@@ -1,0 +1,63 @@
+.carro {
+    height: 300px;
+    max-height: 300px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    padding:5px;
+    position:relative;
+    width: 50%;
+    left: 25%;
+
+
+}
+
+.box{
+    display:flex;
+    flex-wrap: wrap;
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+  
+  
+}
+.objeto {
+    position:relative;
+    width: 40%;
+    display:block;
+    flex: 0 0 15%;
+    max-width: 40%;
+    margin-bottom: 40px;
+    margin-left: 15px;
+    height: 200px;
+    max-height: 200px;
+    background-color: activecaption;
+}
+
+.objeto:hover{
+    box-shadow: inset 0 0 1em #ffcc99, 0 0 1em grey;
+}
+
+.thumbnail-carro {
+    width: 100%;
+    
+}
+.bola {
+    border-radius: 50%;
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+   margin-left: 25%;
+    border: 1px solid #000000;
+    background-color: red;
+}.mapa{
+    margin-top: 20px;
+}.bola1 {
+    border-radius: 50%;
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+   margin-left: 25%;
+    border: 1px solid #000000;
+    background-color: green;
+}
