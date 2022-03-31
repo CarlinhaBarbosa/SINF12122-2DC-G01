@@ -5,8 +5,12 @@
         <title>PaginaInicial</title>
         <meta name="viewport" content="width=device-width">
         <link href="../CSS/initial.css" rel="stylesheet" type="text/css"/>
-        
-<!--ACABAR SARA VIDES-->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+            />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+        <!--ACABAR SARA VIDES-->
     </head>
     <body>
         <!-- partial:index.partial.html -->
@@ -14,32 +18,50 @@
 
         </div>
         <div>
-            <form>  <img alt="" id="logotipo" height="150" width="150" src="../pictures/estacionamento_24908-54068.png">
-                <div class="form-field">
-                    <label>Email&nbsp&nbsp</label>
-                    <input type="email" placeholder="Username" required/>
-                </div>
-                <div class="form-field">
-                      <label>Nome&nbsp&nbsp</label>
-                    <input type="text" placeholder="Nome" required/>                       
-                </div>
-                <div class="form-field">
-                    <input type="password" placeholder="Password" required/>                       
-                </div>
-                <div class="form-field">
-                    <input type="email" placeholder="Username" required/>
-                </div>
-                <div class="form-field">
-                    <input type="email" placeholder="Username" required/>
-                </div><div class="form-field">
-                    <input type="email" placeholder="Username" required/>
-                </div><!-- comment -->
-                <div class="form-field">
-                    <button class="btn" type="submit">Registar</button>
-                </div>
-               
-            </form></div>
+            <center>
+                <form id="login" onsubmit="process(event)">  <img alt=""  height="150" width="150" src="../pictures/estacionamento_24908-54068.png">
+                    <div class="form-field">
+                        <label>Email&nbsp&nbsp</label>
+                        <input type="email" placeholder="Email" required/>
+                    </div>
+                    <div class="form-field">
+                        <label>Nome&nbsp&nbsp</label>
+                        <input type="text" placeholder="Nome" required/>                       
+                    </div>
+                    <div class="form-field">
+                        <label>Palavra-Passe&nbsp&nbsp</label>
+                        <input type="password" placeholder="Password" required/>                       
+                    </div>
+                    <div class="form-field">
+                        <label>Username&nbsp&nbsp</label>
+                        <input type="text" placeholder="Username" required/>
+                    </div>
+                    <div class="container">
 
+                        <input id="phone" type="tel" placeholder="Telemóvel" required />
+
+                        <script>
+                            const phoneInputField = document.querySelector("#phone");
+                            const phoneInput = window.intlTelInput(phoneInputField, {
+                                utilsScript:
+                                        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+                            });
+                        </script>
+
+                    </div>
+                    <p><div class="form-field">
+                        <input type="number" placeholder="NIF" required/>
+                    </div><!-- comment -->
+                    <div class="form-field">
+                        <input type="submit" class="btn" value="Verificar" />
+                        <p>
+                            <button class="btn" type="submit">Registar</button>
+                    </div>
+
+
+                </form>
+            </center>
+        </div>
         <!-- partial -->
 
     </body>
