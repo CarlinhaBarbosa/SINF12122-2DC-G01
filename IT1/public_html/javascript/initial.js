@@ -4,8 +4,7 @@ function login() {
      console.log("user:"+ username);
       console.log("pass:"+ password);
                 if(username==="admin" && password==="admin"){
-                 
-    window.location.href="../../HTML/ClienteScreen.html";
+                    window.location.assign("../GestorScreen");
                     }else if(username==="geronimosousa" && password==="stilton"){
                         window.location="../HTML/ClienteScreen.html";
                     }
