@@ -13,7 +13,16 @@
 body {
   font-family: Helvetica, sans-serif;
 }
+/* Add an orange color to all icons and set the font-size */
+.logo-small {
+  color: #f4511e;
+  font-size: 50px;
+}
 
+.logo {
+  color: #f4511e;
+  font-size: 200px;
+}
 #logotipo{
     margin-bottom: 10%;
     margin-left: 28%;
@@ -54,13 +63,12 @@ form input {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     font-size: 17px;
     color: #4A4A4A;
-    text-indent: 40px;
+    text-indent: 10px;
 }
 form .btn {
     outline: none;
     border: none;
     cursor: pointer;
-    display: inline-block;
     margin: 0 auto;
     padding: 0.9rem 2.5rem;
     text-align: center;
@@ -69,6 +77,10 @@ form .btn {
     border-radius: 4px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .Financeiro {
@@ -122,4 +134,96 @@ form .btn {
   margin: 15px 0;
   background-color: #f4511e;
   color: #fff;
+}
+
+#NãoRegistadoLink{
+  margin-top:10px;
+  color:black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Contactos{
+  width:100%;
+  color:white;
+}
+.tableContactos{
+  display:flex;
+  flex-direction: row;
+}
+.coluna1{
+  margin-left: 20px;
+  width: 50%;
+}
+.coluna2{
+  width:50%;
+}
+.nameAndEmail{
+  display: flex;
+  flex-direction: row;
+}
+.nameFormContact{
+  color:black;
+  width:45%;
+}
+.emailFormContact{
+  color:black;
+  margin-left: 5%;
+  width: 45%;
+}
+.messageFormContact{
+  color:black;
+  margin-top: 1%;
+  width: 95%;
+  text-indent: 10px;
+  font-family: inherit;
+  font-size: 17px;
+}
+#formContactos{
+
+  width:100%;
+}
+.bottomSubmitContact{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 0.9rem 2.5rem;
+  text-align: center;
+  background-color: #47AB11;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  float:right;
+  margin-right: 1%;
+}
+.buttonPrevious{
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 0.9rem 2.5rem;
+    text-align: center;
+    background-color: #47AB11;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgb(0 0 0 / 16%);
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.financas{
+  color:black;
 }
