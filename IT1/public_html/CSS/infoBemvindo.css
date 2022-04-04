@@ -1,0 +1,52 @@
+.navbar li a {
+    color: white; float: left;
+}
+.navbar-header {
+
+}
+.img{
+
+}
+* {
+    font-family: monospace, Helvetica, Arial;
+}
+.container{
+
+}
+.title{
+    margin-top: 10%;
+    font-weight: bold;
+    font-family: 'Elianto';font-size: 20px;
+    float: left;
+}
+.navbar {
+    color: white; 
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
+
+    letter-spacing: 4px;
+    border-radius: 0;
+    align-content: center;
+
+}
+
+.navbar-default {
+    border-color: transparent;
+
+    height: 50px;
+
+
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}

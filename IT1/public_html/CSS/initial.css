@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 #background {
-    background-image: url('../pictures/background-gada440083_1280.jpg');
+    background-image: url('../pictures/parque.jpg');
     z-index: -10;
     position: fixed;
     left: 0;
@@ -13,7 +13,7 @@
 body {
   font-family: Helvetica, sans-serif;
 }
-/* Add an orange color to all icons and set the font-size */
+
 .logo-small {
   color: #f4511e;
   font-size: 50px;
@@ -22,6 +22,11 @@ body {
 .logo {
   color: #f4511e;
   font-size: 200px;
+}
+.container-fluid{
+    background-color: white;
+    align-content: center;
+    text-align: center;
 }
 #logotipo{
     margin-bottom: 10%;
@@ -72,7 +77,7 @@ form .btn {
     margin: 0 auto;
     padding: 0.9rem 2.5rem;
     text-align: center;
-    background-color: #47AB11;
+    background-color: #00416c;
     color: #fff;
     border-radius: 4px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);

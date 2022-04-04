@@ -1,0 +1,159 @@
+
+* {
+    font-family: monospace, Helvetica, Arial;
+}
+
+.column{
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+
+
+    flex:2
+}
+
+.Table {
+    width: 70%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    margin-left: 15%;
+    border-color: #929090;
+    border-style: solid;
+    color: #000000;
+}
+
+Table td{ 
+    border-width: 2px;
+    border-color: #929090;
+    border-style: solid;
+    padding: 3px;
+}
+
+.Table th {
+    border-width: 2px;
+    border-color: #929090;
+    border-style: solid;
+    padding: 3px;
+}
+
+Table thead {
+    background-color: #959493;
+}
+
+
+.column1{
+    display:flex;
+    flex-direction:column;
+    text-align: left;
+
+    flex-basis: 100%;
+    float: left;
+    flex:2;
+}
+.column2{
+    display:flex;
+    flex-direction:column;
+
+
+    flex-basis: 100%;
+    align-content: center;
+    flex:2;
+}
+.title{
+    margin-top: 10%;
+    font-weight: bold;
+    font-family: 'Elianto';font-size: 20px;
+    float: left;
+}
+
+.column3{
+    display:flex;
+    flex-direction:column;
+    text-align: right;
+
+    flex-basis: 100%;
+    align-content: center;
+    flex:4;
+}
+
+.row {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width:100%;
+
+}
+.tags {
+
+}
+.row1 {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width:100%;
+
+}
+.navbar li a {
+    color: white; float: left;
+}
+.navbar-header {
+
+}
+.img{
+
+}
+.container{
+
+}
+.navbar {
+    color: white; 
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
+
+    letter-spacing: 4px;
+    border-radius: 0;
+    align-content: center;
+
+}
+
+.navbar-default {
+    border-color: transparent;
+
+    height: 50px;
+
+
+}
+.row2 {
+    display:flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    width:100%;
+    flex:1;text-align: center;
+
+
+
+
+}.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+.proximo{
+    /*position: fixed;*/
+    left: 0;
+    bottom: 0;
+    margin-bottom: 100%;
+    bottom: 0%;
+    margin-right: 1%;
+}
+.proximo:hover{
+    color:black;
+}
