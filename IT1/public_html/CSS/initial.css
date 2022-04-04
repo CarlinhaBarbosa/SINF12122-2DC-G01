@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 #background {
-    background-image: url('../pictures/parque.jpg');
+    background-image: url('../pictures/background-gada440083_1280.jpg');
     z-index: -10;
     position: fixed;
     left: 0;
@@ -11,17 +11,17 @@
     filter: blur(5px);
 }
 body {
-    font-family: Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 /* Add an orange color to all icons and set the font-size */
 .logo-small {
-    color: #f4511e;
-    font-size: 50px;
+  color: #f4511e;
+  font-size: 50px;
 }
 
 .logo {
-    color: #f4511e;
-    font-size: 200px;
+  color: #f4511e;
+  font-size: 200px;
 }
 #logotipo{
     margin-bottom: 10%;
@@ -29,7 +29,7 @@ body {
     position: relative;}
 #box-login{
     width:100%;
-    font-family: 'Lato', sans-serif;
+      font-family: 'Lato', sans-serif;
     color: #4A4A4A;
     display: flex;
     justify-content: center;
@@ -72,8 +72,8 @@ form .btn {
     margin: 0 auto;
     padding: 0.9rem 2.5rem;
     text-align: center;
-    background-color: #005082;
-    color: white;
+    background-color: #47AB11;
+    color: #fff;
     border-radius: 4px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
     font-size: 17px;
@@ -88,138 +88,122 @@ form .btn {
     height:560px;
     background-color:#C0C0C0;
     text-align: center;
-
 }
+
 .panel {
-    border: 1px solid #f4511e;
-    border-radius:0;
-    transition: box-shadow 0.5s;
+  border: 1px solid #f4511e;
+  border-radius:0;
+  transition: box-shadow 0.5s;
 }
 
 .panel:hover {
-    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  box-shadow: 5px 0px 40px rgba(0,0,0, .2);
 }
 
 .panel-footer .btn:hover {
-    border: 1px solid #f4511e;
-    background-color: #fff !important;
-    color: #f4511e;
+  border: 1px solid #f4511e;
+  background-color: #fff !important;
+  color: #f4511e;
 }
 
 .panel-heading {
-    color: #fff !important;
-    background-color: #f4511e !important;
-    padding: 25px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+  color: #fff !important;
+  background-color: #f4511e !important;
+  padding: 25px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .panel-footer {
-    background-color: #fff !important;
+  background-color: #fff !important;
 }
 
 .panel-footer h3 {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .panel-footer h4 {
-    color: #aaa;
-    font-size: 14px;
+  color: #aaa;
+  font-size: 14px;
 }
 
 .panel-footer .btn {
-    margin: 15px 0;
-    background-color: #f4511e;
-    color: #fff;
-}
-.servico {
-
+  margin: 15px 0;
+  background-color: #f4511e;
+  color: #fff;
 }
 
 #NãoRegistadoLink{
-    margin-top:10px;
-    text-decoration: underline #053562; 
-    color:#053562;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-}
-.container-fluid {
-    background-color:white;
-    text-align: center;
-    color:black;
-    max-height: 100%;
+  margin-top:10px;
+  color:black;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.bg-grey {
-    color:black;
-    text-align: center;
-
-}
 .Contactos{
-    width:100%;
-    color:white;
+  width:100%;
+  color:white;
 }
 .tableContactos{
-    display:flex;
-    flex-direction: row;
+  display:flex;
+  flex-direction: row;
 }
 .coluna1{
-    margin-left: 20px;
-    width: 50%;
+  margin-left: 20px;
+  width: 50%;
 }
 .coluna2{
-    width:50%;
+  width:50%;
 }
 .nameAndEmail{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 .nameFormContact{
-    color:black;
-    width:45%;
+  color:black;
+  width:45%;
 }
 .emailFormContact{
-    color:black;
-    margin-left: 5%;
-    width: 45%;
+  color:black;
+  margin-left: 5%;
+  width: 45%;
 }
 .messageFormContact{
-    color:black;
-    margin-top: 1%;
-    width: 95%;
-    text-indent: 10px;
-    font-family: inherit;
-    font-size: 17px;
+  color:black;
+  margin-top: 1%;
+  width: 95%;
+  text-indent: 10px;
+  font-family: inherit;
+  font-size: 17px;
 }
 #formContactos{
 
-    width:100%;
+  width:100%;
 }
 .bottomSubmitContact{
-    outline: none;
-    border: none;
-    cursor: pointer;
-    margin: 0 auto;
-    padding: 0.9rem 2.5rem;
-    text-align: center;
-    background-color: #005082;
-    color: #fff;
-    border-radius: 4px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-    font-size: 17px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    float:right;
-    margin-right: 1%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 0.9rem 2.5rem;
+  text-align: center;
+  background-color: #47AB11;
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  float:right;
+  margin-right: 1%;
 }
 .buttonPrevious{
     outline: none;
@@ -241,47 +225,5 @@ form .btn {
 }
 
 .financas{
-    color:black;
+  color:black;
 }
-.text-center {
-
-}
-
-.form-field {
-
-}
-.row{
-
-}
-.serv {
-
-}
-
-.col-sm-4 {
-
-}
-
-.glyphicon-off {
-
-}
-
-.glyphicon-heart {
-
-}
-
-.glyphicon {
-
-}
-
-.glyphicon-lock {
-
-}
-
-.glyphicon-leaf {
-
-}
-
-.glyphicon-certificate {
-
-}
-
