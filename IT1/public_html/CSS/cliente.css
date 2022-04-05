@@ -4,15 +4,26 @@
     margin: 0 auto;
     pading:0;
     box-sizing:border-box;
-    background: url(background-gada440083_1280.jpg) center;
-    
-    
+   
     font-family: "Open Sans", sans-serif;  /* tipo de letra, importada do google fonts */
-    line-height: 1,5; /* espaçamento entre linhas */
     color:white;      /* letra branca */
-        }
+   
+     }
+       
+    #background {
+    background-image: url('../pictures/background-gada440083_1280.jpg');
+    z-index: -10;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(5px);
+    }
         
-        
+    /* Style do Menu do cliente  */  
+    
     #Menu-Cliente ul { 
       list-style: none;
       padding:0;
@@ -32,24 +43,29 @@
      }
         
     #Menu-Cliente ul li a:hover {  
-    background-color: rgb(24,139,233);  /* clicar na opçaõ pretendida fica azul*/
+    background-color: rgb(24,139,233);  
       
-    .text-box {
-    background-color: black;  
-    padding: 5px 40px;
-    margin-top: 20px;
-    border-radius:50px; 
     
+    
+    
+    
+    #text-box {
+    width: 100%;
+    position:absolute;
+    text-align: center;
+    top:300px;
+  
     }
 
-     .text-box h1 {
-    text-align: center;
+    #text-box h1 {
+   
     font-size: 62px;
     }
 
-    .text-box p {
-    text-align: center;
+    #text-box p {
+    margin: 10px 0 40px;
+  
     font-size: 14px;
     }
 
-       
+       }
