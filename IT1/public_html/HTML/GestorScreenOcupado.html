@@ -4,18 +4,19 @@
     <head>
         <meta charset="utf-8">
         <title>Project</title>
-        <link href="../CSS/mapa.css" rel="stylesheet" type="text/css"/>
-        
+
+        <script src="../javascript/gestorscreen.js" type="text/javascript"></script>
         <link type="text/css" href="../CSS/headeradmin.css" rel="stylesheet">
-        <link type="text/css" href="../CSS/mapa.css" rel="stylesheet">
         <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
         <meta name="viewport" content="width=device-width">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+
+        </script>
         <style>
-         
+
         </style>
 
     </head>
@@ -23,13 +24,13 @@
         <nav class="navbar">
             <div class="container">
                 <div class="navbar-header">
-                   
+
                     <img align="left" style="width:80px ;height: 80px" class="img" src="../pictures/estacionamento_24908-54068.png" alt="parque de estacionamento"/> 
                     <div class='title' align="center">Pushing Park</div>
                 </div>
                 <div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="GestorScreen.html">Início</a></li>
+                        <li><a href="GestorScreenOcupado.html">Início</a></li>
                         <li><a href="GestorInfoCliente.html">Clientes</a></li>
                         <li><a href="FinancialScreen">Área Financeira</a></li>
                         <li><a  href="MapScreen.html">Mapa</a></li>
@@ -39,11 +40,29 @@
             </div>
         </nav>
 
-        
+
         <div>
             <h1 class="saudacao">Bem Vindo</h1>
-            <div class="conteudo">Sistema do Estacionameto:</div>
+            <div class="conteudo">Sistema do Estacionameto:
+                <button id="myBtn" class="dropbtn">Escolher</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a class="letra" href="GestorScreenOcupado.html">Ocupado</a>
+                    <a class="letra" href="GestorScreenLivre.html">Livre</a>
+
+                </div></div>
         </div>
+        <script>
+            // Get the button, and when the user clicks on it, execute myFunction
+            document.getElementById("myBtn").onclick = function () {
+                myFunction()
+            };
+
+            /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+        </script>
+
         <div class="mapa">
             <div class='box' id="sistemaEntrada">
                 <div class='objeto'>
@@ -52,7 +71,58 @@
                             <a onclick='' > <h5 >Gerónimo de Sousa</h5></a>
                         </div>
                         <div class="bola"></div><br>
-                        <div class="matricula">21UI42 </div>
+
+                        <div class="zona">A10</div>
+
+                    </article>
+                </div>
+                <div class='objeto'>
+                    <article class='carro'>
+                        <div class='thumbnail-carro'>
+                            <a onclick='' > <h5 >Teresa Guilherme</h5></a>
+                        </div>
+                        <div class="bola"></div><br>
+
+                        <div class="zona">B10</div>
+
+                    </article>
+                </div> <div class='objeto'>
+                    <article class='carro'>
+                        <div class='thumbnail-carro'>
+                            <a onclick='' > <h5 >Fernanda Lato</h5></a>
+                        </div>
+                        <div class="bola"></div><br>
+
+                        <div class="zona">D11</div>
+
+                    </article>
+                </div> <div class='objeto'>
+                    <article class='carro'>
+                        <div class='thumbnail-carro'>
+                            <a onclick='' > <h5 >Sara Dança</h5></a>
+                        </div>
+                        <div class="bola"></div><br>
+
+                        <div class="zona">A03</div>
+
+                    </article>
+                </div> <div class='objeto'>
+                    <article class='carro'>
+                        <div class='thumbnail-carro'>
+                            <a onclick='' > <h5 >Ana Banana</h5></a>
+                        </div>
+                        <div class="bola1"></div><br>
+
+                        <div class="zona">A03</div>
+
+                    </article>
+                </div> <div class='objeto'>
+                    <article class='carro'>
+                        <div class='thumbnail-carro'>
+                            <a onclick='' > <h5 >Gonçalo Bish</h5></a>
+                        </div>
+                        <div class="bola"></div><br>
+
                         <div class="zona">A03</div>
 
                     </article>
@@ -60,50 +130,20 @@
                 <div class='objeto'>
                     <article class='carro'>
                         <div class='thumbnail-carro'>
-                            <a onclick='' > <h5 >Gerónimo de Sousa</h5></a>
-                        </div>
-                        <div class="bola"></div><br>
-                        <div class="matricula">21UI42 </div>
-                        <div class="zona">A03</div>
-
-                    </article>
-                </div> <div class='objeto'>
-                    <article class='carro'>
-                        <div class='thumbnail-carro'>
-                            <a onclick='' > <h5 >Gerónimo de Sousa</h5></a>
-                        </div>
-                        <div class="bola"></div><br>
-                        <div class="matricula">21UI42 </div>
-                        <div class="zona">A03</div>
-
-                    </article>
-                </div> <div class='objeto'>
-                    <article class='carro'>
-                        <div class='thumbnail-carro'>
-                            <a onclick='' > <h5 >Gerónimo de Sousa</h5></a>
-                        </div>
-                        <div class="bola"></div><br>
-                        <div class="matricula">21UI42 </div>
-                        <div class="zona">A03</div>
-
-                    </article>
-                </div> <div class='objeto'>
-                    <article class='carro'>
-                        <div class='thumbnail-carro'>
-                            <a onclick='' > <h5 >Gerónimo de Sousa</h5></a>
+                            <a onclick='' > <h5 >Carol DormeCedo</h5></a>
                         </div>
                         <div class="bola1"></div><br>
-                        <div class="matricula">21UI42 </div>
+
                         <div class="zona">A03</div>
 
                     </article>
                 </div> <div class='objeto'>
                     <article class='carro'>
                         <div class='thumbnail-carro'>
-                            <a onclick='' > <h5 >Gerónimo de Sousa</h5></a>
+                            <a onclick='' > <h5 >Hugo Pepega</h5></a>
                         </div>
-                        <div class="bola"></div><br>
-                        <div class="matricula">21UI42 </div>
+                        <div class="bola1"></div><br>
+
                         <div class="zona">A03</div>
 
                     </article>
@@ -111,31 +151,59 @@
                 <div class='objeto'>
                     <article class='carro'>
                         <div class='thumbnail-carro'>
-                            <a onclick='' > <h5 >Gerónimo de Sousa</h5></a>
+                            <a onclick='' > <h5 >Cátia Costa</h5></a>
                         </div>
                         <div class="bola1"></div><br>
-                        <div class="matricula">21UI42 </div>
+
                         <div class="zona">A03</div>
 
                     </article>
+
                 </div> <div class='objeto'>
                     <article class='carro'>
                         <div class='thumbnail-carro'>
-                            <a onclick='' > <h5 >Ana Rabeta</h5></a>
+                            <a onclick='' > <h5 >Cátia Costa</h5></a>
                         </div>
                         <div class="bola1"></div><br>
-                        <div class="matricula">21UI42 </div>
+
+                        <div class="zona">A03</div>
+
+                    </article>
+
+                </div> 
+                <div class='objeto'>
+                    <article class='carro'>
+                        <div class='thumbnail-carro'>
+                            <a onclick='' > <h5 >Cátia Costa</h5></a>
+                        </div>
+                        <div class="bola1"></div><br>
+
+                        <div class="zona">A03</div>
+
+                    </article>
+                </div>
+                <div class='objeto'>
+                    <article class='carro'>
+                        <div class='thumbnail-carro'>
+                            <a onclick='' > <h5 >Cátia Costa</h5></a>
+                        </div>
+                        <div class="bola1"></div><br>
+
                         <div class="zona">A03</div>
 
                     </article>
                 </div>
             </div>
         </div>
+        <div class="round">
+        <a href="#" class="previous">&#8249;</a>
+        <a href="#" class="next">&#8250;</a>
+         </div>
         <div class="footer">
 
 
-            <p>@isep.ipp.pt</p>
-        </div>
+            <p>© All Rights Reserved 2022 </p>
+        </div> 
     </body>
 </html>
 
