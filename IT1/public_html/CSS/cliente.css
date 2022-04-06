@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 *
    {
     margin: 0 auto;
     pading:0;
     box-sizing:border-box;
-   
-    font-family: "Open Sans", sans-serif;  /* tipo de letra, importada do google fonts */
+    font-family: Montserrat, sans-serif;  
     color:white;      /* letra branca */
    
      }
-       
-    #background {
-    background-image: url('../pictures/background-gada440083_1280.jpg');
+
+#background {
+    background-image: url('../pictures/clienteBackground.jpeg');
     z-index: -10;
     position: fixed;
     left: 0;
@@ -20,9 +18,9 @@
     height: 100%;
     background-size: cover;
     filter: blur(5px);
-    }
-        
-    /* Style do Menu do cliente  */  
+}
+
+  /* Style do Menu do cliente  */  
     
     #Menu-Cliente ul { 
       list-style: none;
@@ -38,7 +36,7 @@
         color: #fff;                /* letra do menu branca */
         padding: 20px;
         text-decoration: none; 
-         display: inline-block;
+        display: inline-block;
         
      }
         
@@ -50,22 +48,64 @@
     
     
     #text-box {
+    top:600px;
+        
     width: 100%;
     position:absolute;
-    text-align: center;
-    top:300px;
+    text-align: center;  /* Texto centrado*/
+    line-height: 1.8;   /* Espaçamento entre as linhas*/  /* NÃO FUNCIONA */   
+    margin-bottom: 10%;
+    margin-left: 28%;
+    position: relative;}                         /* NÃO FUNCIONA */   
   
     }
 
-    #text-box h1 {
-   
-    font-size: 62px;
+    #text-box h1 {      /* 1em=16px */   
+    font-size: 6em;
+    margin-bottom: 2%;
+    margin-top: 5%;
+    
     }
-
-    #text-box p {
-    margin: 10px 0 40px;
-  
-    font-size: 14px;
+    #text-box p{
+    margin-bottom: 3%;   
+    font-size: 8em; 
     }
+    
+    #logotipo{
+    margin-bottom: 6%;
+    margin-left: 45%;
+    position: relative;}
 
-       }
+    /* Visite-nos Para Saber Mais box !*/ 
+    
+    .btn {                    
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 34px;      /* Preenchimento */ 
+    border: 1px solid #fff;
+    transition: 0.6s ease;
+    position: relative;
+    background: transparent;
+    font-size: 17px;
+    margin-bottom: 10%;
+    margin-left: 40%;
+    position: relative;
+    } 
+
+
+     /* Botão voltar */ 
+     /* Colocar Botão em baixo */ 
+   .BotaoVolta {
+                   
+     width: 160vw;                /* Largura */ 
+     height:100vh;
+     display:flex;
+     justify-content: center;
+     align-items: center; 
+     cursor:pointer;
+     text-decoration: none;
+     border:1px solid #000;
+     font-size: 16px;
+     
+     }
