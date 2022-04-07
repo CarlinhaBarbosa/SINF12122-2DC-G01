@@ -5,11 +5,12 @@
     box-sizing:border-box;
     font-family: Montserrat, sans-serif;  
     color:white;      /* letra branca */
+    
    
      }
-
-#background {
-    background-image: url('../pictures/clienteBackground.jpeg');
+       
+    #background {
+    background-image: url('../pictures/clienteBackground.jpeg');   
     z-index: -10;
     position: fixed;
     left: 0;
@@ -18,9 +19,9 @@
     height: 100%;
     background-size: cover;
     filter: blur(5px);
-}
-
-  /* Style do Menu do cliente  */  
+    }
+        
+    /* Style do Menu do cliente  */  
     
     #Menu-Cliente ul { 
       list-style: none;
@@ -45,38 +46,44 @@
       
     
     
-    
+    /* Style do texto de Boas Vindas ao cliente  */  
     
     #text-box {
-    top:600px;
-        
+    top:600px;    
     width: 100%;
     position:absolute;
     text-align: center;  /* Texto centrado*/
-    line-height: 1.8;   /* Espaçamento entre as linhas*/  /* NÃO FUNCIONA */   
+    line-height: 1.8;   /* Espaçamento entre as linhas*/   
     margin-bottom: 10%;
     margin-left: 28%;
-    position: relative;}                         /* NÃO FUNCIONA */   
-  
+    position: relative;}                        
+    
     }
 
-    #text-box h1 {      /* 1em=16px */   
-    font-size: 6em;
+     /* Bem-Vindo  */
+     
+    #text-box h1 {         
+    font-size: 70px;      /* 1em=16px */ 
     margin-bottom: 2%;
     margin-top: 5%;
     
     }
+    
+    /* Deixe o stresse de estacionar o carro nas nossas mãos  */
+    
     #text-box p{
     margin-bottom: 3%;   
-    font-size: 8em; 
+    font-size: 20px; 
     }
     
+      /* Imagem LogoTipo  */
+      
     #logotipo{
     margin-bottom: 6%;
     margin-left: 45%;
     position: relative;}
 
-    /* Visite-nos Para Saber Mais box !*/ 
+
     
     .btn {                    
     display: inline-block;
@@ -98,14 +105,14 @@
      /* Colocar Botão em baixo */ 
    .BotaoVolta {
                    
-     width: 160vw;                /* Largura */ 
-     height:100vh;
+    
      display:flex;
      justify-content: center;
      align-items: center; 
      cursor:pointer;
      text-decoration: none;
      border:1px solid #000;
+     background:rgb(24,139,233) ;
      font-size: 16px;
      
      }
