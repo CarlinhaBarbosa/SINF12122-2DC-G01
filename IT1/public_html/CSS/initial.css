@@ -232,8 +232,9 @@ form .btn {
 .financas{
     color:black;
 }.info {
-    background-image: url('../pictures/fundo.png');
-    
+    background-image: url('../pictures/pastel.jpg');
+    color:black;
+    font-family: "Trirong", serif;
     text-align: center;
 
 }
@@ -241,8 +242,22 @@ form .btn {
 .top {
 
 }
-
+.p{
+    width: 100%;
+    height:30px;
+}
 .sp{
     width: 100%;
-    height:5px;
+    height:80px;
 }
+
+
+.texto {
+    right:70px;
+align-content: center;
+text-align: center;
+}
+.text-center {
+margin-top: 4%;
+}
+
