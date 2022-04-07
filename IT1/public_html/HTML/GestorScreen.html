@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <title>Project</title>
+
+       
+        <link type="text/css" href="../CSS/headeradmin.css" rel="stylesheet">
+        <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
+        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+
+        </script>
+        <style>
+
+        </style>
+
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <img align="left" style="width:80px ;height: 80px" class="img" src="../pictures/estacionamento.png" alt="parque de estacionamento"/> 
+                    <div class='title' align="center">Pushing Park</div>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="GestorScreen.html">Início</a></li>
+                        <li><a href="GestorInfoCliente.html">Sobre Clientes</a></li>
+                        <li><a href="FinancialScreen">Área Financeira</a></li>
+                        <li><a  href="MapScreen.html">Mapa</a></li>
+                         
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div>
+            <h1 class="saudacao">Bem Vindo</h1>
+            <div class="conteudo">Sistema do Estacionameto:
+                <button id="myBtn" class="dropbtn">Escolher</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a class="letra" href="GestorScreenOcupado.html">Ocupado</a>
+                    <a class="letra" href="GestorScreenLivre.html">Livre</a>
+
+                </div></div>
+        </div>
+        <script>
+            // Get the button, and when the user clicks on it, execute myFunction
+            document.getElementById("myBtn").onclick = function () {
+                myFunction()
+            };
+
+            /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+        </script>
+                <div><center>
+            <img align="center" class="img" src="../pictures/car.png" alt="car"/> 
+            </center></div>
+        <div class="footer">
+
+
+            <p>© All Rights Reserved 2022 </p>
+        </div> 
+    </body>
+</html>
+
+
+
