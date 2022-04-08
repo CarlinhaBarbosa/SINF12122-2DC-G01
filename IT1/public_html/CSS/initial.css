@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
-#background {
-    
+.background {
+    background-size: 100% 100%;
     z-index: -10;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    
+    padding:0;
     filter: blur(5px);
 }
 body {
@@ -16,17 +16,8 @@ body {
     background-size: 100%;
     max-width: 100vw;
     margin: 0;
+    padding:0;
     
-}
-
-.logo-small {
-    color: #f4511e;
-    font-size: 50px;
-}
-
-.logo {
-    color: #f4511e;
-    font-size: 200px;
 }
 .container-fluid{
     background-color: white;

@@ -114,3 +114,29 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+top{
+    padding:10px;
+    position:fixed;
+    top: 90%;
+    right:40px;
+    display:none;
+    font-size: 30px;
+}
+.top:hover{
+    text-decoration:none;
+}
+
+.botao {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 20px;      /* Preenchimento */ 
+    border: 1px solid #fff;
+    transition: 0.6s ease;
+    position: relative;
+    background: transparent;
+    font-size: 17px;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    position: relative;
+}

@@ -23,7 +23,7 @@ a {
     display: inline-block;
     padding: 8px 16px;
 }
-#background {
+.background {
     background-image: url('../pictures/clienteBackground.jpeg');   
     z-index: -10;
     position: fixed;
@@ -32,7 +32,7 @@ a {
     width: 100%;
     height: 100%;
     background-size: cover;
-    filter: blur(5px);
+
 }
 .navbar {
     color: white; 
@@ -128,8 +128,45 @@ a {
 font-family: arial;
 }
 
-.imagem {
- margin-bottom: 15px;
+
+
+.dropbtn {
+  
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+   background: transparent; 
+    margin-bottom: 15px;
     margin-left: 105%;
-   
+  
 }
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: black;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position:relative ;
+  background-color: #f9f9f9;
+
+
+  overflow: auto;
+  color: rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: black;
+  
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
