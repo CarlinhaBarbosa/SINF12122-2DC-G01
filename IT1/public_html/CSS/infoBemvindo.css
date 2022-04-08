@@ -1,15 +1,29 @@
-*
-   {
-    margin: 0 auto;
-    pading:0;
-    box-sizing:border-box;
-    font-family: Montserrat, sans-serif;  
-    color:white;      /* letra branca */
-    
-   
-     }
-       
-    #background {
+.title{
+    margin-top: 10%;
+    font-weight: bold;
+    font-family: 'Elianto';font-size: 20px;
+    float: left;
+}
+
+
+.navbar li a {
+    color: white; float: left;
+}
+.navbar-header {
+
+}
+.img{
+
+}
+.container{
+
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+#background {
     background-image: url('../pictures/clienteBackground.jpeg');   
     z-index: -10;
     position: fixed;
@@ -19,86 +33,103 @@
     height: 100%;
     background-size: cover;
     filter: blur(5px);
-    }
-        
-    /* Style do Menu do cliente  */  
-    
-    #Menu-Cliente ul { 
-      list-style: none;
-      padding:0;
-      background-color: rgb(37,37,39); /* Barra do menu horizontal preta*/
-     }
-     
-    #Menu-Cliente ul li { 
-         display: inline;
-     }
-        
-    #Menu-Cliente ul li a  {  
-        color: #fff;                /* letra do menu branca */
-        padding: 20px;
-        text-decoration: none; 
-        display: inline-block;
-        
-     }
-        
-    #Menu-Cliente ul li a:hover {  
-    background-color: rgb(24,139,233);  
-      
-    
-    
-    /* Style do texto de Boas Vindas ao cliente  */  
-    
-    #text-box {
-    top:600px;    
-    width: 100%;
-    position:absolute;
-    text-align: center;  /* Texto centrado*/
-    line-height: 1.8;   /* Espaçamento entre as linhas*/   
-    margin-bottom: 10%;
-    margin-left: 28%;
-    position: relative;}                        
-    
-    }
+}
+.navbar {
+    color: white; 
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
 
-     /* Bem-Vindo  */
-     
-    #text-box h1 {         
-    font-size: 70px;      /* 1em=16px */ 
+    letter-spacing: 4px;
+    border-radius: 0;
+    align-content: center;
+
+}
+
+.navbar-default {
+    border-color: transparent;
+
+    height: 50px;
+
+}
+
+.footer {
+    position: fixed;
+    padding: 8px;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+
+}
+
+.nav {
+
+}
+
+.navbar-nav {
+
+}
+
+
+.navbar-right {
+
+}
+
+
+.info {
+
+    color:white;
+    font-family: "Trirong", serif;
+    text-align: center;
+    align-content: center;
+
+}
+
+.info h2{
+    font-size: 40px;     
     margin-bottom: 2%;
     margin-top: 5%;
-    
-    }
-    
-    /* Deixe o stresse de estacionar o carro nas nossas mãos  */
-    
-    #text-box p{
-    margin-bottom: 3%;   
-    font-size: 20px; 
-    }
-    
-      /* Imagem LogoTipo  */
-      
-    #logotipo{
-    margin-bottom: 6%;
-    margin-left: 45%;
-    position: relative;}
+}
+.p{
+    width: 100%;
+    height:30px;
+}
+.sp{
+    width: 100%;
+    height:80px;
+}
 
 
-    
-    .btn {                    
+.btn {                    
     display: inline-block;
     text-decoration: none;
-    color: #fff;
+    color: white;
     padding: 12px 34px;      /* Preenchimento */ 
-    border: 1px solid #fff;
+    border: 1px solid #2d72a3;
     transition: 0.6s ease;
     position: relative;
     background: transparent;
     font-size: 17px;
-    margin-bottom: 10%;
-    margin-left: 40%;
-    position: relative;
-    } 
-
-
    
+    
+
+} 
+.top{
+
+}
+
+.letra {
+font-family: arial;
+}
+
+.imagem {
+ margin-bottom: 15px;
+    margin-left: 105%;
+   
+}

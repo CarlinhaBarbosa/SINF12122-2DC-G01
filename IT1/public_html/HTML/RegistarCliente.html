@@ -9,6 +9,8 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
             />
+            <link rel="stylesheet" href="../CSS/register.css" type="text/css">
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
         <!--ACABAR SARA VIDES-->
     </head>
@@ -20,24 +22,24 @@
         <div>
             <center>
                 <form id="login" onsubmit="process(event)">  <img alt=""  height="150" width="150" src="../pictures/estacionamento.png">
-                    <div class="form-field">
-                        <label>Email&nbsp&nbsp</label>
+                    <div class="forma">
+                        <label style="color:white">Email&nbsp&nbsp</label>
                         <input type="email" placeholder="Email" required/>
                     </div>
-                    <div class="form-field">
-                        <label>Nome&nbsp&nbsp</label>
+                    <div class="forma">
+                        <label style="color:white">Nome&nbsp&nbsp</label>
                         <input type="text" placeholder="Nome" required/>                       
                     </div>
-                    <div class="form-field">
-                        <label>Palavra-Passe&nbsp&nbsp</label>
+                    <div class="forma">
+                        <label style="color:white">Palavra-Passe&nbsp&nbsp</label>
                         <input type="password" placeholder="Password" required/>                       
                     </div>
-                    <div class="form-field">
-                        <label>Username&nbsp&nbsp</label>
+                    <div class="forma">
+                        <label style="color:white">Username&nbsp&nbsp</label>
                         <input type="text" placeholder="Username" required/>
                     </div>
                     <div class="container">
-
+                        <label style="color:white">Telemóvel&nbsp&nbsp</label>
                         <input id="phone" type="tel" placeholder="Telemóvel" required />
 
                         <script>
@@ -49,10 +51,11 @@
                         </script>
 
                     </div>
-                    <p><div class="form-field">
+                    <p><div class="forma">
+                        <label style="color:white">Número de Contribuinte&nbsp&nbsp</label>
                         <input type="number" placeholder="NIF" required/>
                     </div><!-- comment -->
-                    <div class="form-field">
+                    <div class="forma">
                         <input type="submit" class="btn" value="Verificar" />
                         <p>
                             <button class="btn" type="submit">Registar</button>

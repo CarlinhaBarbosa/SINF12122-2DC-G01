@@ -2,51 +2,101 @@
 
 <html lang="pt">
     <head>
-        <title>Clientes</title>
-        <meta charset="UTF-8">  
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../CSS/infoBemVindo.css" rel="stylesheet" type="text/css"/>
-        
+        <meta charset="utf-8">
+        <title>Project</title>
 
-       
+        <link type="text/css" href="../CSS/headeradmin.css" rel="stylesheet">
+        <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
+        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../CSS/infoBemvindo.css" type="text/css"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
+
+        </script>
         <style>
 
         </style>
 
     </head>
     <body>
-
-
-
         <div id="background">
 
         </div>
+        <div>
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header">
+
+                        <img align="left" style="width:80px ;height: 80px" class="img" src="../pictures/estacionamento.png" alt="parque de estacionamento"/> 
+                        <div class='title' align="center">Pushing Park</div>
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="ClienteScreen.html">Pagina</a></li>
+                            <li><a href="#">Faturacao</a></li>
+                            <li><a href="FinancialScreen">Area Financeira</a></li>
+                            <li><a  href="MapScreen.html">Mapa</a></li>
+                            <li><a href="InformationScreen.html">Informacoes</a></li>
+
+                        </ul>
+                        <div class="imagem">
+                   
+                          <button id="imagem"><img alt="" style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
+                        <a class="letra" href="GestorScreenOcupado.html">Ocupado</a>
+                        <a class="letra" href="GestorScreenLivre.html">Livre</a>
+                    </div>
+                    <script>
+                        // Get the button, and when the user clicks on it, execute myFunction
+                        document.getElementById("imagem").onclick = function () {
+                            myFunction();
+                        };
+
+                        /* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+                        function myFunction() {
+                            document.getElementById("imagem").classList.toggle("show");
+                        }
+                    </script>
+                </div>
+
+
+                <div class="info">
+
+                    <div class="top"></div>
+                    <h2>Informações</h2>
+                    <div class="p"></div>
+                    <p></p>
+                    <p></p>
+                    <p></p><h4>Bem vindo ao Pushing Park. Aqui tem 100% lugar e 100% segurança.</h4>
+                    <p></p><h4>Para reservar, por favor registe-se. Poderá escolher o seu lugar e o plano a pagar.</h4>
+                    <p></p><h4>Pode sair e entrar sempre que quiser. Se não pretende alugar uma zona, mas deseja</h4>
+                    <p></p><h4>estacionar no nosso estabelecimento, também é possível.Anota-se que poderá perder o</h4>
+                    <p></p><h4>seu lugar reservado se continuar com o plano escolhido. Contacte-nos se necessitar.</h4>
+                    <p></p><h4>Se quiser ver todos os planos existentes, veja em baixo ou registe-se.</h4>
+                    <div class="p"></div>
+                    <p> <a class="btn" href="MapScreen.html">Mapa do Parque</a></p>
+                    <br>
+                    <div class="p"></div>
+                    <p></p>
+                    <p></p>
+
+                    <p></p><h4>Se quiser ver todos os planos existentes, veja em baixo ou registe-se.</h4>
+                    <div class="p"></div>
+                    <p> <a class="btn" href="FinancialScreen.html">Area Financeira</a></p>
+                    <div class="p"></div><div class="p"></div>
+
+                </div>
+
+
+                <div class="footer">
+
+
+                    <p>© All Rights Reserved 2022 </p>
+                </div> 
+                </body>
+                </html>
 
 
 
-        <nav id="Menu-Cliente">
-
-            <ul>
-                  <li><a href="ClienteScreen.html">Pagina</a></li>
-                        <li><a href="GestorInfoCliente.html">Sobre Clientes</a></li>
-                        <li><a href="FinancialScreen">Area Financeira</a></li>
-                        <li><a  href="MapScreen.html">Mapa</a></li>
-                        <li><a href="InformationScreen.html">Informacoes</a></li>
-
-            </ul> 
-        </nav>
-
-
-        <div id= "text-box">
-
-            <center><h1>Informações </h1></center>
-           
-            <center><p> Deixe o stress de estacionar o carro nas nossas mãos</p></center>
-            
-
-         
-        </div>
-
-
-    </body>
-</html>
