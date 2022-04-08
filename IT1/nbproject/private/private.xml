@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/InformationScreen.html</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/CSS/initial.css</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/InicialScreen.html</file>
@@ -11,6 +12,29 @@
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/CSS/mapa.css</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/MapScreen.html</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/FinancialScreen.html</file>
+=======
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/InicialScreen.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/GestorScreenOcupado.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/infoBemvindo.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/headeradmin.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/infoDoCliente.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/mapa.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/InformationScreen.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/GestorScreenLivre.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/GestorScreen.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/gestorInfo.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/register.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/pictures/piso1.png</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/GestorInfoCliente.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/MapScreen.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/ClienteScreen.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/RegistarCliente.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/FinancialScreen.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/pictures/car.png</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/initial.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/pictures/piso0.png</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/cliente.css</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
