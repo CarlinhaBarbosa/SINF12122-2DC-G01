@@ -5,12 +5,11 @@
     box-sizing:border-box;
     font-family: Montserrat, sans-serif;  
     color:white;      /* letra branca */
-    
    
      }
        
     #background {
-    background-image: url('../pictures/clienteBackground.jpeg');   
+    background-image: url('../pictures/estacionamento.jpg');   
     z-index: -10;
     position: fixed;
     left: 0;
@@ -63,7 +62,7 @@
      /* Bem-Vindo  */
      
     #text-box h1 {         
-    font-size: 70px;      /* 1em=16px */ 
+    font-size: 6em;      /* 1em=16px */ 
     margin-bottom: 2%;
     margin-top: 5%;
     
@@ -73,16 +72,15 @@
     
     #text-box p{
     margin-bottom: 3%;   
-    font-size: 20px; 
+    font-size: 8em; 
     }
     
       /* Imagem LogoTipo  */
       
     #logotipo{
-    margin-bottom: 6%;
+    margin-bottom: 5%;
     margin-left: 45%;
     position: relative;}
-
 
     
     .btn {                    
@@ -95,24 +93,37 @@
     position: relative;
     background: transparent;
     font-size: 17px;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     margin-left: 40%;
     position: relative;
-    } 
-
-
-     /* Botão voltar */ 
-     /* Colocar Botão em baixo */ 
-   .BotaoVolta {
-                   
+    }
     
-     display:flex;
-     justify-content: center;
-     align-items: center; 
-     cursor:pointer;
-     text-decoration: none;
-     border:1px solid #000;
-     background:rgb(24,139,233) ;
-     font-size: 16px;
-     
+    .round {
+    border-radius: 50%;
+    position: fixed;
+    left: 95%;
+    bottom: 90%;
+    width: 100%;
+    
+    
+    .previous {
+    background-color: black;
+    color: white;
+
      }
+
+    .next {
+    background-color: black;
+    color: white;
+    }
+
+    .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(37,37,39);;
+    color: white;
+    text-align: center;
+    height: 15vh;
+
+    }
