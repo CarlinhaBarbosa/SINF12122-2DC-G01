@@ -9,7 +9,7 @@
      }
        
     #background {
-    background-image: url('../pictures/estacionamento.jpg');   
+    background-image: url('../pictures/clienteBackground.jpeg');   
     z-index: -10;
     position: fixed;
     left: 0;
@@ -72,7 +72,7 @@
     
     #text-box p{
     margin-bottom: 3%;   
-    font-size: 8em; 
+    font-size: 3em; 
     }
     
       /* Imagem LogoTipo  */
