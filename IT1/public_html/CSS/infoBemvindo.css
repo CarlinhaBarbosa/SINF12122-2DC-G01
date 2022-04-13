@@ -14,6 +14,9 @@
 }
 .img{
 
+
+
+
 }
 .container{
 
@@ -37,7 +40,6 @@ a {
 .navbar {
     color: white; 
     margin-bottom: 0;
-    background-color: black;
     z-index: 9999;
     border: 0;
     font-size: 12px;
@@ -152,13 +154,12 @@ font-family: arial;
 }
 
 .dropdown-content {
-  display: none;
+width: 12%;
+margin-left:100%;
+text-decoration: none;
   position:relative ;
+  display: none;
  
-
-
-  overflow: auto;
-
 }
 
 .dropdown-content a {
@@ -173,4 +174,12 @@ font-family: arial;
 
 .imagem {
 
+}
+.dropbtn {
+    background-color: #2d72a3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
