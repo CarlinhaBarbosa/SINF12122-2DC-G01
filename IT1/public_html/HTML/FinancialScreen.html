@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>Area Financeira</title>
-        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8">
+        <title>Área Financeirra</title>
         <link type="text/css" href="../CSS/newcss.css" rel="stylesheet">
         <link type="text/css" href="../CSS/headeradmin.css" rel="stylesheet">
-        <link type="text/css" href="../CSS/finacial.css" rel="stylesheet">
+        <link type="text/css" href="../CSS/financial.css" rel="stylesheet">
         <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
         <meta name="viewport" content="width=device-width">
+        <script src="../javascript/InformationScreen.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+
     </head>
     <body>
         <nav class="navbar">
@@ -27,22 +24,91 @@ and open the template in the editor.
                 </div>
                 <div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="ClienteScreen.html">Inicial</a></li>
-                        <li><a href="#">Faturacao</a></li>
-                        <li><a href="FinancialScreen.html">Área Financeira</a></li>
-                        <li><a  href="MapScreen.html">Mapa</a></li>
+                        <li><a href="ClienteScreen.html">Página</a></li>
+                        <li><a href="#">Faturação</a></li>
+                        <li><a href="FinancialScreen.html">Àrea Financeira</a></li>
+                        <li><a  style="background-color: grey" href="MapScreen.html">Mapa</a></li>
                         <li><a href="InformationScreen.html">Informações</a></li>
                     </ul>
                 </div>
+                <div class="botao">
+                    <button id="myBtn" class="dropbtn" onclick="openOption()"><img alt=""
+                            style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
+                    <div id="myDropdown" class="dropdown-content" value="1">
+                        <a class="letra" href="#">AlterarDados</a>
+                        <a class="letra" href="#">A minha conta</a>
+                            <a class="letra" href="#">Sair</a>
+                    </div>
+                </div>
             </div>
         </nav>
-       <div class="container-fluid bg-grey">
-            <div class="Dinheiro">
-             Ola eu sou a Bea 
-            </div>  
-       </div>     
-         <div class="footer">
-            <p>© All Rights Reserved 2022 </p>
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="Financeiro">
+                    <div class="text-center">
+                        <h2>Preços</h2> 
+                        <h4>Para conhecer melhor o seu Pushing Park</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4" id="Rese">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h1>Reservado</h1>
+                                </div>
+                                <div class="panel-body" id="Reservado">
+                                    <p class="financas"><strong>Lugar pessoal</strong></p>
+                                    <p class="financas"><strong>Lembrete de pagamento</strong></p>
+                                </div>
+                                <div class="panel-footer">
+                                    <h3 class="financas">200€</h3>
+                                    <h4 class="financas">por mês</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h1>Diário</h1>
+                                </div>
+                                <div class="panel-body" id="Diario">
+                                    <p class="financas"><strong >Lugar pessoal</strong></p>
+                                    <p class="financas"><strong>Lembrete de pagamento</strong></p>
+                                </div>
+                                <div class="panel-footer">
+                                    <h3 class="financas">7€</h3>
+                                    <h4 class="financas">por mês</h4>
+                                    <h3 class="financas"> + </h3>
+                                    <h3 class="financas">0.10€</h3>
+                                    <h4 class="financas"> por dia </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h1>Ocasional</h1>
+                                </div>
+                                <div class="panel-body" id="Ocasional">
+                                    <p class="financas"><strong>Das 8 às 20 horas:</strong></p>
+                                    <p class="financas">1.ª hora – por cada período de quinze minutos ou fração <div>
+                                        <h3 class="financas">0.20€</h3></div>
+                                    <p class="financas">2.ª hora e seguintes – por cada período de quinze minutos ou fração <div>
+                                        <h3 class="financas">0.30€</h3></div>
+                                    <p class="financas"><strong>Das 20 às 8 horas:</strong></p>
+                                    <p class="financas">Por cada período de quinze minutos ou fração<div>
+                                        <h3 class="financas">0.20€</h3></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
+        <div>
+                <div class="p"></div>
+            </div>
+            <div class="footer">
+                <p>© All Rights Reserved 2022 </p>
+            </div>
     </body>
 </html>

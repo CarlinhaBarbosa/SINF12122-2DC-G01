@@ -4,8 +4,6 @@
     font-family: 'Elianto';font-size: 20px;
     float: left;
 }
-
-
 .navbar li a {
     color: white; float: left;
 }
@@ -38,10 +36,7 @@ a:hover {
     position:relative;
     width: 50%;
     left: 25%;
-
-
 }
-
 .box{
     display:flex;
     flex-wrap: wrap;
