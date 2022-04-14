@@ -4,9 +4,8 @@
     pading:0;
     box-sizing:border-box;
     font-family: Montserrat, sans-serif;  
-    color:white;      /* letra branca */
+       color:white;  /* letra branca */
     
-   
      }
        
     #background {
@@ -20,13 +19,14 @@
     background-size: cover;
     filter: blur(5px);
     }
-        
+   
     /* Style do Menu do cliente  */  
     
     #Menu-Cliente ul { 
       list-style: none;
       padding:0;
       background-color: rgb(37,37,39); /* Barra do menu horizontal preta*/
+      height:80px;
      }
      
     #Menu-Cliente ul li { 
@@ -44,7 +44,7 @@
     #Menu-Cliente ul li a:hover {  
     background-color: rgb(24,139,233);  
       
-    
+ 
     
     /* Style do texto de Boas Vindas ao cliente  */  
     
@@ -56,33 +56,32 @@
     line-height: 1.8;   /* Espaçamento entre as linhas*/   
     margin-bottom: 10%;
     margin-left: 28%;
-    position: relative;}                        
+    position: relative; }                        
     
     }
 
      /* Bem-Vindo  */
      
     #text-box h1 {         
-    font-size: 70px;      /* 1em=16px */ 
+    font-size: 6em;      /* 1em=16px */ 
     margin-bottom: 2%;
     margin-top: 5%;
-    
+  
     }
     
     /* Deixe o stresse de estacionar o carro nas nossas mãos  */
     
     #text-box p{
     margin-bottom: 3%;   
-    font-size: 20px; 
+    font-size: 3em; 
     }
     
       /* Imagem LogoTipo  */
       
     #logotipo{
-    margin-bottom: 6%;
+    margin-bottom: 5%;
     margin-left: 45%;
     position: relative;}
-
 
     
     .btn {                    
@@ -95,24 +94,94 @@
     position: relative;
     background: transparent;
     font-size: 17px;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     margin-left: 40%;
     position: relative;
-    } 
+    }
+    .botao {
+
+    right: 0px;
+    position: absolute;
+}
 
 
-     /* Botão voltar */ 
-     /* Colocar Botão em baixo */ 
-   .BotaoVolta {
-                   
+.letra {
+    font-family: arial;
+}
+
+
+
+.dropbtn {
+
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    background: transparent;
+
+
+
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: lightskyblue;
+
+}
+
+
+
+.dropdown-content {
+    background-color: white;
+    color: blue;
+    text-align: center;
+    padding: 8px 0;
+    display:none;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+
+
+}
+
+.dropdown-content a {
+
+    text-decoration: none;
+    display: block;
+    color:grey;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+    .round {
+    border-radius: 50%;
+    position: fixed;
+    left: 95%;
+    bottom: 75%;
+    width: 100%;
     
-     display:flex;
-     justify-content: center;
-     align-items: center; 
-     cursor:pointer;
-     text-decoration: none;
-     border:1px solid #000;
-     background:rgb(24,139,233) ;
-     font-size: 16px;
-     
+    
+    .previous {
+    background-color: black;
+    color: white;
+
      }
+
+    .next {
+    background-color: black;
+    color: white;
+    }
+
+    .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:rgb(37,37,39);;
+    color: white;
+    text-align: center;
+    height: 15vh;
+
+    }
