@@ -140,3 +140,34 @@ top{
     margin-left: 10%;
     position: relative;
 }
+
+
+.contain {
+  
+  margin: 20px auto;
+}
+
+.licenseplate {
+  color: #333;
+  background-color: #fff;
+	
+            background-repeat: no-repeat;
+  
+  font-family: 'Segoe UI', Arial, sans-serif;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  
+  padding-left: 60px;
+  padding-bottom: 10px;
+  
+  width: 510px;
+  border: 5px solid red;
+  border-radius: 15px;
+  outline: none;
+  
+  &::placeholder {
+    color: #eee;
+  }
+}
