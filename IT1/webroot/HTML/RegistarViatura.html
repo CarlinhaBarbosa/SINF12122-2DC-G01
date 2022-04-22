@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt" >
+    <head>
+        <meta charset="UTF-8">
+        <title>PaginaInicial</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="../CSS/initial.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+
+        <link rel="stylesheet" href="../CSS/register.css" type="text/css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+
+        <!--ACABAR SARA VIDES-->
+    </head>
+    <body>
+        <!-- partial:index.partial.html -->
+        <div class="background">
+
+        </div>
+        <div><form> 
+
+                <a href="RegistarCliente.html" class="botao"> <center>Voltar Atrás</center></a>
+            </form></div>
+
+        <div>
+            <center>
+                <form id="login" onsubmit="process(event)">  <img alt=""  height="150" width="150" src="../pictures/estacionamento.png">
+                    <div style="color:#00416c;font-family: Arial; font-size: 30px"><center>DADOS DA VIATURA</center></div><p></p>
+                    <div class="forma">
+                        <label style="color:white">Modelo&nbsp&nbsp</label>
+                        <input type="email" placeholder="Modelo da Viatura" required/>
+                    </div>
+                    <div class="forma">
+                        <label style="color:white">Marca&nbsp&nbsp</label>
+                        <input type="text" placeholder="Marca da Viatura" required/>                       
+                    </div>
+                    <div class="contain">
+                        <label style="color:white">Matricula&nbsp&nbsp</label>
+                        <input type="text" name="licenseplate" class="licenseplate" maxlength="6" placeholder="AB-12-FH"/>
+                    </div>
+
+                    <div class="forma">
+                        
+                        <p>
+                            <button class="btn" type="submit">Registar</button>
+                    </div>
+
+
+                </form>
+
+            </center>
+        </div>
+
+    </body>
+</html>
