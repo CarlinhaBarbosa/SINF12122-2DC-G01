@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/GestorScreen.html</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/CSS/faturacao.css</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/InformationScreen.html</file>
@@ -18,6 +19,12 @@
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/ClienteScreen.html</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/RegistarCliente.html</file>
             <file>file:/C:/Users/Beatriz%20Neves/Documents/GitHub/IT1/public_html/HTML/FinancialScreen.html</file>
+=======
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/HTML/RegistarCliente.html</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/register.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/newcss.css</file>
+            <file>file:/C:/Users/Carla/Documents/GitHub/SINF1_C01/IT1/public_html/CSS/cliente.css</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
