@@ -1,2 +1,6 @@
-SQL\DBFactory.class
+servidor\DBFactory.class
+Controller\UserController.class
+servidor\Handlers.class
+servidor\Main.class
 servidor\Servidor.class
+Model\Utilizador.class
