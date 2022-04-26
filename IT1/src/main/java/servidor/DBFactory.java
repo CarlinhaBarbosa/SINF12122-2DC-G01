@@ -6,17 +6,18 @@ import java.sql.SQLException;
 
 public class DBFactory {
 
-    static final String URL = "jdbc:mysql://localhost:3306/" + "pushingpark";
-    static final String USER = "teste";
-    static final String PASS = "teste";
+    static final String URL = "jdbc:sqlserver://ctesp.dei.isep.ipp.pt:3306/" + "2022sinf1_016";
+    static final String USER = "2022sinf1_016";
+    static final String PASS = "Qh48833hJE!";
 
     public static Connection getConnection() {
         try {
+            DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
             Connection conn = DriverManager.getConnection(URL, USER, PASS);
-            System.out.println(String.format(" Connection t o %s " + "succeded ! ", conn.getCatalog()));
+            System.out.println("Connection to " + conn.getCatalog() + " succeded!");
             return conn;
         } catch (SQLException exc) {
-            throw new RuntimeException(" ! ! ! ! E r r o r c o n n e c ti n g ! ! ! ! ", exc);
+            throw new RuntimeException("Error connecting!", exc);
         }
     }
 }
