@@ -24,23 +24,8 @@ public class Handlers {
     
  
     String webRoot = DEFAULT_WEB_ROOT;
-       public void idUtilizador(String userName, String password) {
-        ResultSet rs = null;
-        int numero = 0;
-        try {
 
-            String query0 = "SELECT id from user where username= '" + userName + "' AND password='" + password + "'";
-            rs = this.returnQuery(query0);
-
-            while (rs.next()) {
-                numero = rs.getInt("id");
-            }
-            UserController.id_utilizadorObtido = numero;
-
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-    }  private void executaQuery(String query) {
+    private void executaQuery(String query) {
         try {
             Statement stmt = DBFactory.getConnection().createStatement();
             stmt.executeUpdate(query);
@@ -67,5 +52,42 @@ public class Handlers {
         }
         return rs;
     }
-}
 
+       public void idUtilizador(String userName, String password) {
+        ResultSet rs = null;
+        int numero = 0;
+        try {
+
+            String query0 = "SELECT id from Users where username= '" + Username + "' AND password='" + Password + "'";
+            rs = this.returnQuery(query0);
+
+            while (rs.next()) {
+                numero = rs.getInt("id");
+            }
+            UserController.id_utilizadorObtido = numero;
+
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }  
+
+    public void introduzirUtilizador(String nome, String email, String password, String username, String phone, String nrContribuinte) {
+        Integer phoneNumber = Integer.parseInt(phone);
+        Integer taxId = Integer.parseInt(nrContribuinte);
+
+        String query = "INSERT INTO Users (Name,Email,Password,Username,Phone,taxID)  VALUES ('" + nome + "','" + email + "','" + password + "','" +username + "',"+ phoneNumber + "," + taxId +")";
+        System.out.println(query);
+        executaQuery(query);
+
+    }
+
+    public void registarVeiculo(String marca, String matricula, String modelo, String userId) {
+        Integer userId2 = Integer.parseInt(userId);
+        
+
+        String query = "INSERT INTO Vehicles (Brand,Model,Registration,UserId)  VALUES ('" + marca + "','" + modelo + "','" + matricula + "'," +userId2  +")";
+        System.out.println(query);
+        executaQuery(query);
+
+    }
+}
