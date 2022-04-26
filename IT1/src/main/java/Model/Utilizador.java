@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 /**
@@ -18,9 +13,7 @@ public class Utilizador {
     private int id;
     private int telemovel;
     private int nif;
-    private String modelo;
-    private String marca;
-    private int matricula;
+
 
     private static final String String_POR_OMISSAO = "SemString";
 
@@ -59,37 +52,7 @@ public class Utilizador {
         this.nif = nif;
     }
 
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public int getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(int matricula) {
-        this.matricula = matricula;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+  
 
     public String getPassword() {
         return password;
@@ -125,7 +88,7 @@ public class Utilizador {
         this.password = Int_POR_OMISSAO;
     }
 
-    public Utilizador(String username, String nome, String email, String password, int id, int telemovel, int nif, String modelo, String marca, int matricula) {
+    public Utilizador(String username, String nome, String email, String password, int id, int telemovel, int nif) {
         this.username = username;
         this.nome = nome;
         this.email = email;
@@ -133,9 +96,7 @@ public class Utilizador {
         this.id = id;
         this.telemovel = telemovel;
         this.nif = nif;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.matricula = matricula;
+       
     }
 
     public Utilizador(String username, String password) {
@@ -145,7 +106,7 @@ public class Utilizador {
 
     }
 
-    public Utilizador(String username, String nome, String email, String password, int telemovel, int nif, String modelo, String marca, int matricula) {
+    public Utilizador(String username, String nome, String email, String password, int telemovel, int nif) {
         this.username = username;
         this.nome = nome;
         this.email = email;
@@ -153,9 +114,8 @@ public class Utilizador {
 
         this.telemovel = telemovel;
         this.nif = nif;
-        this.modelo = modelo;
-        this.marca = marca;
-        this.matricula = matricula;
+        
     }
 
 }
+
