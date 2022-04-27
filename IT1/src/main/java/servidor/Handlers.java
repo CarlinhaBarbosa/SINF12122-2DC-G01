@@ -6,15 +6,13 @@
 package servidor;
 
 import Controller.UserController;
-import io.vertx.ext.web.RoutingContext;
+
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
@@ -58,7 +56,7 @@ public class Handlers {
         int numero = 0;
         try {
 
-            String query0 = "SELECT id from Users where username= '" + Username + "' AND password='" + Password + "'";
+            String query0 = "SELECT id from Users where username= '" + userName + "' AND password='" + password + "'";
             rs = this.returnQuery(query0);
 
             while (rs.next()) {
