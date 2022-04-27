@@ -34,11 +34,11 @@ public class Vehicle {
         this.brand = marca;
     }
 
-    public int getMatricula() {
+    public String getMatricula() {
         return registration;
     }
 
-    public void setMatricula(int matricula) {
+    public void setMatricula(String matricula) {
         this.registration = matricula;
     }
 
@@ -54,7 +54,7 @@ public class Vehicle {
         this.brand = String_POR_OMISSAO;
         this.model = String_POR_OMISSAO;
         this.registration = String_POR_OMISSAO;
-        this.userId = Int_POR_OMISSAO
+        this.userId = Int_POR_OMISSAO;
     }
 
     public Vehicle(String brand, String model, String registration, String userID) {
