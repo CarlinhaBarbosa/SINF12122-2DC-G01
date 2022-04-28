@@ -87,10 +87,18 @@ margin-top: 2%;
     text-align: center;
     width:90%; 
 }
-.Faturar {
+.Escolher {
     width:100%;
     background-color:#C0C0C0;
     text-align: center;
 }
-
-
+.text-center {
+margin-top: 4%;
+}
+.text-left{
+    text-align: left;
+    margin-left: 5%;
+}
+label {
+    ;
+}
