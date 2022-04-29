@@ -11,8 +11,8 @@ public class Utilizador {
     private String email;
     private String password;
     private int id;
-    private int telemovel;
-    private int nif;
+    private String telemovel;
+    private String nif;
 
 
     private static final String String_POR_OMISSAO = "SemString";
@@ -36,19 +36,19 @@ public class Utilizador {
         this.username = username;
     }
 
-    public int getTelemovel() {
+    public String getTelemovel() {
         return telemovel;
     }
 
-    public void setTelemovel(int telemovel) {
+    public void setTelemovel(String telemovel) {
         this.telemovel = telemovel;
     }
 
-    public int getNif() {
+    public String getNif() {
         return nif;
     }
 
-    public void setNif(int nif) {
+    public void setNif(String nif) {
         this.nif = nif;
     }
 
@@ -88,7 +88,7 @@ public class Utilizador {
         this.password = Int_POR_OMISSAO;
     }
 
-    public Utilizador(String username, String nome, String email, String password, int id, int telemovel, int nif) {
+    public Utilizador(int id, String email, String nome, String password, String username, String telemovel, String nif) {
         this.username = username;
         this.nome = nome;
         this.email = email;
@@ -106,7 +106,7 @@ public class Utilizador {
 
     }
 
-    public Utilizador(String username, String nome, String email, String password, int telemovel, int nif) {
+    public Utilizador(String email, String nome, String password, String username, String telemovel, String nif) {
         this.username = username;
         this.nome = nome;
         this.email = email;

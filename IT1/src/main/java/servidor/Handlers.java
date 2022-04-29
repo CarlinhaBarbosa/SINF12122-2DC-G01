@@ -6,6 +6,7 @@
 package servidor;
 
 import Controller.UserController;
+import Model.Utilizador;
 
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;
 import java.sql.Connection;
@@ -13,6 +14,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -51,12 +55,12 @@ public class Handlers {
         return rs;
     }
 
-       public void idUtilizador(String userName, String password) {
+       public void idUtilizador(String Username, String Password) {
         ResultSet rs = null;
         int numero = 0;
         try {
-
-            String query0 = "SELECT id from Users where username= '" + userName + "' AND password='" + password + "'";
+           
+            String query0 = "SELECT id from Users where Username= '" + Username + "' AND Password='" + Password + "'";
             rs = this.returnQuery(query0);
 
             while (rs.next()) {
@@ -69,9 +73,9 @@ public class Handlers {
         }
     }  
 
-    public void introduzirUtilizador(String nome, String email, String password, String username, String phone, String nrContribuinte) {
+    public void introduzirUtilizador(String email, String nome, String password, String username, String phone, String nif) {
         Integer phoneNumber = Integer.parseInt(phone);
-        Integer taxId = Integer.parseInt(nrContribuinte);
+        Integer taxId = Integer.parseInt(nif);
 
         String query = "INSERT INTO Users (Name,Email,Password,Username,Phone,taxID)  VALUES ('" + nome + "','" + email + "','" + password + "','" +username + "',"+ phoneNumber + "," + taxId +")";
         System.out.println(query);
@@ -87,5 +91,24 @@ public class Handlers {
         System.out.println(query);
         executaQuery(query);
 
+    }
+     public ArrayList<Utilizador> getListaUtilizadores() {
+        ArrayList<Utilizador> listaUtilizadores = new ArrayList<>();
+        ResultSet rs = null;
+        try {
+            String querry = "SELECT * FROM Users";
+            rs = this.returnQuery(querry);
+
+            while (rs.next()) {
+                System.out.println("utilizador");
+                Utilizador ut = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"),  rs.getString("Username"), rs.getString("Phone"),  rs.getString("taxID"));
+                System.out.println(ut.toString());
+                listaUtilizadores.add(ut);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+         System.out.println(listaUtilizadores.size());
+        return listaUtilizadores;
     }
 }

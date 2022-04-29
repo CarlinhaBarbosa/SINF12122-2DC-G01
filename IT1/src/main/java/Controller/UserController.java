@@ -38,22 +38,22 @@ public class UserController {
 
     }
 
-//    public void addUtilizador(RoutingContext routingContext, String nome, String email, String password, int nif, int telemovel, String matricula ...) {
-//        System.out.println("addUtilizador() - " + routingContext.toString());
-//        try {
-//            Utilizador u = new Utilizador(0, nome, email, password);
-//            cf.introduzirUtilizador(nome, email, password);
-//            final String json = Json.encodePrettily(u);
-//            routingContext.response().setStatusCode(201).putHeader("content-type", "application/json; charset=utf-8").end(json);
-//
-//        } catch (EncodeException e) {
-//            System.out.println("exception: " + e.getMessage());
-//            routingContext.response()
-//                    .setStatusCode(500)
-//                    .putHeader("content-type", "application/json; charset=utf-8")
-//                    .end(Json.encodeToBuffer("{erro: 'erro!'}"));
-//        }
-//    }
+    public void addUtilizador(RoutingContext routingContext, String email, String nome, String password, String username, String telemovel, String nif) {
+        System.out.println("addUtilizador() - " + routingContext.toString());
+        try {
+            Utilizador u = new Utilizador(email, nome, password, username, telemovel, nif);
+            cf.introduzirUtilizador(email, nome, password, username, telemovel, nif);
+            final String json = Json.encodePrettily(u);
+            routingContext.response().setStatusCode(201).putHeader("content-type", "application/json; charset=utf-8").end(json);
+
+        } catch (EncodeException e) {
+            System.out.println("exception: " + e.getMessage());
+            routingContext.response()
+                    .setStatusCode(500)
+                    .putHeader("content-type", "application/json; charset=utf-8")
+                    .end(Json.encodeToBuffer("{erro: 'erro!'}"));
+        }
+    }
 
     public void login(RoutingContext rc) {
         String userName = rc.request().getParam("userlogin");
@@ -78,8 +78,8 @@ public class UserController {
         response.end(json.toString());
     }
 
-//    public ArrayList<Utilizador> listarUtilizadores() {
-//        return cf.getListaUtilizadores();
-//    }
+    public ArrayList<Utilizador> listarUtilizadores() {
+        return cf.getListaUtilizadores();
+    }
 
 }
