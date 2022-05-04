@@ -25,11 +25,11 @@
 
         <div>
             <center>
-                <form id="registoV" onsubmit="process(event)">  <img alt=""  height="150" width="150" src="../pictures/estacionamento.png">
+                <form id="registoV" onsubmit="process(event)" method="POST">  <img alt=""  height="150" width="150" src="../pictures/estacionamento.png">
                     <div style="color:#00416c;font-family: Arial; font-size: 30px"><center>DADOS DA VIATURA</center></div><p></p>
                     <div class="forma">
                         <label style="color:white">Modelo&nbsp&nbsp</label>
-                        <input id="modelo" name="modelo" type="email" placeholder="Modelo da Viatura" required/>
+                        <input id="modelo" name="modelo" type="text" placeholder="Modelo da Viatura" required/>
                     </div>
                     <div class="forma">
                         <label style="color:white">Marca&nbsp&nbsp</label>
@@ -43,7 +43,7 @@
                     <div class="forma">
 
                         <p>
-                            <button class="btn" type="submit">Registar</button>
+                            <button class="btn" onclick="registarViatura()"> Registar</button>
                     </div>
 
 

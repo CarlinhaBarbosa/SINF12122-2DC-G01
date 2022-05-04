@@ -7,6 +7,7 @@ package Controller;
 
 
 import Model.Utilizador;
+import Model.Viatura;
 import static io.vertx.core.http.HttpHeaders.CONTENT_TYPE;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.EncodeException;
@@ -59,16 +60,16 @@ public class UserController {
         String userName = rc.request().getParam("userlogin");
         String password = rc.request().getParam("passwordlogin");
         System.out.println(userName + " - " + password);
-        cf.idUtilizador(userName, password);
+        
         HttpServerResponse response = rc.response();
-        ut = new Utilizador();
+       
+        ut = cf.getUser(userName, password);;
         String json = Json.encodePrettily(ut);
         if (UserController.id_utilizadorObtido != 0) {
 
             isAuthenticated = true;
             response.setStatusCode(200);
 
-            ut = new Utilizador(userName, password);
             json = Json.encodePrettily(ut);
         } else {
 
@@ -80,6 +81,31 @@ public class UserController {
 
     public ArrayList<Utilizador> listarUtilizadores() {
         return cf.getListaUtilizadores();
+    }
+
+    public ArrayList<Viatura> listarVeiculos() {
+         return cf.getListaVeiculos();
+    }
+
+    public int getUtilizador(RoutingContext rc, String username, String password) {
+        return cf.getUtilizador(rc,username,password);
+    }
+
+    public void addVeiculo(RoutingContext rc, String modelo, String marca, int id, String matricula) {
+       System.out.println("addUVeiculo() - " + rc.toString());
+        try {
+            Viatura u = new Viatura(modelo,marca,id,matricula);
+            cf.introduzirViatura(modelo,marca,id,matricula);
+            final String json = Json.encodePrettily(u);
+            rc.response().setStatusCode(201).putHeader("content-type", "application/json; charset=utf-8").end(json);
+
+        } catch (EncodeException e) {
+            System.out.println("exception: " + e.getMessage());
+            rc.response()
+                    .setStatusCode(500)
+                    .putHeader("content-type", "application/json; charset=utf-8")
+                    .end(Json.encodeToBuffer("{erro: 'erro!'}"));
+        }
     }
 
 }

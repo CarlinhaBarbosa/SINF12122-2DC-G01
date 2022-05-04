@@ -13,7 +13,7 @@ public class Utilizador {
     private int id;
     private String telemovel;
     private String nif;
-
+    private String cargo;
 
     private static final String String_POR_OMISSAO = "SemString";
 
@@ -26,6 +26,14 @@ public class Utilizador {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public String getUsername() {
@@ -50,6 +58,14 @@ public class Utilizador {
 
     public void setNif(String nif) {
         this.nif = nif;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
   

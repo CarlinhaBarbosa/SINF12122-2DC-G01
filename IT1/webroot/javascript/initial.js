@@ -14,9 +14,16 @@ function login() {
                 throw Error("Erro no servidor!!");
             })
             .then((data) => {
+                console.log(data);
+        if(data.cargo==="admin"){
+            
                 document.getElementById("formularioLogin").submit();
                window.location.assign("/GestorScreen");
            
+        }else{
+             document.getElementById("formularioLogin").submit();
+               window.location.assign("/ClienteScreen");
+        }
             })
             .catch((err) =>
                 console.log(err),

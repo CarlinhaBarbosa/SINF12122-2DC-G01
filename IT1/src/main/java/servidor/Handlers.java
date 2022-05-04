@@ -7,6 +7,8 @@ package servidor;
 
 import Controller.UserController;
 import Model.Utilizador;
+import Model.Viatura;
+import io.vertx.ext.web.RoutingContext;
 
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;
 import java.sql.Connection;
@@ -54,23 +56,30 @@ public class Handlers {
         }
         return rs;
     }
-
-       public void idUtilizador(String Username, String Password) {
+    
+       public Utilizador getUser(String Username, String Password) {
         ResultSet rs = null;
-        int numero = 0;
+        Utilizador o=new Utilizador();
         try {
            
-            String query0 = "SELECT id from Users where Username= '" + Username + "' AND Password='" + Password + "'";
+            String query0 = "SELECT * from Users where Username= '" + Username + "' AND Password='" + Password + "'";
             rs = this.returnQuery(query0);
 
             while (rs.next()) {
-                numero = rs.getInt("id");
+               
+                o=new Utilizador(rs.getInt("Id"),rs.getString("Email"),rs.getString("Name"), rs.getString("Password"),rs.getString("Username"),rs.getString("Phone"),rs.getString("taxID"));
+            if(Username=="admin" && Password=="admin"){ 
+                o.setCargo("admin");
+            }else{
+                o.setCargo("cliente");
             }
-            UserController.id_utilizadorObtido = numero;
+            }
+            UserController.id_utilizadorObtido = o.getId();
 
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+        return o;
     }  
 
     public void introduzirUtilizador(String email, String nome, String password, String username, String phone, String nif) {
@@ -100,6 +109,7 @@ public class Handlers {
             rs = this.returnQuery(querry);
 
             while (rs.next()) {
+                  
                 System.out.println("utilizador");
                 Utilizador ut = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"),  rs.getString("Username"), rs.getString("Phone"),  rs.getString("taxID"));
                 System.out.println(ut.toString());
@@ -110,5 +120,55 @@ public class Handlers {
         }
          System.out.println(listaUtilizadores.size());
         return listaUtilizadores;
+    }
+
+    public ArrayList<Viatura> getListaVeiculos() {
+      ArrayList<Viatura> listaViaturas = new ArrayList<>();
+        ResultSet rs = null;
+        try {
+            String querry = "SELECT * FROM Vehicles";
+            rs = this.returnQuery(querry);
+
+            while (rs.next()) {
+                  
+                
+                Viatura ut = new Viatura(rs.getInt("VehiclesId"), rs.getString("Brand"), rs.getString("Model"), rs.getInt("UserId"),  rs.getString("Registration"));
+                System.out.println(ut.toString());
+                listaViaturas.add(ut);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+         System.out.println(listaViaturas.size());
+        return listaViaturas;
+    }
+
+    public int getUtilizador(RoutingContext rc, String username, String password) {
+        int u=0;
+        
+        ResultSet rs = null;
+        try {
+            String querry = "SELECT Id FROM Users where Username='"+username + "'and Password='"+password+"'";
+            
+            rs = this.returnQuery(querry);
+
+            while (rs.next()) {
+                  u=rs.getInt("Id");
+                
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+     
+        return u;
+    }
+
+    public void introduzirViatura(String modelo, String marca, int id, String matricula) {
+         
+
+        String query = "INSERT INTO Vehicles (Brand, Model, UserId, Registration)  VALUES ('" + modelo + "','" + marca + "'," + id + ",'" + matricula +  "')";
+        System.out.println(query);
+        executaQuery(query);
+
     }
 }
