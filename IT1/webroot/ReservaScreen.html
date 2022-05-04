@@ -29,9 +29,8 @@
                     </ul>
                 </div>
                 <div class="botao">
-                    <button id="myBtn" class="dropbtn" onclick="openOption()"><img alt=""
-                                                                                   style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
-                    <div id="myDropdown" class="dropdown-content" value="1">
+                    <button id="myBtn" class="dropbtn" onclick="openOption()"><img alt="" style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
+                    <div id="myDropdown" class="dropdown-content">
                         <a class="letra" href="#">AlterarDados</a>
                         <a class="letra" href="#">A minha conta</a>
                         <a class="letra" href="FaturacaoScreen.html"> Faturação </a>
@@ -49,67 +48,196 @@
                 </div>
                 <fieldset>
                     <div class="text-left">
-                    <div>
-                        <input type="checkbox" id="ZonaA" onclick="myFunction()">
-                        <label for="ZonaA">Zona A</label>
-                        <p id="lugarA" style="display:none">
-                        <input type="checkbox" id="lugar1A" class="lugar">
-                        <label for="lugar1A"> Lugar 1   </label>
-                        <br>
-                        <input type="checkbox" id="lugar2A" class="lugar">
-                        <label for="lugar2A"> Lugar 2   </label>
-                        <br>
-                        <input type="checkbox" id="lugar3A" class="lugar">
-                        <label for="lugar3A"> Lugar 3   </label>
-                        <br>
-                        <input type="checkbox" id="lugar4A" class="lugar">
-                        <label for="lugar4A"> Lugar 4   </label>
-                        <br>
-                        <input type="checkbox" id="lugar5A" class="lugar">
-                        <label for="lugar5A"> Lugar 5   </label>
-                        <br>
-                        <input type="checkbox" id="lugar6A" class="lugar">
-                        <label for="lugar6A"> Lugar 6   </label>
-                        <br>
-                        <input type="checkbox" id="lugar7A" class="lugar">
-                        <label for="lugar7A"> Lugar 7   </label>
-                        <br>
-                        <input type="checkbox" id="lugar8A" class="lugar">
-                        <label for="lugar8A"> Lugar 8   </label>
-                        <br>
-                        <input type="checkbox" id="lugar9A" class="lugar">
-                        <label for="lugar9A"> Lugar 9   </label>
-                        <br>
-                        <input type="checkbox" id="lugar10A" class="lugar">
-                        <label for="lugar10A"> Lugar 10   </label>
-                        <br>
-                        <input type="checkbox" id="lugar11A" class="lugar">
-                        <label for="lugar11A"> Lugar 11   </label>
-                        <br>
-                        <input type="checkbox" id="lugar12A" class="lugar">
-                        <label for="lugar12A"> Lugar 12   </label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ZonaB" name="horns">
-                        <label for="ZonaB"> Zona B</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ZonaC" name="horns">
-                        <label for="ZonaC"> Zona C </label>
-                    </div>
                         <div>
-                        <input type="checkbox" id="ZonaD" name="horns">
-                        <label for="ZonaD"> Zona D</label>
-                    </div>
+                            <input type="checkbox" id="za" onclick="place('za')">
+                            <label for="za">Zona A</label>
+                            <div id="lugarA" style="display:none">
+                                <form style="border:none">
+                                    <input list="browsersA" name="browserA">
+                                    <datalist id="browsersA">
+                                        <option value="Lugar 1">
+                                        <option value="Lugar 2">
+                                        <option value="Lugar 3">
+                                        <option value="Lugar 4">
+                                        <option value="Lugar 5">
+                                        <option value="Lugar 6">
+                                        <option value="Lugar 7">
+                                        <option value="Lugar 8">
+                                        <option value="Lugar 9">
+                                        <option value="Lugar 10">
+                                        <option value="Lugar 11">
+                                        <option value="Lugar 12">
+                                        <option value="Lugar 13">
+                                        <option value="Lugar 14">
+                                        <option value="Lugar 15">
+                                        <option value="Lugar 16">
+                                        <option value="Lugar 17">
+                                        <option value="Lugar 18">
+                                        <option value="Lugar 19">
+                                        <option value="Lugar 20">
+                                        <option value="Lugar 21">
+                                    </datalist>
+                                    <input type="submit" style="background: black">
+                                </form>
+                            </div>
+                        </div>
                         <div>
-                        <input type="checkbox" id="ZonaE" name="horns">
-                        <label for="ZonaE"> Zona E</label>
-                    </div>
+                            <input type="checkbox" id="zb" onclick="place('zb')">
+                            <label for="zb"> Zona B</label>
+                            <div id="lugarB" style="display:none">
+                                <form style="border:none">
+                                    <input list="browsersB" name="browserB">
+                                    <datalist id="browsersB">
+                                        <option value="Lugar 1">
+                                        <option value="Lugar 2">
+                                        <option value="Lugar 3">
+                                        <option value="Lugar 4">
+                                        <option value="Lugar 5">
+                                        <option value="Lugar 6">
+                                        <option value="Lugar 7">
+                                        <option value="Lugar 8">
+                                        <option value="Lugar 9">
+                                        <option value="Lugar 10">
+                                        <option value="Lugar 11">
+                                        <option value="Lugar 12">
+                                    </datalist>
+                                    <input type="submit" style="background: black">
+                                </form>
+                            </div>
+                        </div>
                         <div>
-                        <input type="checkbox" id="ZonaF" name="horns">
-                        <label for="ZonaF"> Zona F</label>
+                            <input type="checkbox" id="zc" onclick="place('zc')">
+                            <label for="zc">Zona C</label>
+                            <div id="lugarC" style="display:none">
+                                <form style="border:none">
+                                    <input list="browsersC" name="browserC">
+                                    <datalist id="browsersC">
+                                        <option value="Lugar 1">
+                                        <option value="Lugar 2">
+                                        <option value="Lugar 3">
+                                        <option value="Lugar 4">
+                                        <option value="Lugar 5">
+                                        <option value="Lugar 6">
+                                        <option value="Lugar 7">
+                                        <option value="Lugar 8">
+                                        <option value="Lugar 9">
+                                        <option value="Lugar 10">
+                                        <option value="Lugar 11">
+                                        <option value="Lugar 12">
+                                        <option value="Lugar 13">
+                                        <option value="Lugar 14">
+                                        <option value="Lugar 15">
+                                        <option value="Lugar 16">
+                                        <option value="Lugar 17">
+                                        <option value="Lugar 18">
+                                        <option value="Lugar 19">
+                                        <option value="Lugar 20">
+                                        <option value="Lugar 21">
+                                        <option value="Lugar 22">
+                                        <option value="Lugar 23">
+                                    </datalist>
+                                    <input type="submit" style="background: black">
+                                </form>
+                            </div>
+                        </div>
+                        <input type="checkbox" id="zd" onclick="place('zd')">
+                        <label for="zd">Zona D</label>
+                        <div id="lugarD" style="display:none">
+                            <form style="border:none">
+                                <input list="browsersD" name="browserD">
+                                <datalist id="browsersD">
+                                    <option value="Lugar 1">
+                                    <option value="Lugar 2">
+                                    <option value="Lugar 3">
+                                    <option value="Lugar 4">
+                                    <option value="Lugar 5">
+                                    <option value="Lugar 6">
+                                    <option value="Lugar 7">
+                                    <option value="Lugar 8">
+                                    <option value="Lugar 9">
+                                    <option value="Lugar 10">
+                                    <option value="Lugar 11">
+                                    <option value="Lugar 12">
+                                    <option value="Lugar 13">
+                                    <option value="Lugar 14">
+                                    <option value="Lugar 15">
+                                    <option value="Lugar 16">
+                                    <option value="Lugar 17">
+                                    <option value="Lugar 18">
+                                    <option value="Lugar 19">
+                                    <option value="Lugar 20">
+                                    <option value="Lugar 21">
+                                    <option value="Lugar 22">
+                                    <option value="Lugar 23">
+                                </datalist>
+                                <input type="submit" style="background: black">
+                            </form>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ze" onclick="place('ze')">
+                            <label for="ze">Zona E</label>
+                            <div id="lugarE" style="display:none">
+                                <form style="border:none">
+                                    <input list="browsersE" name="browserE">
+                                    <datalist id="browsersE">
+                                        <option value="Lugar 1">
+                                        <option value="Lugar 2">
+                                        <option value="Lugar 3">
+                                        <option value="Lugar 4">
+                                        <option value="Lugar 5">
+                                        <option value="Lugar 6">
+                                        <option value="Lugar 7">
+                                        <option value="Lugar 8">
+                                        <option value="Lugar 9">
+                                        <option value="Lugar 10">
+                                        <option value="Lugar 11">
+                                        <option value="Lugar 12">
+                                    </datalist>
+                                    <input type="submit" style="background: black">
+                                </form>
+                            </div>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="zf" onclick="place('zf')">
+                            <label for="zf">Zona F</label>
+                            <div id="lugarF" style="display:none">
+                                <form style="border:none">
+                                    <input list="browsersF" name="browserF">
+                                    <datalist id="browsersF">
+                                        <option value="Lugar 1">
+                                        <option value="Lugar 2">
+                                        <option value="Lugar 3">
+                                        <option value="Lugar 4">
+                                        <option value="Lugar 5">
+                                        <option value="Lugar 6">
+                                        <option value="Lugar 7">
+                                        <option value="Lugar 8">
+                                        <option value="Lugar 9">
+                                        <option value="Lugar 10">
+                                        <option value="Lugar 11">
+                                        <option value="Lugar 12">
+                                        <option value="Lugar 13">
+                                        <option value="Lugar 14">
+                                        <option value="Lugar 15">
+                                        <option value="Lugar 16">
+                                        <option value="Lugar 17">
+                                        <option value="Lugar 18">
+                                        <option value="Lugar 19">
+                                        <option value="Lugar 20">
+                                        <option value="Lugar 21">
+                                        <option value="Lugar 22">
+                                        <option value="Lugar 23">
+                                        <option value="Lugar 24">
+                                        <option value="Lugar 25">
+                                        <option value="Lugar 26">
+                                        <option value="Lugar 27">
+                                        <option value="Lugar 28">
+                                    </datalist>
+                                    <input type="submit" style="background: black">
+                                </form>
+                            </div>
+                        </div>
                     </div>
-            </div>
                 </fieldset>
             </div>
         </div>
