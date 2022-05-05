@@ -4,4 +4,3 @@ servidor\Handlers.class
 servidor\Main.class
 Model\Utilizador.class
 servidor\Servidor.class
-Model\Vehicle.class
