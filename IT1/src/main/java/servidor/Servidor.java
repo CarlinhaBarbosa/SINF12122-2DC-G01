@@ -67,7 +67,7 @@ public class Servidor extends AbstractVerticle {
         // serve index
         router.route("/").handler(StaticHandler.create(webRoot).setDefaultContentEncoding("UTF-8"));
         router.post("/submitLoginForm").handler(new UserController()::login);
-
+        router.route(HttpMethod.POST, "/ListarClientes").handler(this::ListarClientes);
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
@@ -141,4 +141,32 @@ public class Servidor extends AbstractVerticle {
         response.putHeader("content-type", "application/json; charset=utf-8");
         response.end();
     }
+
+    private void ListarClientes(RoutingContext e) {
+       
+        JSONObject json2 = new JSONObject();
+        UserController pc = new UserController();
+        ArrayList<Utilizador> listaUsers = pc.listaUtilizadores();
+        int i = 1;
+        for (Utilizador u : listaUsers) {
+            JSONObject json1 = new JSONObject();
+            json1.put("nome", u.getNome());
+            json1.put("matricula", u.getMatricula());
+              json1.put("telemovel", u.getTelemovel());
+            json1.put("email", u.getEmail());
+            json1.put("nif", u.getNif());
+            json1.put("lugar", u.getLugar());
+            json1.put("plano", u.getPlano());
+            json2.put(i, json1);
+            i++;
+        }
+
+        JSONObject finalJson = new JSONObject();
+        finalJson.put("clientes", json2);
+        HttpServerResponse response = e.response();
+        response.putHeader("content-type", "application/json; charset=utf-8");
+        response.setStatusCode(200);
+        response.end(finalJson.toJSONString());
+    }
+    
 }

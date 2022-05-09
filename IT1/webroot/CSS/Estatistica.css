@@ -1,0 +1,36 @@
+* {
+    font-family: monospace, Helvetica, Arial;
+}
+body {
+    background-image: url('../pictures/parque.jpg');
+    width: 100%;
+    background-size: cover;
+  
+}
+.navbar {
+    color: white; 
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
+    letter-spacing: 4px;
+    border-radius: 0;
+    align-content: center;
+}
+.navbar-default {
+    border-color: transparent;
+    height: 50px;
+}
+.footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.container-fluid{
+    align-content: center;
+    text-align: center;
+    width:90%; 
+}

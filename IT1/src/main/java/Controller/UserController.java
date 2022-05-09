@@ -108,4 +108,8 @@ public class UserController {
         }
     }
 
+    public ArrayList<Utilizador> listaUtilizadores() {
+        return cf.listaUsers();
+    }
+
 }
