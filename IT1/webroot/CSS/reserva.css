@@ -102,3 +102,13 @@ margin-top: 4%;
 #lugarA{
     margin-left: 20%;
 }
+.round {
+    border-radius: 50%;
+     position: fixed;
+    left: 95%;
+    bottom: 5%;
+    width: 100%;
+   
+  
+
+}
