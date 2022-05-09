@@ -1,17 +1,16 @@
 <html lang="pt">
     <head>
         <meta charset="utf-8">
-        <title>Reservar</title>
+        <title>Faturação</title>
         <link type="text/css" href="../CSS/newcss.css" rel="stylesheet">
         <link type="text/css" href="../CSS/headeradmin.css" rel="stylesheet">
-        <link type="text/css" href="../CSS/reserva.css" rel="stylesheet">
+        <link type="text/css" href="../CSS/faturacao.css" rel="stylesheet">
         <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
         <meta name="viewport" content="width=device-width">
-        <script src="../javascript/InformationScreen.js" type="text/javascript"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script src="../javascript/reservar.js" type="text/javascript"></script>
+        <script src="../javascript/faturacao.js" type="text/javascript"></script>
     </head>
     <body>
         <nav class="navbar">
@@ -29,11 +28,11 @@
                     </ul>
                 </div>
                 <div class="botao">
-                    <button id="myBtn" class="dropbtn" onclick="openOption()"><img alt="" style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
+                    <button id="myBtn" class="dropbtn" onclick="openOption()"><img alt=""
+                                                                                   style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
                     <div id="myDropdown" class="dropdown-content">
                         <a class="letra" href="#">AlterarDados</a>
                         <a class="letra" href="#">A minha conta</a>
-                        <a class="letra" href="FaturacaoScreen.html"> Faturação </a>
                         <a class="letra" href="ReservaScreen.html"> Reserva </a>
                         <a class="letra" href="#">Sair</a>
                     </div>
@@ -41,204 +40,16 @@
             </div>
         </nav>
         <div class="container-fluid bg-grey">
-            <div class="Escolher">
-                <div class="text-center">
-                    <h2>Reservar</h2> 
-                    <h4>Escolha o lugar que pretende</h4>
-                </div>
-                <fieldset>
-                    <div class="text-left">
-                        <div>
-                            <input type="checkbox" id="za" onclick="place('za')">
-                            <label for="za">Zona A</label>
-                            <div id="lugarA" style="display:none">
-                                <form style="border:none">
-                                    <input list="browsersA" name="browserA">
-                                    <datalist id="browsersA">
-                                        <option value="Lugar 1">
-                                        <option value="Lugar 2">
-                                        <option value="Lugar 3">
-                                        <option value="Lugar 4">
-                                        <option value="Lugar 5">
-                                        <option value="Lugar 6">
-                                        <option value="Lugar 7">
-                                        <option value="Lugar 8">
-                                        <option value="Lugar 9">
-                                        <option value="Lugar 10">
-                                        <option value="Lugar 11">
-                                        <option value="Lugar 12">
-                                        <option value="Lugar 13">
-                                        <option value="Lugar 14">
-                                        <option value="Lugar 15">
-                                        <option value="Lugar 16">
-                                        <option value="Lugar 17">
-                                        <option value="Lugar 18">
-                                        <option value="Lugar 19">
-                                        <option value="Lugar 20">
-                                        <option value="Lugar 21">
-                                    </datalist>
-                                    <input type="submit" style="background: black">
-                                </form>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="zb" onclick="place('zb')">
-                            <label for="zb"> Zona B</label>
-                            <div id="lugarB" style="display:none">
-                                <form style="border:none">
-                                    <input list="browsersB" name="browserB">
-                                    <datalist id="browsersB">
-                                        <option value="Lugar 1">
-                                        <option value="Lugar 2">
-                                        <option value="Lugar 3">
-                                        <option value="Lugar 4">
-                                        <option value="Lugar 5">
-                                        <option value="Lugar 6">
-                                        <option value="Lugar 7">
-                                        <option value="Lugar 8">
-                                        <option value="Lugar 9">
-                                        <option value="Lugar 10">
-                                        <option value="Lugar 11">
-                                        <option value="Lugar 12">
-                                    </datalist>
-                                    <input type="submit" style="background: black">
-                                </form>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="zc" onclick="place('zc')">
-                            <label for="zc">Zona C</label>
-                            <div id="lugarC" style="display:none">
-                                <form style="border:none">
-                                    <input list="browsersC" name="browserC">
-                                    <datalist id="browsersC">
-                                        <option value="Lugar 1">
-                                        <option value="Lugar 2">
-                                        <option value="Lugar 3">
-                                        <option value="Lugar 4">
-                                        <option value="Lugar 5">
-                                        <option value="Lugar 6">
-                                        <option value="Lugar 7">
-                                        <option value="Lugar 8">
-                                        <option value="Lugar 9">
-                                        <option value="Lugar 10">
-                                        <option value="Lugar 11">
-                                        <option value="Lugar 12">
-                                        <option value="Lugar 13">
-                                        <option value="Lugar 14">
-                                        <option value="Lugar 15">
-                                        <option value="Lugar 16">
-                                        <option value="Lugar 17">
-                                        <option value="Lugar 18">
-                                        <option value="Lugar 19">
-                                        <option value="Lugar 20">
-                                        <option value="Lugar 21">
-                                        <option value="Lugar 22">
-                                        <option value="Lugar 23">
-                                    </datalist>
-                                    <input type="submit" style="background: black">
-                                </form>
-                            </div>
-                        </div>
-                        <input type="checkbox" id="zd" onclick="place('zd')">
-                        <label for="zd">Zona D</label>
-                        <div id="lugarD" style="display:none">
-                            <form style="border:none">
-                                <input list="browsersD" name="browserD">
-                                <datalist id="browsersD">
-                                    <option value="Lugar 1">
-                                    <option value="Lugar 2">
-                                    <option value="Lugar 3">
-                                    <option value="Lugar 4">
-                                    <option value="Lugar 5">
-                                    <option value="Lugar 6">
-                                    <option value="Lugar 7">
-                                    <option value="Lugar 8">
-                                    <option value="Lugar 9">
-                                    <option value="Lugar 10">
-                                    <option value="Lugar 11">
-                                    <option value="Lugar 12">
-                                    <option value="Lugar 13">
-                                    <option value="Lugar 14">
-                                    <option value="Lugar 15">
-                                    <option value="Lugar 16">
-                                    <option value="Lugar 17">
-                                    <option value="Lugar 18">
-                                    <option value="Lugar 19">
-                                    <option value="Lugar 20">
-                                    <option value="Lugar 21">
-                                    <option value="Lugar 22">
-                                    <option value="Lugar 23">
-                                </datalist>
-                                <input type="submit" style="background: black">
-                            </form>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="ze" onclick="place('ze')">
-                            <label for="ze">Zona E</label>
-                            <div id="lugarE" style="display:none">
-                                <form style="border:none">
-                                    <input list="browsersE" name="browserE">
-                                    <datalist id="browsersE">
-                                        <option value="Lugar 1">
-                                        <option value="Lugar 2">
-                                        <option value="Lugar 3">
-                                        <option value="Lugar 4">
-                                        <option value="Lugar 5">
-                                        <option value="Lugar 6">
-                                        <option value="Lugar 7">
-                                        <option value="Lugar 8">
-                                        <option value="Lugar 9">
-                                        <option value="Lugar 10">
-                                        <option value="Lugar 11">
-                                        <option value="Lugar 12">
-                                    </datalist>
-                                    <input type="submit" style="background: black">
-                                </form>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="zf" onclick="place('zf')">
-                            <label for="zf">Zona F</label>
-                            <div id="lugarF" style="display:none">
-                                <form style="border:none">
-                                    <input list="browsersF" name="browserF">
-                                    <datalist id="browsersF">
-                                        <option value="Lugar 1">
-                                        <option value="Lugar 2">
-                                        <option value="Lugar 3">
-                                        <option value="Lugar 4">
-                                        <option value="Lugar 5">
-                                        <option value="Lugar 6">
-                                        <option value="Lugar 7">
-                                        <option value="Lugar 8">
-                                        <option value="Lugar 9">
-                                        <option value="Lugar 10">
-                                        <option value="Lugar 11">
-                                        <option value="Lugar 12">
-                                        <option value="Lugar 13">
-                                        <option value="Lugar 14">
-                                        <option value="Lugar 15">
-                                        <option value="Lugar 16">
-                                        <option value="Lugar 17">
-                                        <option value="Lugar 18">
-                                        <option value="Lugar 19">
-                                        <option value="Lugar 20">
-                                        <option value="Lugar 21">
-                                        <option value="Lugar 22">
-                                        <option value="Lugar 23">
-                                        <option value="Lugar 24">
-                                        <option value="Lugar 25">
-                                        <option value="Lugar 26">
-                                        <option value="Lugar 27">
-                                        <option value="Lugar 28">
-                                    </datalist>
-                                    <input type="submit" style="background: black">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
+            <div class="Faturar">
+                <form>
+                    <input list="browsers" name="browser">
+                    <datalist id="browsers">
+                        <option value="Reservado">
+                        <option value="Diário">
+                        <option value="Ocasional">
+                    </datalist>
+                    <input type="submit">
+                </form>
             </div>
         </div>
         <div class="footer">
