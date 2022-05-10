@@ -8,6 +8,8 @@ package servidor;
 import Controller.UserController;
 import Model.Utilizador;
 import Model.Viatura;
+import Model.Plano;
+import Model.Parque;
 import io.vertx.ext.web.RoutingContext;
 
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;

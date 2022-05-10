@@ -8,6 +8,8 @@ package servidor;
 import Controller.UserController;
 import Model.Utilizador;
 import Model.Viatura;
+import Model.Parque;
+import Model.Plano;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
