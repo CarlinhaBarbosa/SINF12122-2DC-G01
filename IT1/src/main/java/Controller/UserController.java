@@ -8,6 +8,8 @@ package Controller;
 
 import Model.Utilizador;
 import Model.Viatura;
+import Model.Parque;
+import Model.Plano;
 import static io.vertx.core.http.HttpHeaders.CONTENT_TYPE;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.EncodeException;
