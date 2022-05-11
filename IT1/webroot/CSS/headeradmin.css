@@ -112,20 +112,14 @@ a:hover {
     z-index: 9999;
     border: 0;
     font-size: 12px;
-
     letter-spacing: 4px;
     border-radius: 0;
     align-content: center;
-
 }
-
 .navbar-default {
     border-color: transparent;
-
     height: 50px;
-
 }
-
 .headercolumn1{
     display:flex;
     flex-direction:column;
@@ -279,3 +273,14 @@ font-family: arial;
 .zona {
 
 }
+
+.title{
+    margin-top: 10%;
+    font-weight: bold;
+    font-family: 'Elianto';font-size: 20px;
+    float: left;
+}
+.navbar li a {
+    color: white; float: left;
+}
+.navbar-header {
