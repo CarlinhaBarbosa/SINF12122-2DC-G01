@@ -70,7 +70,8 @@ public class Servidor extends AbstractVerticle {
         router.route("/").handler(StaticHandler.create(webRoot).setDefaultContentEncoding("UTF-8"));
         router.post("/submitLoginForm").handler(new UserController()::login);
         router.route(HttpMethod.POST, "/ListarClientes").handler(this::ListarClientes);
-        router.route(HttpMethod.POST, "/ListarClientes").handler(this::ListarClientes);
+      
+        router.route(HttpMethod.POST, "/ContaUtilizador").handler(this::AMinhaConta);
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
@@ -176,23 +177,15 @@ public class Servidor extends AbstractVerticle {
         UserController rcc = new UserController();
          JSONObject json1 = new JSONObject();
         String id = rc.request().getParam("id");
-        String username = rc.request().getParam("username");
-        String nif = rc.request().getParam("nif");
-        String nome = rc.request().getParam("nome");
-        String phone = rc.request().getParam("phone");
-        String email = rc.request().getParam("email");
-        String password = rc.request().getParam("password");
-        String modelo = rc.request().getParam("modelo");
-        String marca = rc.request().getParam("marca");
-        String matricula = rc.request().getParam("licenseplate");
-        String plano = rc.request().getParam("plano");
-        String lugar = rc.request().getParam("lugar");
+       String username = rc.request().getParam("username");
+       String password=rc.request().getParam("password");
+       u=rcc.Utilizador(rc, username, password);
         ArrayList<Utilizador> utilizadores = rcc.listarUtilizadores();
        
         int id1 = Integer.parseInt(id);
         for (int i = 0; i < utilizadores.size(); i++) {
             if (u.getId() == id1) {
-               
+              
                 json1.put("nome", u.getNome());
                 json1.put("matricula", u.getMatricula());
                 json1.put("telemovel", u.getTelemovel());
