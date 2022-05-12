@@ -17,6 +17,8 @@ public class Utilizador {
     private String lugar;
     private String plano;
     private String matricula;
+    private String marca;
+    private String modelo;
     private static final String String_POR_OMISSAO = "SemString";
 
     private static final String Int_POR_OMISSAO = "SemInT";
@@ -30,6 +32,22 @@ public class Utilizador {
         return email;
     }
 
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+    
     public String getCargo() {
         return cargo;
     }

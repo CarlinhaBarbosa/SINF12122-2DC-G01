@@ -183,15 +183,15 @@ public class Handlers {
             while (rs.next()) {
                 Utilizador e = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"), rs.getString("Username"), rs.getString("Phone"), rs.getString("taxID"), rs.getString("Seat"), rs.getString("PlanNAME"));
                 System.out.println(e.toString());
-                 ResultSet rs2 = null;
+                ResultSet rs2 = null;
                 try {
 
-                    String querry2 = "select Registration from Vehicles where UserId="+e.getId();
+                    String querry2 = "select Registration from Vehicles where UserId=" + e.getId();
                     rs2 = this.returnQuery(querry2);
 
                     while (rs2.next()) {
                         e.setMatricula(rs2.getString("Registration"));
-                    
+
                     }
                 } catch (SQLException ex) {
                     System.out.println(ex.toString());
@@ -204,4 +204,48 @@ public class Handlers {
 
         return listaClientes;
     }
+
+    public Utilizador ContaUtilizador(RoutingContext rc, String username, String password) {
+        Utilizador e = null;
+        ResultSet rs = null;
+        try {
+            String querry = "SELECT * FROM Users where Username='" + username + "'and Password='" + password + "'";
+
+            rs = this.returnQuery(querry);
+
+            while (rs.next()) {
+
+                 e = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"), rs.getString("Username"), rs.getString("Phone"), rs.getString("taxID"), rs.getString("Seat"), rs.getString("PlanNAME"));
+                System.out.println(e.toString());
+                ResultSet rs2 = null;
+                try {
+
+                    String querry2 = "select Registration from Vehicles where UserId=" + e.getId();
+                    rs2 = this.returnQuery(querry2);
+                   
+                    String querry3 = "select Model from Vehicles where UserId=" + e.getId();
+                    rs2 = this.returnQuery(querry3);
+                  
+                    String querry4 = "select Brand from Vehicles where UserId=" + e.getId();
+                    rs2 = this.returnQuery(querry4);
+                     
+                    while (rs2.next()) {
+                        e.setMatricula(rs2.getString("Registration"));
+                        e.setModelo(rs2.getString("Model"));
+                        e.setMarca(rs2.getString("Brand"));
+
+                    }
+
+                } catch (SQLException ex) {
+                    System.out.println(ex.toString());
+                }
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+
+        return e;
+    }
+
 }
+

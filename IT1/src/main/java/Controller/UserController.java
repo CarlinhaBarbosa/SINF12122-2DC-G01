@@ -113,5 +113,7 @@ public class UserController {
     public ArrayList<Utilizador> listaUtilizadores() {
         return cf.listaUsers();
     }
-
+    public Utilizador Utilizador(RoutingContext rc, String username, String password) {
+        return cf.ContaUtilizador(rc,username,password);
+    }
 }

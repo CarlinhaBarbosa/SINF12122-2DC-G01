@@ -63,12 +63,13 @@ public class Servidor extends AbstractVerticle {
         router = Router.router(vertx);
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.GET, "/GestorScreen").handler(StaticHandler.create(webRoot + "/" + "GestorScreen.html").setDefaultContentEncoding("UTF-8"));
-         router.route(HttpMethod.GET, "/ClienteScreen").handler(StaticHandler.create(webRoot + "/" + "ClienteScreen.html").setDefaultContentEncoding("UTF-8"));
-        
+        router.route(HttpMethod.GET, "/ClienteScreen").handler(StaticHandler.create(webRoot + "/" + "ClienteScreen.html").setDefaultContentEncoding("UTF-8"));
+        router.route(HttpMethod.GET, "/AMinhaConta").handler(StaticHandler.create(webRoot + "/" + "AMinhaConta.html").setDefaultContentEncoding("UTF-8"));
         router.route().handler(StaticHandler.create().setWebRoot(webRoot).setDefaultContentEncoding("UTF-8"));
         // serve index
         router.route("/").handler(StaticHandler.create(webRoot).setDefaultContentEncoding("UTF-8"));
         router.post("/submitLoginForm").handler(new UserController()::login);
+        router.route(HttpMethod.POST, "/ListarClientes").handler(this::ListarClientes);
         router.route(HttpMethod.POST, "/ListarClientes").handler(this::ListarClientes);
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
@@ -128,13 +129,13 @@ public class Servidor extends AbstractVerticle {
 
             }
         }
-        
+
         HttpServerResponse response = rc.response();
         System.out.println("resposta: " + response.getStatusCode());
         response.putHeader("content-type", "application/json; charset=utf-8");
 
         if (!matricula.equals("false")) {
-            rcc.addVeiculo(rc, modelo, marca,u.getId(), matricula);
+            rcc.addVeiculo(rc, modelo, marca, u.getId(), matricula);
 
             response.setStatusCode(201);
         } else {
@@ -145,7 +146,7 @@ public class Servidor extends AbstractVerticle {
     }
 
     private void ListarClientes(RoutingContext e) {
-       
+
         JSONObject json2 = new JSONObject();
         UserController pc = new UserController();
         ArrayList<Utilizador> listaUsers = pc.listaUtilizadores();
@@ -154,7 +155,7 @@ public class Servidor extends AbstractVerticle {
             JSONObject json1 = new JSONObject();
             json1.put("nome", u.getNome());
             json1.put("matricula", u.getMatricula());
-              json1.put("telemovel", u.getTelemovel());
+            json1.put("telemovel", u.getTelemovel());
             json1.put("email", u.getEmail());
             json1.put("nif", u.getNif());
             json1.put("lugar", u.getLugar());
@@ -170,5 +171,48 @@ public class Servidor extends AbstractVerticle {
         response.setStatusCode(200);
         response.end(finalJson.toJSONString());
     }
-    
+
+    private void AMinhaConta(RoutingContext rc) {
+        UserController rcc = new UserController();
+         JSONObject json1 = new JSONObject();
+        String id = rc.request().getParam("id");
+        String username = rc.request().getParam("username");
+        String nif = rc.request().getParam("nif");
+        String nome = rc.request().getParam("nome");
+        String phone = rc.request().getParam("phone");
+        String email = rc.request().getParam("email");
+        String password = rc.request().getParam("password");
+        String modelo = rc.request().getParam("modelo");
+        String marca = rc.request().getParam("marca");
+        String matricula = rc.request().getParam("licenseplate");
+        String plano = rc.request().getParam("plano");
+        String lugar = rc.request().getParam("lugar");
+        ArrayList<Utilizador> utilizadores = rcc.listarUtilizadores();
+       
+        int id1 = Integer.parseInt(id);
+        for (int i = 0; i < utilizadores.size(); i++) {
+            if (u.getId() == id1) {
+               
+                json1.put("nome", u.getNome());
+                json1.put("matricula", u.getMatricula());
+                json1.put("telemovel", u.getTelemovel());
+                json1.put("email", u.getEmail());
+                json1.put("nif", u.getNif());
+                json1.put("lugar", u.getLugar());
+                json1.put("plano", u.getPlano());
+                json1.put("username", u.getUsername());
+                json1.put("password", u.getPassword());
+                json1.put("modelo", u.getModelo());
+                json1.put("marca", u.getMarca());
+            }else{
+                i++;
+            }
+        }
+        JSONObject finalJson = new JSONObject();
+        finalJson.put("cliente", json1);
+        HttpServerResponse response = rc.response();
+        response.putHeader("content-type", "application/json; charset=utf-8");
+        response.setStatusCode(200);
+        response.end(finalJson.toJSONString());
+    }
 }
