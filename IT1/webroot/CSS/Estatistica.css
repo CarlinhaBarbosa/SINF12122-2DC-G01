@@ -4,7 +4,7 @@
 body {
     
     width: 100%;
-
+    background-image: url('../pictures/2.jpg');
 
 }.box{
     display:flex;
@@ -48,7 +48,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-  background: #efefef;
+
   overflow: hidden;
 }
 .panel {
@@ -83,7 +83,8 @@ body {
 }
 .panel-body {
   display: flex;
-  height: 400px; background-color: #838CC7;
+  height: 400px; 
+  background-color: #7FFFD4;
 }
 .categories {
   display: flex;
@@ -100,7 +101,7 @@ body {
   font-weight: 300;
   font-size: 14px;
   opacity: 0.6;
-  color: white;
+  color: #433A37;
   margin-bottom: 6px;
 }
 .category span:last-child {
