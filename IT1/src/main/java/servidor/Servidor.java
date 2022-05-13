@@ -176,31 +176,25 @@ public class Servidor extends AbstractVerticle {
     private void AMinhaConta(RoutingContext rc) {
         UserController rcc = new UserController();
          JSONObject json1 = new JSONObject();
-        String id = rc.request().getParam("id");
-       String username = rc.request().getParam("username");
-       String password=rc.request().getParam("password");
-       u=rcc.Utilizador(rc, username, password);
-        ArrayList<Utilizador> utilizadores = rcc.listarUtilizadores();
-       
-        int id1 = Integer.parseInt(id);
-        for (int i = 0; i < utilizadores.size(); i++) {
-            if (u.getId() == id1) {
+        int id = Integer.parseInt(rc.request().getParam("id"));
+         System.out.println("Id --------------->" + id);
+       Utilizador ut = rcc.Utilizador(rc,id);
+      
+    
+    
               
-                json1.put("nome", u.getNome());
-                json1.put("matricula", u.getMatricula());
-                json1.put("telemovel", u.getTelemovel());
-                json1.put("email", u.getEmail());
-                json1.put("nif", u.getNif());
-                json1.put("lugar", u.getLugar());
-                json1.put("plano", u.getPlano());
-                json1.put("username", u.getUsername());
-                json1.put("password", u.getPassword());
-                json1.put("modelo", u.getModelo());
-                json1.put("marca", u.getMarca());
-            }else{
-                i++;
-            }
-        }
+                json1.put("nome", ut.getNome());
+                json1.put("matricula", ut.getMatricula());
+                json1.put("telemovel", ut.getTelemovel());
+                json1.put("email", ut.getEmail());
+                json1.put("nif", ut.getNif());
+                json1.put("lugar", ut.getLugar());
+                json1.put("plano", ut.getPlano());
+                json1.put("username", ut.getUsername());
+                json1.put("password", ut.getPassword());
+                json1.put("modelo", ut.getModelo());
+                json1.put("marca", ut.getMarca());
+          
         JSONObject finalJson = new JSONObject();
         finalJson.put("cliente", json1);
         HttpServerResponse response = rc.response();
@@ -208,4 +202,7 @@ public class Servidor extends AbstractVerticle {
         response.setStatusCode(200);
         response.end(finalJson.toJSONString());
     }
+   
+     
+    
 }

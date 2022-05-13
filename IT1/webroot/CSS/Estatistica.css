@@ -270,7 +270,7 @@ div[class*="-stats"] span:hover {
     text-align: center;
 }
 
-.container-fluid{
+.nav-fluid{
     align-content: center;
     text-align: center;
     width:90%; 

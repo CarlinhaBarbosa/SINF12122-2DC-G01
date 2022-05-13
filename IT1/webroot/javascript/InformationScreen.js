@@ -10,6 +10,3 @@ function openOption() {
     console.log(document.getElementById("myDropdown").value);
   }
 }
-
-
-

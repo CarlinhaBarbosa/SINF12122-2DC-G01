@@ -205,11 +205,11 @@ public class Handlers {
         return listaClientes;
     }
 
-    public Utilizador ContaUtilizador(RoutingContext rc, String username, String password) {
+    public Utilizador ContaUtilizador(RoutingContext rc, int id) {
         Utilizador e = null;
         ResultSet rs = null;
         try {
-            String querry = "SELECT * FROM Users where Username='" + username + "'and Password='" + password + "'";
+            String querry = "SELECT * FROM pecas WHERE id_peca = " + id + "";
 
             rs = this.returnQuery(querry);
 
@@ -220,14 +220,15 @@ public class Handlers {
                 ResultSet rs2 = null;
                 try {
 
-                    String querry2 = "select Registration from Vehicles where UserId=" + e.getId();
-                    rs2 = this.returnQuery(querry2);
+                    String querry2 = "select Registration from Vehicles where UserId=" + id;
+                    rs2 = this.returnQuery(querry2);System.out.println(querry2);
                    
-                    String querry3 = "select Model from Vehicles where UserId=" + e.getId();
+                    String querry3 = "select Model from Vehicles where UserId=" +id;
                     rs2 = this.returnQuery(querry3);
+                    System.out.println(querry3);
                   
-                    String querry4 = "select Brand from Vehicles where UserId=" + e.getId();
-                    rs2 = this.returnQuery(querry4);
+                    String querry4 = "select Brand from Vehicles where UserId=" + id;
+                    rs2 = this.returnQuery(querry4);System.out.println(querry4);
                      
                     while (rs2.next()) {
                         e.setMatricula(rs2.getString("Registration"));
@@ -246,6 +247,7 @@ public class Handlers {
 
         return e;
     }
+    
 
 }
 
