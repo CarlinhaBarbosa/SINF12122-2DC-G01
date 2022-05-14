@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt">
+    <head>
+        <title>Clientes</title>
+        <meta charset="UTF-8">  
+        <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../CSS/cliente.css" rel="stylesheet" type="text/css"/>
+        <script src="../javascript/InformationScreen.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+
+
+        <div id="background">
+
+        </div>
+
+        <div> 
+
+
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-header">
+                        <div>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a style="background-color: grey" href="ClienteScreen.html">Página</a></li>
+                                <li><a   href="FinancialScreen.html">Área Financeira</a></li>
+                                <li><a  href="MapScreen.html">Mapa</a></li>
+                                <li><a href="InformationScreen.html">Informações</a></li>
+                            </ul>
+                        </div>
+                        <div class="botao">
+                            <button id="myBtn" class="dropbtn" onclick="openOption()"><img alt=""
+                                                                                           style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
+                            <div id="myDropdown" class="dropdown-content">
+                                <button class="letra"  onclick="OpenInfoUser()">A minha conta</button>
+                                <a class="letra" href="FaturacaoScreen.html"> Faturação </a>
+                                <a class="letra" href="ReservaScreen.html"> Reserva </a>
+                                <a class="letra" href="#">Sair</a>
+                            </div>
+                        </div>
+                    </div>
+            </nav>
+
+
+            <div id= "text-box">
+
+                <center><h1>Bem-Vindo! </h1></center>
+                <center> <p> Deixe o stress de estacionar o carro nas nossas mãos</p></center>
+                <img alt="" id="logotipo" height="150" width="150" src="../pictures/estacionamento.png">
+
+
+            </div>
+            <div>
+                <a href="" class="bt"> <center>Visite-nos Para Saber Mais</center></a>
+            </div>
+            <div class="footer">
+
+                <center><p>© All Rights Reserved 2022</p></center>
+            </div>
+        </div>  
+
+    </body>
+</html>

@@ -39,7 +39,7 @@ public class Servidor extends AbstractVerticle {
     @Override
     public void start(Promise<Void> startPromise) throws Exception {
 
-        Handlers handlers = new Handlers();
+        DAL handlers = new DAL();
         router = routes(handlers);
 
         HttpServerOptions options = new HttpServerOptions();
@@ -58,7 +58,7 @@ public class Servidor extends AbstractVerticle {
                 });
     }
 
-    private Router routes(Handlers handlers) {
+    private Router routes(DAL handlers) {
         router = Router.router(vertx);
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.GET, "/GestorScreen").handler(StaticHandler.create(webRoot + "/" + "GestorScreen.html").setDefaultContentEncoding("UTF-8"));
@@ -219,7 +219,7 @@ public class Servidor extends AbstractVerticle {
 
     private void nada(RoutingContext e) {
    
-        Handlers cf = new Handlers();
+        DAL cf = new DAL();
 
         try {
             int id = Integer.parseInt(e.request().getParam("id"));

@@ -17,7 +17,7 @@ import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import java.util.ArrayList;
-import servidor.Handlers;
+import servidor.DAL;
 import io.vertx.ext.web.RoutingContext;
 import java.sql.SQLException;
 
@@ -34,7 +34,7 @@ public class UserController {
     private static Utilizador ut;
     boolean isAuthenticated = false;
 
-    public static servidor.Handlers cf = new servidor.Handlers();
+    public static servidor.DAL cf = new servidor.DAL();
 
     public static void obterUserName(RoutingContext routingContext) {
         System.out.println("obterUtilizador() - " + routingContext.toString());
