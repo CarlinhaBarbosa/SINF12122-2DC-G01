@@ -1,9 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package servidor;
+
 
 import Controller.UserController;
 import Model.Utilizador;
@@ -75,13 +72,13 @@ public class Servidor extends AbstractVerticle {
         router.get("/ClienteScreen/*").handler((this::PaginaCliente));
         router.get("/InfoUser/*").handler((this::ContaPessoal));
         router.post("/cliente/:id").handler((this::AMinhaConta));
-        
-        router.route(HttpMethod.POST, "/editarCliente").handler(this::AlterarCliente);
-        
+
+        router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
+
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
-     
+
         return router;
 
     }
@@ -220,8 +217,8 @@ public class Servidor extends AbstractVerticle {
         e.response().end();
     }
 
-    private void AlterarCliente(RoutingContext e) {
-
+    private void nada(RoutingContext e) {
+   
         Handlers cf = new Handlers();
 
         try {
@@ -252,7 +249,7 @@ public class Servidor extends AbstractVerticle {
                     .setStatusCode(500)
                     .putHeader("content-type", "application/json; charset=utf-8")
                     .end(Json.encodeToBuffer("{erro: 'erro!'}"));
-        }
+}
         
     }
 }

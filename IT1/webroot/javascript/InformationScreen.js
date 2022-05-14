@@ -27,23 +27,24 @@ function InfoUser() {
             .then((data) => {
                 console.log(data);
                 var s = Object.keys(data.cliente).length;
-                console.log(data.cliente.username);
+                console.log(data.cliente.id);
                 cliente = cliente + `
-                    <div class="rightbox">
+                    
                     <div class="profile tabShow">
-                        <h1>Personal Info </h1>
-                        <input type="hidden" class="input" name="id" id="id" disabled value="${data.cliente.id}" >
-                        <h2>Username </h2>
-                        <input type="text" class="input" name="username" id="username"  value="${data.cliente.username}" >
-                        <h2>Email </h2>
-                        <input type="text" class="input" name="email" id="email"  value="${data.cliente.email}" >
-                        <h2>Phone </h2>
-                        <input type="text" class="input" name="phone" id="phone"  value="${data.cliente.phone}" >  
-                        <h2>Nif </h2>
-                        <input type="text" class="input" name="nif" id="nif"  value="${data.cliente.nif}" > 
-                        <h2>password </h2>
-                        <input type="text" class="input"  name="password" id="password"  value="${data.cliente.password}">  
-                       
+
+                    <h1>Personal Info </h1>
+                    <input type="hidden" class="input" name="numero" id="numero" value="${data.cliente.id}" >
+                    <h2>Username </h2>
+                    <input type="text" class="input" name="username" id="username"  value="${data.cliente.username}" >
+                    <h2>Email </h2>
+                    <input type="text" class="input" name="email" id="email"  value="${data.cliente.email}" >
+                    <h2>Phone </h2>
+                    <input type="text" class="input" name="phone" id="phone"  value="${data.cliente.telemovel}" >  
+                    <h2>Nif </h2>
+                    <input type="text" class="input" name="nif" id="nif"  value="${data.cliente.nif}" > 
+                    <h2>password </h2>
+                    <input type="text" class="input"  name="password" id="password"  value="${data.cliente.password}">  
+
                     <div class="Payment Info tabShow">
                         <h1>Other Info </h1>
                         <h2>Plan </h2>
@@ -63,7 +64,8 @@ function InfoUser() {
                         <input type="text" class="input" name="lugar" id="lugar"  value="${data.cliente.lugar}" >
                         <p></p>
                         <button class="bt" onclick="alterarDados()">Alterar</button>
-                    </div> `;
+                    </div> 
+                </div>`;
 
 
                 d.innerHTML = cliente;
@@ -78,26 +80,26 @@ function OpenInfoUser() {
     window.location.assign('/InfoUser/' + id);
 
 }
+
 function alterarDados() {
-    var pathname = window.location.pathname.split("/");
-    let id = pathname[pathname.length - 1 ];
+   
     let form = document.getElementById('cliente');
+    console.log(form); 
     let formdata = new FormData(form);
-    
-    var d = document.getElementById("cliente");
-    fetch('/editarCliente', {
-        method: 'POST',
-        body: formdata
-    })
+    console.log(formdata);
+    fetch('/edicao', {
+    method: 'POST',
+            body: formdata
+
             .then((res) => {
-                if (res.status === 201)
+            if (res.status === 201)
                     return res.json();
-                else
+                    else
                     throw Error("Erro no servidor!!");
             })
             .then((data) => {
-                document.getElementById("cliente").submit();
-
+            document.getElementById("cliente").submit();
             })
+               })
             .catch((err) => console.log(err));
 }
