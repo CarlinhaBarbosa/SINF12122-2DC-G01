@@ -64,11 +64,13 @@ public class Servidor extends AbstractVerticle {
         router.route(HttpMethod.GET, "/GestorScreen").handler(StaticHandler.create(webRoot + "/" + "GestorScreen.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/ClienteScreen/").handler(StaticHandler.create(webRoot + "/" + "ClienteScreen.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/AMinhaConta").handler(StaticHandler.create(webRoot + "/" + "AMinhaConta.html").setDefaultContentEncoding("UTF-8"));
+        router.route(HttpMethod.GET, "/Estatisticas").handler(StaticHandler.create(webRoot + "/" + "Estatistica.html").setDefaultContentEncoding("UTF-8"));
         router.route().handler(StaticHandler.create().setWebRoot(webRoot).setDefaultContentEncoding("UTF-8"));
         // serve index
         router.route("/").handler(StaticHandler.create(webRoot).setDefaultContentEncoding("UTF-8"));
         router.post("/submitLoginForm").handler(new UserController()::login);
         router.route(HttpMethod.POST, "/ListarClientes").handler(this::ListarClientes);
+         router.route(HttpMethod.POST, "/ListarStats").handler(this::ListarStats);
         router.get("/ClienteScreen/*").handler((this::PaginaCliente));
         router.get("/InfoUser/*").handler((this::ContaPessoal));
         router.post("/cliente/:id").handler((this::AMinhaConta));
@@ -251,5 +253,34 @@ public class Servidor extends AbstractVerticle {
                     .end(Json.encodeToBuffer("{erro: 'erro!'}"));
 }
         
+    }
+
+    private void ListarStats(RoutingContext e) {
+        JSONObject json2 = new JSONObject();
+        UserController pc = new UserController();
+         DAL cf = new DAL();
+        ArrayList<Utilizador> listaUsers = pc.listaUtilizadores();
+        String nr= cf.NumeroPlano();
+        String nrr= cf.NumeroViaturasReal();
+        String n= cf.NumeroModel();
+        int i = 1;
+        for (Utilizador u : listaUsers) {
+            JSONObject json1 = new JSONObject();
+            json1.put("lugar", u.getLugar());
+            json1.put("plano", u.getPlano());
+            json1.put("plano", u.getPlano());
+            json1.put("id",u.getId());
+//            json1.put("totais",u.getTotais()); - Parque.java
+            
+            json2.put(i, json1);
+            i++;
+        }
+
+        JSONObject finalJson = new JSONObject();
+        finalJson.put("stats", json2);
+        HttpServerResponse response = e.response();
+        response.putHeader("content-type", "application/json; charset=utf-8");
+        response.setStatusCode(200);
+        response.end(finalJson.toJSONString());
     }
 }

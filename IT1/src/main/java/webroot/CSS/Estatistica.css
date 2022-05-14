@@ -118,36 +118,37 @@ body {
   flex-grow: 2;
   position: relative;
  
+ 
 }
  
 .operating-systems {
   display: flex;
   justify-content: space-between;
   width: 215px;
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-top: 60px;
+ 
 }
 span[class*="-os"] {
   font-size: 14px;
   font-weight: 300;
   font-size: 14px;
-  color: black;  
+  color: black;   bottom:10%;
 }
 span[class*="-os"] span {
   width: 9px;
   height: 9px;
   display: inline-block;
   border-radius: 50%;
-  margin-right: 9px;
+  margin-right: 9px; bottom:10%;
 }
 .android-os span {
-  background: #80B354;
+  background: #80B354; bottom:10%;
 }
 .ios-os span {
-  background: #F5A623;
+  background: #F5A623; bottom:10%;
 }
 .windows-os span {
-  background: #F8E71C;
+  background: #F8E71C; bottom:10%;
 }
 div[class*="-stats"] {
   position: absolute;
@@ -274,4 +275,8 @@ div[class*="-stats"] span:hover {
     align-content: center;
     text-align: center;
     width:90%; 
+}
+
+.titulo {
+left:20%;
 }

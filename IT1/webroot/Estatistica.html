@@ -3,16 +3,18 @@
         <meta charset="utf-8">
         <title>Estatistica</title>
 
-         <link href="../CSS/aminhaconta.css" rel="stylesheet" type="text/css"/>
+     
         <link type="text/css" href="../CSS/Estatistica.css" rel="stylesheet">
         <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../src/main/java/webroot/CSS/Estatistica.css" type="text/css"/>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
-    <body onload="loadEstat">
+    <body onload="loadEstat()">
 
         <nav class="navbar">
             <div class="container">
@@ -33,67 +35,13 @@
                 </div>
             </div>
         </nav>
-        <div class="teste">
-            <div>
-                <div class="panel">
-                    <div class="panel-header">
-                        <h3 class="title1">Statistics</h3>
-
-
-                    </div>
-
-                    <div class="panel-body">
-                        <div class="categories">
-                            <div class="category">
-                                <span>Modelo</span>
-                                <span>1.897</span>
-                            </div>
-                            <div class="category">
-                                <span>Marca</span>
-                                <span>127</span>
-                            </div>
-                            <div class="category">
-                                <span>nr de vagas ocupadas</span>
-                                <span>8.648</span>
-                            </div>
-                            <div class="category">
-                                <span>nr de reservas totais</span>
-                                <span>8.648</span>
-                            </div>
-                        </div>
-
-                        <div class="chart">
-                            <div class="operating-systems">
-                                <span class="ios-os">
-                                    <span></span>Ocasional
-                                </span>
-                                <span class="windows-os">
-                                    <span></span>Diário
-                                </span>
-                                <span class="android-os">
-                                    <span></span>Reservado
-                                </span>
-                            </div>
-                            <div class="android-stats">
-                                55<span></span>
-                            </div>
-                            <div class="ios-stats">
-                                <span></span>50
-                            </div>
-                            <div class="windows-stats">
-                                <span></span>45
-                            </div>
-
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="footer">
-                    <p>© All Rights Reserved 2022 </p>
-                </div>
-            </div>
+        <div class="teste" id="stats">
+            
         </div>
+
+        <div class="footer">
+            <p>© All Rights Reserved 2022 </p>
+        </div>
+
     </body>
 </html>
