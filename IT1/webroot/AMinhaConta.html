@@ -14,7 +14,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     </head>
-    <body>
+    <body onload="InfoUser()">
 
         <nav class="navbar">
             <div class="container">
@@ -34,18 +34,18 @@
                     <button id="myBtn" class="dropbtn" value="1" onclick="openOption()"><img alt=""
                                                                                              style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
                     <div id="myDropdown" class="dropdown-content">
-                     
+
                         <a class="letra" style="background-color: grey" href="AMinhaConta.html">A minha conta</a>
                         <a class="letra" href="FaturacaoScreen.html"> Faturação </a>
                         <a class="letra" href="ReservaScreen.html"> Reserva </a>
-                        <a class="letra" href="#">Sair</a>
+                        <a class="letra" href="#">Sair</a> 
                     </div>
                 </div>
             </div>
         </nav>
         <div class="p"></div>
 
-        <div class="lol" ><center> 
+        <div class="lol" >
                 <div class="leftbox ">
                     <nav class="tentativa">
 
@@ -53,64 +53,19 @@
                     </nav>
 
                 </div>
-                <div class="rightbox" id="cliente">
-                    <div class="profile tabShow">
-                        <h1 >Personal Info </h1>
-                        <h2 class="letr">Username </h2>
-                        <input type="text" id="1" class="input" disabled value="" >
-                        <h2  class="letr">Email </h2>
-                        <input type="text" id="2"  class="input" disabled value="" >
-                        <h2  class="letr">Phone </h2>
-                        <input type="text" id="3"  class="input" disabled value="" >  
-                        <h2  class="letr">Nif </h2>
-                        <input type="text" id="4"  class="input" disabled value="" > 
-                        <h2  class="letr">password </h2>
-                        <input type="text" id="5"  class="input" disabled value="">  
+                <form class="rightbox" id="cliente">
 
-                    </div>
-                    <div class="Payment Info tabShow">
-                        <h1 >Payment Info </h1>
-                        <h2  class="letr">Plan </h2>
-                        <input type="text" id="6"  class="input" disabled value="" >
-                        <h2  class="letr">Name </h2>
-                        <input type="text" id="7"  class="input" disabled value="" >
-                        <h2  class="letr">Nºcartão </h2>
-                        <input type="text" id="8" class="input" disabled value="" >  
 
-                    </div>  
-                    <div class="vehicle tabShow">
-                        <h1>Vehicle Info </h1>
-                        <h2  class="letr">Brand </h2>
-                        <input type="text" id="9"  class="input" disabled value="" >
-                        <h2  class="letr">Model </h2>
-                        <input type="text" id="10"  class="input" disabled value="" >
-                        <h2  class="letr">License Plate </h2>
-                        <input type="text" id="11" class="input" disabled value="" >
-                        <h2  class="letr">Parking Space </h2>
-                        <input type="text" id="12" class="input" disabled value="" >
-                       </div>  <div>
-                            <a  class="bt" href="AlterarDados.html">Alterar Dados</a></div>
-                     
-                    <script src="jquery/jquery.js"></script>
-                    <script>
-                        const tabBtn = document.querySelectorAll(".tab");
-                        const tabBtn = document.querySelectorAll(".tabShow");
-                        function tabs(panelIndex) {
-                            tab.forEach(function (node) {
-                                node.AMinhaConta.display = "none";
+                </form>
+               
+                
 
-                            });
-                            tab[panelIndex].AMinhaConta.display = "block";
-                        }
-                        tabs(0);
-                    </script>
-                </div>  
-            </center>
+            
         </div>
         <p></p>
-
+<div class="p"></div>
         <div class="footer">
-
+             
 
             <p>© All Rights Reserved 2022 </p>
         </div>

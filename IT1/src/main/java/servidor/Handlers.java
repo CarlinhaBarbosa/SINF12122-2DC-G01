@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  * @author Carla
  */
 public class Handlers {
-
+    static PreparedStatement prepedStatement = null;
     String webRoot = DEFAULT_WEB_ROOT;
 
     private void executaQuery(String query) {
@@ -209,7 +209,7 @@ public class Handlers {
         Utilizador e = null;
         ResultSet rs = null;
         try {
-            String querry = "SELECT * FROM pecas WHERE id_peca = " + id + "";
+            String querry = "SELECT * FROM Users WHERE id = " + id + "";
 
             rs = this.returnQuery(querry);
 
@@ -220,16 +220,10 @@ public class Handlers {
                 ResultSet rs2 = null;
                 try {
 
-                    String querry2 = "select Registration from Vehicles where UserId=" + id;
+                    String querry2 = "select * from Vehicles where UserId=" + id;
                     rs2 = this.returnQuery(querry2);System.out.println(querry2);
                    
-                    String querry3 = "select Model from Vehicles where UserId=" +id;
-                    rs2 = this.returnQuery(querry3);
-                    System.out.println(querry3);
-                  
-                    String querry4 = "select Brand from Vehicles where UserId=" + id;
-                    rs2 = this.returnQuery(querry4);System.out.println(querry4);
-                     
+                   
                     while (rs2.next()) {
                         e.setMatricula(rs2.getString("Registration"));
                         e.setModelo(rs2.getString("Model"));
@@ -247,7 +241,31 @@ public class Handlers {
 
         return e;
     }
-    
+
+    public void atualizarUser(int id,String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
+        String query = "Update Users SET Name= " + nome + ",Email="+ email+",Username="+username+",Phone="+phone+",taxID="+nif+",Password="+password+",PlanNAME="+plano+",Seat="+lugar+"WHERE Id= '" + id + "'";
+        System.out.println(query);
+        executaQuery(query);
+        String query1 = "UPDATE Vehicles SET Brand="+marca+",Model="+modelo+",Registration="+matricula+"WHERE UserId= '" + id + "'";
+        System.out.println(query1);
+        executaQuery(query1);
+    }
+    public static void atualizaUser(Connection connection, int id,String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
+        String querry = "Update Users SET Name= " + nome + ",Email="+ email+",Username="+username+",Phone="+phone+",taxID="+nif+",Password="+password+",PlanNAME="+plano+",Seat="+lugar+"WHERE Id= '" + id + "'";
+        String querry1 = "Update Vehicles SET Brand="+marca+",Model="+modelo+",Registration="+matricula+"WHERE UserId= '" + id + "'";
+        
+        try {
+            prepedStatement = connection.prepareStatement(querry);
+            prepedStatement.execute();
+            prepedStatement = connection.prepareStatement(querry1);
+            prepedStatement.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
+       
+        }
+    }
+
+  
 
 }
 

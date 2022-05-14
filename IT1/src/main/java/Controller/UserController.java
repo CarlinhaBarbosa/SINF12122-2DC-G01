@@ -116,4 +116,9 @@ public class UserController {
     public Utilizador Utilizador(RoutingContext rc, int id) {
         return cf.ContaUtilizador(rc,id);
     }
+    public void adicionarUser(int id,String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
+        
+        cf.atualizarUser(id, nome,  username,  email,  nif,  password,  matricula,  modelo,  plano,  lugar,  marca,  phone) ;
+        
+    }
 }

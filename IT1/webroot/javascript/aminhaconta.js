@@ -1,13 +1,13 @@
 function loadInfo() {
     let info = "";
-     var pathname = window.location.pathname.split("/");
+    var pathname = window.location.pathname.split("/");
     let nome = pathname[pathname.length - 1 ];
     var d = document.getElementById("cliente");
     fetch('/ContaUtilizador', {
         method: 'POST'
     })
             .then((res) => {
-                
+
                 if (res.status === 200)
                     return res.json();
                 else
@@ -17,7 +17,7 @@ function loadInfo() {
                 var s = Object.keys(data.cliente).length;
                 for (j = 1; j <= s; j++) {
                     info = info + `
-                    <div class="rightbox">
+                  
                     <div class="profile tabShow">
                         <h1>Personal Info </h1>
                         <h2>Username </h2>
@@ -48,12 +48,25 @@ function loadInfo() {
                         <h2>Lugar </h2>
                         <input type="text" class="input"  id="12" disabled value="${data.cliente[j].lugar}" >
                         <button class="bt">Update</button>
-                    </div> `; //                        <h2>Name </h2>
+            <script src="jquery/jquery.js"></script>
+                <script>
+                        const tabBtn = document.querySelectorAll(".tab");
+                        const tabBtn = document.querySelectorAll(".tabShow");
+                        function tabs(panelIndex) {
+                            tab.forEach(function (node) {
+                                node.AMinhaConta.display = "none";
+
+                            });
+                            tab[panelIndex].AMinhaConta.display = "block";
+                        }
+                        tabs(0);
+                </script>
+                    `; //                        <h2>Name </h2>
 //                        <input type="text" class="input"  id="7" disabled value="${data.cliente[j].nome}" >
 //                        <h2>Nºcartão </h2>
 //                        <input type="text" class="input"  id="8" disabled value="${data.cliente[j].nrCartao}" >  
 //                        <button class="bt">Update</button>
-                        
+
 
                 }
                 d.innerHTML = info;
