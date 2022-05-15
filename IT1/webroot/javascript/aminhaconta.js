@@ -12,9 +12,8 @@ function loadEstat() {
                     throw Error("Erro no servidor!!");
             })
             .then((data) => {
-                var s = Object.keys(data.stats).length;
-                for (j = 1; j <= s; j++) {
-                    info = info + `
+              
+                info=`
                      <div>
                 <div class="panel">
                     <div class="panel-header">
@@ -27,19 +26,19 @@ function loadEstat() {
                         <div class="categories">
                             <div class="category">
                                 <span>Histórico de Entradas e Saídas</span>
-                                <span id="Historico" name="">${data.stats}</span>
+                                <span id="Historico" name=""></span>
                             </div>
                             <div class="category">
-                                <span>Número de Modelos Iguais</span>
-                                <span>${data.stats}</span>
+                                <span>Número de Modelos Iguais - Volvo</span>
+                                <span>${data.stats.NumeroModelo}</span>
                             </div>
                             <div class="category">
                                 <span>Número de Reservas Totais</span>
-                                <span>${data.stats}</span>
+                                <span>${data.stats.NumeroReservas}</span>
                             </div>
                             <div class="category">
                                 <div>Número de Viaturas no Parque em Tempo Real</div>
-                                <span>${data.stats}</span>
+                                <span></span>
                             </div>
                         </div>
                        
@@ -56,13 +55,13 @@ function loadEstat() {
                                 </span>
                             </div>
                             <div class="android-stats">
-                                ${data.stats}<span></span>
+                                <span></span>
                             </div>
                             <div class="ios-stats">
-                                <span></span>${data.stats}
+                                <span></span>
                             </div>
                             <div class="windows-stats">
-                                <span></span>${data.stats}
+                                <span></span>
                             </div>
 
 
@@ -71,7 +70,7 @@ function loadEstat() {
                 </div>
             </div> `;
 
-                }
+                
                 d.innerHTML = info;
             })
 

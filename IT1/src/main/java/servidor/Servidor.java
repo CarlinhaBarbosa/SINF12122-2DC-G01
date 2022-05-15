@@ -256,28 +256,16 @@ public class Servidor extends AbstractVerticle {
     }
 
     private void ListarStats(RoutingContext e) {
-        JSONObject json2 = new JSONObject();
-        UserController pc = new UserController();
+        JSONObject json1 = new JSONObject();
+        
          DAL cf = new DAL();
-        ArrayList<Utilizador> listaUsers = pc.listaUtilizadores();
-        String nr= cf.NumeroPlano();
-        String nrr= cf.NumeroViaturasReal();
-        String n= cf.NumeroModel();
-        int i = 1;
-        for (Utilizador u : listaUsers) {
-            JSONObject json1 = new JSONObject();
-            json1.put("lugar", u.getLugar());
-            json1.put("plano", u.getPlano());
-            json1.put("plano", u.getPlano());
-            json1.put("id",u.getId());
-//            json1.put("totais",u.getTotais()); - Parque.java
-            
-            json2.put(i, json1);
-            i++;
-        }
-
+      
+//        json1.put("NumeroViaturas", cf.NumeroViaturasReal());
+        json1.put("NumeroReservas", cf.NumeroReservas());
+        json1.put("NumeroModelo", cf.NumeroModel());
+//        json1.put("NumeroPlano",cf.NumeroPlano());
         JSONObject finalJson = new JSONObject();
-        finalJson.put("stats", json2);
+        finalJson.put("stats", json1);
         HttpServerResponse response = e.response();
         response.putHeader("content-type", "application/json; charset=utf-8");
         response.setStatusCode(200);

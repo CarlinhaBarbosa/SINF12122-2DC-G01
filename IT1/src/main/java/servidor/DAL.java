@@ -27,6 +27,7 @@ import java.util.logging.Logger;
  * @author Carla
  */
 public class DAL {
+
     static PreparedStatement prepedStatement = null;
     String webRoot = DEFAULT_WEB_ROOT;
 
@@ -215,15 +216,15 @@ public class DAL {
 
             while (rs.next()) {
 
-                 e = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"), rs.getString("Username"), rs.getString("Phone"), rs.getString("taxID"), rs.getString("Seat"), rs.getString("PlanNAME"));
+                e = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"), rs.getString("Username"), rs.getString("Phone"), rs.getString("taxID"), rs.getString("Seat"), rs.getString("PlanNAME"));
                 System.out.println(e.toString());
                 ResultSet rs2 = null;
                 try {
 
                     String querry2 = "select * from Vehicles where UserId=" + id;
-                    rs2 = this.returnQuery(querry2);System.out.println(querry2);
-                   
-                   
+                    rs2 = this.returnQuery(querry2);
+                    System.out.println(querry2);
+
                     while (rs2.next()) {
                         e.setMatricula(rs2.getString("Registration"));
                         e.setModelo(rs2.getString("Model"));
@@ -242,18 +243,19 @@ public class DAL {
         return e;
     }
 
-    public void atualizarUser(int id,String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
-        String query = "Update Users SET Name= " + nome + ",Email="+ email+",Username="+username+",Phone="+phone+",taxID="+nif+",Password="+password+",PlanNAME="+plano+",Seat="+lugar+"WHERE Id= '" + id + "'";
+    public void atualizarUser(int id, String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
+        String query = "Update Users SET Name= " + nome + ",Email=" + email + ",Username=" + username + ",Phone=" + phone + ",taxID=" + nif + ",Password=" + password + ",PlanNAME=" + plano + ",Seat=" + lugar + "WHERE Id= '" + id + "'";
         System.out.println(query);
         executaQuery(query);
-        String query1 = "UPDATE Vehicles SET Brand="+marca+",Model="+modelo+",Registration="+matricula+"WHERE UserId= '" + id + "'";
+        String query1 = "UPDATE Vehicles SET Brand=" + marca + ",Model=" + modelo + ",Registration=" + matricula + "WHERE UserId= '" + id + "'";
         System.out.println(query1);
         executaQuery(query1);
     }
-    public static void atualizaUser(Connection connection, int id,String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
-        String querry = "Update Users SET Name= " + nome + ",Email="+ email+",Username="+username+",Phone="+phone+",taxID="+nif+",Password="+password+",PlanNAME="+plano+",Seat="+lugar+"WHERE Id= '" + id + "'";
-        String querry1 = "Update Vehicles SET Brand="+marca+",Model="+modelo+",Registration="+matricula+"WHERE UserId= '" + id + "'";
-        
+
+    public static void atualizaUser(Connection connection, int id, String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
+        String querry = "Update Users SET Name= " + nome + ",Email=" + email + ",Username=" + username + ",Phone=" + phone + ",taxID=" + nif + ",Password=" + password + ",PlanNAME=" + plano + ",Seat=" + lugar + "WHERE Id= '" + id + "'";
+        String querry1 = "Update Vehicles SET Brand=" + marca + ",Model=" + modelo + ",Registration=" + matricula + "WHERE UserId= '" + id + "'";
+
         try {
             prepedStatement = connection.prepareStatement(querry);
             prepedStatement.execute();
@@ -261,29 +263,76 @@ public class DAL {
             prepedStatement.execute();
         } catch (SQLException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
-       
+
         }
     }
-    public String NumeroPlano(){
-        String query="SELECT COUNT (Id), PlanNAME FROM Users GROUP BY PlanNAME";
+
+    public String NumeroPlano() {
+        String query = "SELECT COUNT (Id), PlanNAME FROM Users GROUP BY PlanNAME";
         return query;
-        
+
     }
-     public String NumeroModel(){
-        String query="SELECT COUNT (Id) FROM Vehicles GROUP BY MODEL";
-        return query;
-        
+
+    public int NumeroModel() {
+        ResultSet rs2 = null;
+        int o = 0;
+        try {
+
+            String querry2 = "SELECT COUNT(*) FROM Vehicles WHERE Model='Volvo'";
+            rs2 = this.returnQuery(querry2);
+
+            while (rs2.next()) {
+                o = rs2.getInt("COUNT(*)");
+
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+
+        return o;
+
     }
-      public String NumeroViaturasReal(){
-        String query="Select COUNT(id) from parque where dataSaida IS NULL";
-        return query;
-        
+
+    public int NumeroViaturasReal() {
+
+        ResultSet rs2 = null;
+        int o = 0;
+        try {
+
+            String query = "SELECT COUNT(*) FROM RESERVE WHERE DATASAIDA IS NULL";
+            rs2 = this.returnQuery(query);
+
+            while (rs2.next()) {
+                o = rs2.getInt("COUNT(*)");
+
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+
+        return o;
+
     }
-//      public String NumeroReservas(){
-//        String query="";
-//        return query;
-//        
-//    }
+
+    public int NumeroReservas() {
+        ResultSet rs2 = null;
+        int o = 0;
+        try {
+
+            String query = "SELECT COUNT(*) FROM Users WHERE PlanNAME IS NOT NULL";
+            rs2 = this.returnQuery(query);
+
+            while (rs2.next()) {
+                o = rs2.getInt("COUNT(*)");
+
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+
+        return o;
+    }
+}
 
 //  public void inserirReserva(reserva r) throws SQLException, ParseException {
 //        Connection conn = DBConnection.getConnection();
@@ -309,6 +358,4 @@ public class DAL {
 //        stmt.executeUpdate();
 //        conn.close();
 //    }
-
-}
 
