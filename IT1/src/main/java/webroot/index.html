@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt" >
+    <head>
+        <meta charset="UTF-8">
+        <title>PaginaInicial</title>
+        <meta name="viewport" content="width=device-width">
+        <link href="../CSS/initial.css" rel="stylesheet" type="text/css"/>
+        <script src="../javascript/initial.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+     
+    </head>
+    <body>
+        
+        <div id="box-login">
+            <form id="formularioLogin" name="formularioLogin" method="POST"> 
+                <img alt="" id="logotipo" height="150" width="150" src="../pictures/estacionamento.png">
+                <div class="form-field">
+                    <input id="userlogin" name="userlogin" type="text" placeholder="Username" required/> 
+                </div>
+
+                <div class="form-field">
+                    <input type="password" name="passwordlogin" id="passwordlogin" placeholder="Password" required/>                       
+                </div>
+                <div class="form-field">
+                    <input type="button" class="btn" id="buttonLogin" name="buttonLogin" value="Log in" onclick="login()"/>
+                </div>
+                <div>
+                    <a id="NãoRegistadoLink" style="text-decoration: underline black" href="RegistarCliente.html">Não está registado? Clique aqui</a>
+                </div>
+            </form>
+        </div>
+        <div class="info">
+            <div class="p"></div>
+            <div class="top"></div>
+            <h2>Informações</h2> 
+            <img alt="" align="left" width="20%" height="20%" src="../pictures/barreira.png"> <div class="p"></div> <div class="p"></div>
+            <br>
+            <div class="row">
+                <div class="texto">
+                    <p></p>
+                    <p></p><h4></h4>
+                    <p></p><h4>Bem vindo ao Pushing Park. Aqui tem 100% lugar e 100% segurança.</h4>
+                    <p></p><h4>Para reservar, por favor registe-se. Poderá escolher o seu lugar e o plano a pagar.</h4>
+                    <p></p><h4>Pode sair e entrar sempre que quiser. Se não pretende alugar uma zona, mas deseja</h4>
+                    <p></p><h4>estacionar no nosso estabelecimento, também é possível. Anota-se que poderá perder o</h4>
+                    <p></p><h4>seu lugar reservado se não continuar com o plano escolhido. Contacte-nos se necessitar.</h4>
+                    <p></p><h4>Se quiser ver todos os planos existentes, veja em baixo ou registe-se.</h4>
+                    <div class="sp"></div>
+                    <div class="sp"></div>
+                </div></div>
+        </div>
+        <div class="container-fluid">
+            <div class="sp"></div>
+            <h2>SERVIÇOS</h2>
+            <h4>O que temos para lhe oferecer</h4>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-off"></span>
+                    <h4>Dois pisos</h4>
+                    <p></p>
+                </div>
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-heart"></span>
+                    <h4>Lugares de Deficientes</h4>
+                    <p></p>
+                </div>
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-lock"></span>
+                    <h4>Elevadores</h4>
+                    <p></p>
+                </div>
+            </div>
+            <br><br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-leaf"></span>
+                    <h4>Lugares para Carros Elétricos</h4>
+                    <p></p>
+                </div>
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-certificate"></span>
+                    <h4>121 lugares</h4>
+                    <p></p>
+                </div>
+                <div class="col-sm-4">
+                    <span class="glyphicon glyphicon-lock"></span>
+                    <h4>Vigilância</h4>
+                    <p></p>
+                </div>
+            </div><div class="sp"></div>
+        </div> 
+        <div class="container-fluid bg-grey">
+            <div class="row">
+                <div class="Financeiro">
+                    <div class="text-center">
+                        <h2>  Preços</h2> 
+                        <h4>Para conhecer melhor o seu Pushing Park</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h1>Reservado</h1>
+                                </div>
+                                <div class="panel-body" id="Reservado">
+                                    <p class="financas"><strong>Lugar pessoal</strong></p>
+                                    <p class="financas"><strong>Lembrete de pagamento</strong></p>
+                                </div>
+                                <div class="panel-footer">
+                                    <h3 class="financas">200€</h3>
+                                    <h4 class="financas">por mês</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h1>Diário</h1>
+                                </div>
+                                <div class="panel-body" id="Diario">
+                                    <p class="financas"><strong >Lugar pessoal</strong></p>
+                                    <p class="financas"><strong>Lembrete de pagamento</strong></p>
+                                </div>
+                                <div class="panel-footer">
+                                    <h3 class="financas">7€</h3>
+                                    <h4 class="financas">por mês</h4>
+                                    <h3 class="financas"> + </h3>
+                                    <h3 class="financas">0.10€</h3>
+                                    <h4 class="financas"> por dia </h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="panel panel-default text-center">
+                                <div class="panel-heading">
+                                    <h1>Ocasional</h1>
+                                </div>
+                                <div class="panel-body" id="Ocasional">
+                                    <p class="financas"><strong>Das 8 às 20 horas:</strong></p>
+                                    <p class="financas">1.ª hora – por cada período de quinze minutos ou fração <div>
+                                        <h3 class="financas">0.20€</h3></div>
+                                    <p class="financas">2.ª hora e seguintes – por cada período de quinze minutos ou fração <div>
+                                        <h3 class="financas">0.30€</h3></div>
+                                    <p class="financas"><strong>Das 20 às 8 horas:</strong></p>
+                                    <p class="financas">Por cada período de quinze minutos ou fração<div>
+                                        <h3 class="financas">0.20€</h3></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div id="Contactos">
+            <h2 class="text-center" style="text-align: left">&nbsp&nbspCONTACTE-NOS</h2>
+            <div class="tableContactos">
+                <div class="coluna1">
+                    <p>Entre em contacto connosco e retornaremos até 24 horas.</p>
+                    <p><span class="glyphicon glyphicon-map-marker"></span> Porto, Portugal</p>
+                    <p><span class="glyphicon glyphicon-phone"></span> +252 555 666</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span> parking@gmail.com</p>
+                </div>
+                <div class="coluna2">
+                    <form id="formContactos">
+                        <div class="nameAndEmail">
+                            <input class="nameFormContact" id="nameContact" name="Nome" placeholder="Nome" type="text" required>
+                            <input class="emailFormContact" id="emailContact" name="Email" placeholder="Email" type="email" required>
+                        </div>
+                        <textarea class="messageFormContact" id="commentsContact" name="Mensagem" placeholder="Mensagem" rows="3"></textarea><br>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <button class="bottomSubmitContact" type="submit">Enviar</button>   
+                            </div>
+
+                        </div>
+                </div> 
+
+
+            </div>  
+        </div>
+
+    </body>
+</html>

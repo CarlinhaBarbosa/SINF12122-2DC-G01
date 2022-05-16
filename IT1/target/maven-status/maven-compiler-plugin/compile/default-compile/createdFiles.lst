@@ -6,3 +6,4 @@ Model\Utilizador.class
 Model\Plano.class
 servidor\Servidor.class
 Model\Parque.class
+Model\Viatura.class

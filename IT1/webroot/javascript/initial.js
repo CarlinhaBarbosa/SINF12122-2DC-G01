@@ -21,8 +21,9 @@ function login() {
                window.location.assign("/GestorScreen");
            
         }else{
-             document.getElementById("formularioLogin").submit();
-               window.location.assign("/ClienteScreen");
+            let id=data.id;            
+             document.getElementById("formularioLogin").submit();      
+             window.location.assign("/ClienteScreen/"+id);
         }
             })
             .catch((err) =>

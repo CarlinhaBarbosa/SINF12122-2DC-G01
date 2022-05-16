@@ -1,0 +1,173 @@
+* {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+    padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.registerbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+    color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+#phone, .btn {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    color: #ffffff;
+    background-color: #428BCA;
+    border-color: #357EBD;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.btn:focus, .btn:hover {
+    background-color: #3276B1;
+    border-color: #285E8E;
+}
+
+.btn:active {
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    width:5%;
+    max-width: 200px;
+}
+
+.alert {
+    padding: 15px;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-info {
+    border-color: #bce8f1;
+    color: #31708f;
+    background-color: #d9edf7;
+}
+
+.alert-error {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.forma {
+    margin-left: auto;
+    margin-right: auto;
+}
+top{
+    padding:10px;
+    position:fixed;
+    top: 90%;
+    right:40px;
+    display:none;
+    font-size: 30px;
+}
+.top:hover{
+    text-decoration:none;
+}
+
+.botao {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 12px 20px;      /* Preenchimento */ 
+    border: 1px solid #fff;
+    transition: 0.6s ease;
+    position: relative;
+    background: black;
+    font-size: 17px;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    position: relative;
+}
+
+
+.contain {
+  
+  margin: 20px auto;
+}
+
+.licenseplate {
+  color: #333;
+  background-color: #fff;
+	
+            background-repeat: no-repeat;
+  
+  font-family: 'Segoe UI', Arial, sans-serif;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  
+  padding-left: 60px;
+  padding-bottom: 10px;
+  
+  width: 510px;
+  border: 5px solid red;
+  border-radius: 15px;
+  outline: none;
+  
+  &::placeholder {
+    color: #eee;
+  }
+}
