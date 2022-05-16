@@ -3,6 +3,7 @@ package servidor;
 
 
 import Controller.UserController;
+import FicheirosCSV.LerFicheiros;
 import Model.Utilizador;
 import Model.Viatura;
 
@@ -22,6 +23,7 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;
+import java.io.File;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -76,7 +78,7 @@ public class Servidor extends AbstractVerticle {
         router.post("/cliente/:id").handler((this::AMinhaConta));
 
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
-
+         router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
@@ -270,5 +272,23 @@ public class Servidor extends AbstractVerticle {
         response.putHeader("content-type", "application/json; charset=utf-8");
         response.setStatusCode(200);
         response.end(finalJson.toJSONString());
+    }
+
+    private void Sending(RoutingContext e) {
+        
+        try {
+           File f = new File(e.request().getParam("file"));
+           
+           LerFicheiros.leitorUser(f);
+         
+        } catch (EncodeException ee) {
+            System.out.println("exception: " + ee.getMessage());
+
+            e.response()
+                    .setStatusCode(500)
+                    .putHeader("content-type", "application/json; charset=utf-8")
+                    .end(Json.encodeToBuffer("{erro: 'erro!'}"));
+}
+        
     }
 }

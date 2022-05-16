@@ -32,3 +32,27 @@ function loadInfo() {
             .catch((err) => console.log(err));
 
 }
+function SendFile(){
+    let info = "";
+    
+    var form = document.getElementById("Leitor");
+    let formdata = new FormData(form);
+    fetch('/SendFile', {
+        method: 'POST',
+        body: formdata
+         })
+            .then((res) => {
+
+                if (res.status === 200)
+                    return res.json();
+                else
+                    throw Error("Erro no servidor!!");
+            })
+            .then((data) => {
+                 document.getElementById("Leitor").submit();
+            })
+
+            .catch((err) => 
+            console.log(err));
+    }
+    

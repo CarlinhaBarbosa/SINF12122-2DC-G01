@@ -125,7 +125,7 @@ public class UserController {
         
     }
      public void AlterarCliente(RoutingContext e) {
-        System.out.println("ola");
+        System.out.println("ola"); // NÃO IMPRIME  A PARTIR DAQUI
        
         try {
         int id = Integer.parseInt(e.request().getParam("numero"));
@@ -161,5 +161,10 @@ public class UserController {
                     .end(Json.encodeToBuffer("{erro: 'erro!'}"));
         }
 
+    }
+
+    public void adicionarUtilizador(String nome, String email, String password, String telemovel) {
+        System.out.println("feoooooooooooooooooooooo" + email);
+        
     }
 }
