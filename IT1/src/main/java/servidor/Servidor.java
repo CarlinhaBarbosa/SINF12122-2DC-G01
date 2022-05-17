@@ -108,7 +108,7 @@ public class Servidor extends AbstractVerticle  {
         router.get("/ClienteScreen/*").handler((this::PaginaCliente));
         router.get("/InfoUser/*").handler((this::ContaPessoal));
         router.post("/cliente/:id").handler((this::AMinhaConta));
-        
+        router.post("/SendFile").handler((this::Sending));
 
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
      
