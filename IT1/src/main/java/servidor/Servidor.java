@@ -3,6 +3,7 @@ package servidor;
 
 
 import Controller.UserController;
+import Model.Reservar;
 import Model.Utilizador;
 import Model.Viatura;
 
@@ -23,11 +24,20 @@ import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
+import com.mysql.cj.result.LocalTimeValueFactory;
+
 import org.json.simple.JSONObject;
 
 public class Servidor extends AbstractVerticle {
@@ -66,23 +76,23 @@ public class Servidor extends AbstractVerticle {
         router.route(HttpMethod.GET, "/AMinhaConta").handler(StaticHandler.create(webRoot + "/" + "AMinhaConta.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/Estatisticas").handler(StaticHandler.create(webRoot + "/" + "Estatistica.html").setDefaultContentEncoding("UTF-8"));
         router.route().handler(StaticHandler.create().setWebRoot(webRoot).setDefaultContentEncoding("UTF-8"));
-        // serve index
+        //serve index
         router.route("/").handler(StaticHandler.create(webRoot).setDefaultContentEncoding("UTF-8"));
         router.post("/submitLoginForm").handler(new UserController()::login);
         router.route(HttpMethod.POST, "/ListarClientes").handler(this::ListarClientes);
-         router.route(HttpMethod.POST, "/ListarStats").handler(this::ListarStats);
+        router.route(HttpMethod.POST, "/ListarStats").handler(this::ListarStats);
         router.get("/ClienteScreen/*").handler((this::PaginaCliente));
         router.get("/InfoUser/*").handler((this::ContaPessoal));
         router.post("/cliente/:id").handler((this::AMinhaConta));
 
-        router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
 
+        router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
+        router.route(HttpMethod.POST, "/addReserva").handler(this::inserirReserva);
 
         return router;
-
     }
 
     private void verificarUtilizador(RoutingContext rc) {
@@ -142,7 +152,6 @@ public class Servidor extends AbstractVerticle {
 
         if (!matricula.equals("false")) {
             rcc.addVeiculo(rc, modelo, marca, u.getId(), matricula);
-
             response.setStatusCode(201);
         } else {
             response.setStatusCode(400);
@@ -152,7 +161,6 @@ public class Servidor extends AbstractVerticle {
     }
 
     private void ListarClientes(RoutingContext e) {
-
         JSONObject json2 = new JSONObject();
         UserController pc = new UserController();
         ArrayList<Utilizador> listaUsers = pc.listaUtilizadores();
@@ -251,19 +259,17 @@ public class Servidor extends AbstractVerticle {
                     .setStatusCode(500)
                     .putHeader("content-type", "application/json; charset=utf-8")
                     .end(Json.encodeToBuffer("{erro: 'erro!'}"));
-}
-        
+        }
     }
 
     private void ListarStats(RoutingContext e) {
         JSONObject json1 = new JSONObject();
         
          DAL cf = new DAL();
-      
-//        json1.put("NumeroViaturas", cf.NumeroViaturasReal());
+        //json1.put("NumeroViaturas", cf.NumeroViaturasReal());
         json1.put("NumeroReservas", cf.NumeroReservas());
         json1.put("NumeroModelo", cf.NumeroModel());
-//        json1.put("NumeroPlano",cf.NumeroPlano());
+        //json1.put("NumeroPlano",cf.NumeroPlano());
         JSONObject finalJson = new JSONObject();
         finalJson.put("stats", json1);
         HttpServerResponse response = e.response();
@@ -271,4 +277,33 @@ public class Servidor extends AbstractVerticle {
         response.setStatusCode(200);
         response.end(finalJson.toJSONString());
     }
+
+    public void inserirReserva(RoutingContext rc){
+        UserController rcc = new UserController();
+        String plano = rc.request().getParam("tipoReserva");
+        String zona = rc.request().getParam("zona");
+        int lugar = Integer.parseInt(rc.request().getParam("lugar"));
+        Date dataInicio = new Date();
+        try {
+            DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            String date = rc.request().getParam("entrada");
+            dataInicio = format.parse(date);
+        }catch (ParseException e){
+            System.out.println(e);
+        }
+        Date dataFim = new Date();
+        try {
+            DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+            String date = rc.request().getParam("saida");
+            dataFim = format.parse(date);
+        }catch (ParseException e){
+            System.out.println(e);
+        }
+        int viatura = Integer.parseInt(rc.request().getParam("viatura"));
+        LocalTime HoraEntrada = LocalTime.now();
+        LocalTime HoraSaida = LocalTime.now();
+        Reservar r = new Reservar(plano, dataInicio, dataFim, HoraEntrada, HoraSaida, viatura, lugar, u.getId());
+    }
+
+
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 import java.text.ParseException;
@@ -14,28 +9,30 @@ import java.util.Date;
  *
  * @author Carla
  */
+
 public class Reservar {
     private int id;
-    private String tipo;
-    private Data dataInicio;
-    private Data dataFim;
+    private String plano;
+    private Date dataInicio;
+    private Date dataFim;
     private LocalTime HoraEntrada;
     private LocalTime HoraSaida;
     private int id_viatura;
     private int id_lugar;
+    private int id_cliente;
 
     static int totalID = 0;
 
-    public Reservar(int id, String tipo, Data dataInicio, Data dataFim, LocalTime HoraEntrada, LocalTime HoraSaida, int id_viatura, int id_lugar) {
+    public Reservar(String plano, Date dataInicio, Date dataFim, LocalTime HoraEntrada, LocalTime HoraSaida, int id_viatura, int id_lugar, int id_cliente) {
         this.id = ++totalID;
-        this.tipo = tipo;
+        this.plano = plano;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.HoraEntrada = HoraEntrada;
         this.HoraSaida = HoraSaida;
         this.id_viatura = id_viatura;
         this.id_lugar = id_lugar;
-
+        this.id_cliente = id_cliente;
     }
 
     public int getId() {
@@ -46,46 +43,27 @@ public class Reservar {
         this.id = id;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getPlano() {
+        return plano;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setPlano(String plano) {
+        this.plano = plano;
     }
 
-    public int getTipoReservaConvertido(String tipo) {
-        int result = 0;
-        switch (tipo) {
-            case "Tuition with lot reservation":
-                result = 1;
-                break;
-            case "Tuition without lot reservation":
-                result = 2;
-                break;
-            case "Daily":
-                result = 3;
-                break;
-            case "Occasional Ticket":
-                result = 4;
-                break;
-        }
-        return result;
-    }
-
-    public Data getDataInicio() {
+    public Date getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Data dataInicio) {
+    public void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public Data getDataFim() {
+    public Date getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(Data dataFim) {
+    public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
     }
 
@@ -120,18 +98,12 @@ public class Reservar {
     public void setId_lugar(int id_lugar) {
         this.id_lugar = id_lugar;
     }
-    public Date getDataInicioConvertida(Data dataInicio) throws ParseException {
-        String dataInicioParaConversao = Integer.toString(dataInicio.getDia()) + "/" + Integer.toString(dataInicio.getMes()) + "/" + Integer.toString(dataInicio.getAno());
-        SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
-        Date date1 = formatter1.parse(dataInicioParaConversao);
-        return date1;
+
+    public int getId_cliente(){
+        return this.id_cliente;
     }
 
-    public Date getDataFimConvertida(Data dataFim) throws ParseException {
-        String dataInicioParaConversao = Integer.toString(dataFim.getDia()) + "/" + Integer.toString(dataFim.getMes()) + "/" + Integer.toString(dataFim.getAno());
-        SimpleDateFormat formatter1 = new SimpleDateFormat("dd/MM/yyyy");
-        Date date1 = formatter1.parse(dataInicioParaConversao);
-        return date1;
+    public void setId_cliente(int id_cliente){
+        this.id_cliente = id_cliente;
     }
-
 }

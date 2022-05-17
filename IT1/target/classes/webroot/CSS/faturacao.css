@@ -1,0 +1,104 @@
+* {
+    font-family: monospace, Helvetica, Arial;
+}
+body {
+    background-image: url('../pictures/parque.jpg');
+    width: 100%;
+    background-size: cover;
+}
+.navbar {
+    color: white; 
+    margin-bottom: 0;
+    background-color: black;
+    z-index: 9999;
+    border: 0;
+    font-size: 12px;
+    letter-spacing: 4px;
+    border-radius: 0;
+    align-content: center;
+}
+.navbar-default {
+    border-color: transparent;
+    height: 50px;
+}
+#Rese{
+    margin-left: 40px;
+    width: 355px;  
+}
+.footer {
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+.Dinheiro {
+    width:100%;
+    background-color:#C0C0C0;
+    text-align: center;
+}
+.container-fluid{
+    align-content: center;
+    text-align: center;
+    width:90%; 
+}
+.text-center {
+margin-top: 2%;
+}
+.panel {
+    border: 1px solid #00416c;
+    border-radius:0;
+    transition: box-shadow 0.5s;
+}
+.panel-heading {
+    color: #fff !important;
+    background-color: #00416c !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.panel-footer {
+    background-color: #fff !important;
+}
+.panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+}
+.panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+.panel-footer h3 {
+    font-size: 35px;
+}
+.panel-footer h4 {
+    color: #aaa;
+    font-size: 15px;
+}
+.panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+}
+.financas{
+    color:black;
+}
+.aturar {
+    width:100%;
+    height:570px;
+    background-color:#C0C0C0;
+    text-align: center;
+}
+.p{
+    width: 100%;
+    height:40px;
+}
+.botao {
+    right: 0px;
+    position: absolute;
+}
+#inserir{
+    background-color: black;
+}

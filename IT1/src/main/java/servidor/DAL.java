@@ -9,15 +9,20 @@ import Controller.UserController;
 import Model.Utilizador;
 import Model.Viatura;
 import Model.Plano;
+import Model.Reservar;
+import Model.Data;
 import Model.Parque;
 import io.vertx.ext.web.RoutingContext;
 
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Time;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -92,7 +97,6 @@ public class DAL {
         String query = "INSERT INTO Users (Name,Email,Password,Username,Phone,taxID)  VALUES ('" + nome + "','" + email + "','" + password + "','" + username + "'," + phoneNumber + "," + taxId + ")";
         System.out.println(query);
         executaQuery(query);
-
     }
 
     public void registarVeiculo(String marca, String matricula, String modelo, String userId) {
@@ -101,7 +105,6 @@ public class DAL {
         String query = "INSERT INTO Vehicles (Brand,Model,Registration,UserId)  VALUES ('" + marca + "','" + modelo + "','" + matricula + "'," + userId2 + ")";
         System.out.println(query);
         executaQuery(query);
-
     }
 
     public ArrayList<Utilizador> getListaUtilizadores() {
@@ -177,22 +180,17 @@ public class DAL {
         ArrayList<Utilizador> listaClientes = new ArrayList<>();
         ResultSet rs = null;
         try {
-
             String querry = "select * from Users where Name<>'admin';";
             rs = this.returnQuery(querry);
-
             while (rs.next()) {
                 Utilizador e = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"), rs.getString("Username"), rs.getString("Phone"), rs.getString("taxID"), rs.getString("Seat"), rs.getString("PlanNAME"));
                 System.out.println(e.toString());
                 ResultSet rs2 = null;
                 try {
-
                     String querry2 = "select Registration from Vehicles where UserId=" + e.getId();
                     rs2 = this.returnQuery(querry2);
-
                     while (rs2.next()) {
                         e.setMatricula(rs2.getString("Registration"));
-
                     }
                 } catch (SQLException ex) {
                     System.out.println(ex.toString());
@@ -202,7 +200,6 @@ public class DAL {
         } catch (SQLException ex) {
             System.out.println(ex.toString());
         }
-
         return listaClientes;
     }
 
@@ -215,21 +212,17 @@ public class DAL {
             rs = this.returnQuery(querry);
 
             while (rs.next()) {
-
                 e = new Utilizador(rs.getInt("Id"), rs.getString("Email"), rs.getString("Name"), rs.getString("Password"), rs.getString("Username"), rs.getString("Phone"), rs.getString("taxID"), rs.getString("Seat"), rs.getString("PlanNAME"));
                 System.out.println(e.toString());
                 ResultSet rs2 = null;
                 try {
-
                     String querry2 = "select * from Vehicles where UserId=" + id;
                     rs2 = this.returnQuery(querry2);
                     System.out.println(querry2);
-
                     while (rs2.next()) {
                         e.setMatricula(rs2.getString("Registration"));
                         e.setModelo(rs2.getString("Model"));
                         e.setMarca(rs2.getString("Brand"));
-
                     }
 
                 } catch (SQLException ex) {
@@ -239,7 +232,6 @@ public class DAL {
         } catch (SQLException ex) {
             System.out.println(ex.toString());
         }
-
         return e;
     }
 
@@ -270,92 +262,73 @@ public class DAL {
     public String NumeroPlano() {
         String query = "SELECT COUNT (Id), PlanNAME FROM Users GROUP BY PlanNAME";
         return query;
-
     }
 
     public int NumeroModel() {
         ResultSet rs2 = null;
         int o = 0;
         try {
-
             String querry2 = "SELECT COUNT(*) FROM Vehicles WHERE Model='Volvo'";
             rs2 = this.returnQuery(querry2);
 
             while (rs2.next()) {
                 o = rs2.getInt("COUNT(*)");
-
             }
         } catch (SQLException ex) {
             System.out.println(ex.toString());
         }
-
         return o;
-
     }
 
     public int NumeroViaturasReal() {
-
         ResultSet rs2 = null;
         int o = 0;
         try {
-
             String query = "SELECT COUNT(*) FROM RESERVE WHERE DATASAIDA IS NULL";
             rs2 = this.returnQuery(query);
 
             while (rs2.next()) {
                 o = rs2.getInt("COUNT(*)");
-
             }
         } catch (SQLException ex) {
             System.out.println(ex.toString());
         }
-
         return o;
-
     }
 
     public int NumeroReservas() {
         ResultSet rs2 = null;
         int o = 0;
         try {
-
             String query = "SELECT COUNT(*) FROM Users WHERE PlanNAME IS NOT NULL";
             rs2 = this.returnQuery(query);
 
             while (rs2.next()) {
                 o = rs2.getInt("COUNT(*)");
-
             }
         } catch (SQLException ex) {
             System.out.println(ex.toString());
         }
-
         return o;
     }
+
+
+    public void inserirReserva(Reservar r) throws SQLException, ParseException {
+        Connection conn = DBFactory.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO Reserva (tipo, dataInicio, dataFim, horaEntrada, horaSaida, id_viatura, id_lugar, id_cliente) VALUES (?,?,?,?,?,?,?,?)");
+        stmt.setString(1, r.getPlano());
+        Date sqlDataInicio = (Date) r.getDataInicio();
+        stmt.setDate(2, sqlDataInicio);
+        Date sqlDataFim = (Date) r.getDataFim();
+        stmt.setDate(3, sqlDataFim);
+        Time entrada = Time.valueOf(r.getHoraEntrada());
+        stmt.setTime(4, entrada);
+        Time saida = Time.valueOf(r.getHoraSaida());
+        stmt.setTime(5, saida);
+        stmt.setInt(6, r.getId_viatura());
+        stmt.setInt(7, r.getId_lugar());
+        stmt.setInt(7, r.getId_cliente());
+        stmt.executeUpdate();
+        conn.close();
+    }
 }
-
-//  public void inserirReserva(reserva r) throws SQLException, ParseException {
-//        Connection conn = DBConnection.getConnection();
-//        PreparedStatement stmt = conn.prepareStatement("INSERT INTO reserva (dataInicio, dataFim, horaEntrada, horaSaida,id_viatura) VALUES (?,?,?,?,?)");
-//        Date sqlDataInicio = new Date(r.getDataInicioConvertida(r.getDataInicio()).getTime());
-//        stmt.setDate(1, sqlDataInicio);
-//        Date sqlDataFim = new Date(r.getDataFimConvertida(r.getDataFim()).getTime());
-//        stmt.setDate(2, sqlDataFim);
-//        Time entrada = Time.valueOf(r.getHoraEntrada());
-//        stmt.setTime(3, entrada);
-//        Time saida = Time.valueOf(r.getHoraSaida());
-//        stmt.setTime(4, saida);
-//        stmt.setInt(5, r.getId_viatura());
-//        stmt.executeUpdate();
-//        conn.close();
-//    }
-//
-//    public void inserirFaturacao(faturacao f) throws SQLException {
-//        Connection conn = DBConnection.getConnection();
-//        PreparedStatement stmt = conn.prepareStatement("INSERT INTO faturacao (valor, idCliente) VALUES (?,?)");
-//        stmt.setInt(1, f.getValor());
-//        stmt.setInt(2, f.getIdCliente());
-//        stmt.executeUpdate();
-//        conn.close();
-//    }
-
