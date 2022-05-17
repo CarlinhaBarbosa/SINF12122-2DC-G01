@@ -1,9 +1,3 @@
-servidor\DBFactory.class
-Controller\UserController.class
-servidor\Handlers.class
-servidor\Main.class
-Model\Utilizador.class
-Model\Plano.class
-servidor\Servidor.class
 Model\Parque.class
+Model\Utilizador.class
 Model\Viatura.class

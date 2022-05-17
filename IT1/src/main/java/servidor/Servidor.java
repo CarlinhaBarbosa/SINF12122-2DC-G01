@@ -1,6 +1,4 @@
-
 package servidor;
-
 
 import Controller.UserController;
 <<<<<<< HEAD
@@ -17,11 +15,18 @@ import Model.Utilizador;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
 import io.vertx.core.Vertx;
+import io.vertx.core.buffer.Buffer;
+import io.vertx.core.eventbus.DeliveryOptions;
 import io.vertx.core.file.FileSystemOptions;
+import io.vertx.core.http.HttpHeaders;
 import io.vertx.core.http.HttpMethod;
 import io.vertx.core.http.HttpServerOptions;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.core.json.Json;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.streams.Pump;
+import io.vertx.core.streams.ReadStream;
+import io.vertx.ext.web.FileUpload;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
@@ -45,7 +50,18 @@ import com.mysql.cj.result.LocalTimeValueFactory;
 
 import org.json.simple.JSONObject;
 
-public class Servidor extends AbstractVerticle {
+import io.vertx.core.Handler;
+import io.vertx.core.Vertx;
+import io.vertx.core.buffer.Buffer;
+import io.vertx.core.eventbus.DeliveryOptions;
+import io.vertx.core.http.HttpHeaders;
+import io.vertx.core.http.HttpServerResponse;
+import io.vertx.core.json.JsonArray;
+import io.vertx.core.streams.Pump;
+import io.vertx.core.streams.ReadStream;
+import io.vertx.ext.web.RoutingContext;
+
+public class Servidor extends AbstractVerticle  {
 
     String webRoot = DEFAULT_WEB_ROOT;
     Router router;
@@ -78,6 +94,9 @@ public class Servidor extends AbstractVerticle {
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.GET, "/GestorScreen").handler(StaticHandler.create(webRoot + "/" + "GestorScreen.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/ClienteScreen/").handler(StaticHandler.create(webRoot + "/" + "ClienteScreen.html").setDefaultContentEncoding("UTF-8"));
+        router.route(HttpMethod.GET, "/ClienteScreen/FinancialScreen.html").handler(StaticHandler.create(webRoot + "/" + "FinancialScreen.html").setDefaultContentEncoding("UTF-8"));
+        router.route(HttpMethod.GET, "/ClienteScreen/MapScreen.html").handler(StaticHandler.create(webRoot + "/" + "MapScreen.html").setDefaultContentEncoding("UTF-8"));
+        router.route(HttpMethod.GET, "/ClienteScreen/InformationScreen.html").handler(StaticHandler.create(webRoot + "/" + "InformationScreen.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/AMinhaConta").handler(StaticHandler.create(webRoot + "/" + "AMinhaConta.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/Estatisticas").handler(StaticHandler.create(webRoot + "/" + "Estatistica.html").setDefaultContentEncoding("UTF-8"));
         router.route().handler(StaticHandler.create().setWebRoot(webRoot).setDefaultContentEncoding("UTF-8"));
@@ -90,6 +109,7 @@ public class Servidor extends AbstractVerticle {
         router.get("/InfoUser/*").handler((this::ContaPessoal));
         router.post("/cliente/:id").handler((this::AMinhaConta));
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
@@ -97,6 +117,10 @@ public class Servidor extends AbstractVerticle {
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
          router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
 >>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
+=======
+        router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
+        router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
+>>>>>>> Stashed changes
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
@@ -237,8 +261,8 @@ public class Servidor extends AbstractVerticle {
         e.response().end();
     }
 
-    private void nada(RoutingContext e) {
    
+<<<<<<< Updated upstream
         DAL cf = new DAL();
 
         try {
@@ -277,6 +301,15 @@ public class Servidor extends AbstractVerticle {
         
          DAL cf = new DAL();
         //json1.put("NumeroViaturas", cf.NumeroViaturasReal());
+=======
+
+    private void ListarStats(RoutingContext e) {
+        JSONObject json1 = new JSONObject();
+
+        DAL cf = new DAL();
+
+//        json1.put("NumeroViaturas", cf.NumeroViaturasReal());
+>>>>>>> Stashed changes
         json1.put("NumeroReservas", cf.NumeroReservas());
         json1.put("NumeroModelo", cf.NumeroModel());
         //json1.put("NumeroPlano",cf.NumeroPlano());
@@ -320,21 +353,25 @@ public class Servidor extends AbstractVerticle {
 }
 =======
     private void Sending(RoutingContext e) {
-        
-        try {
-           File f = new File(e.request().getParam("file"));
-           
-           LerFicheiros.leitorUser(f);
-         
-        } catch (EncodeException ee) {
-            System.out.println("exception: " + ee.getMessage());
+        DeliveryOptions options = new DeliveryOptions();
+        HttpServerResponse response = e.response();
+        response.putHeader(HttpHeaders.CONTENT_TYPE, "application/csv")
+                .putHeader("Content-Disposition", "attachment; filename=sinf.csv")
+                .putHeader(HttpHeaders.TRANSFER_ENCODING, "chunked").setChunked(true);
 
-            e.response()
-                    .setStatusCode(500)
-                    .putHeader("content-type", "application/json; charset=utf-8")
-                    .end(Json.encodeToBuffer("{erro: 'erro!'}"));
-}
-        
+        ReadStream<Buffer> consumer = this.vertx.eventBus().<Buffer>consumer("3fb24b47-ae9d-46fd-a915-480245c8ebda")
+                .bodyStream();
+        consumer.handler(result -> {
+            JsonArray array = (JsonArray) result;
+          response.setStatusCode(200);
+          response.end(toString(array));
+        });
+
+      
+    }
+
+    public String toString(final JsonArray data) {
+        return String.join(",", "" + data.getValue(0), "" + data.getValue(1), "" + data.getValue(2), "" + data.getValue(3), "" + data.getValue(4), "" + data.getValue(5), "\r\n");
     }
 }
 >>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4

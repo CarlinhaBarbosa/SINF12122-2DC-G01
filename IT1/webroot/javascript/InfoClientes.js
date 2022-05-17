@@ -49,7 +49,9 @@ function SendFile(){
                     throw Error("Erro no servidor!!");
             })
             .then((data) => {
+                console.log(data.status);
                  document.getElementById("Leitor").submit();
+         
             })
 
             .catch((err) => 

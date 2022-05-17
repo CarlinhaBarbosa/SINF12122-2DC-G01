@@ -84,22 +84,23 @@ function OpenInfoUser() {
 function alterarDados() {
    
     let form = document.getElementById('cliente');
-    console.log(form); 
     let formdata = new FormData(form);
-    console.log(formdata);
-    fetch('/edicao', {
-    method: 'POST',
-            body: formdata
-
+    fetch('/alterarUser', {
+        method: 'POST',
+        body: formdata
+    })
             .then((res) => {
-            if (res.status === 201)
+                if (res.status === 201)
                     return res.json();
-                    else
-                    throw Error("Erro no servidor!!");
+                else
+                 window.alert("O username ou email do utilizador inserido já existe!");
+                throw Error("Erro no servidor!!");
             })
             .then((data) => {
-            document.getElementById("cliente").submit();
+                document.getElementById("registo").submit();
+           
             })
-               })
-            .catch((err) => console.log(err));
+            .catch((err) => 
+            console.log(err),);
+            
 }

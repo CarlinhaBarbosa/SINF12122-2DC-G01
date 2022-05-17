@@ -114,7 +114,7 @@ public class UserController {
     public Utilizador Utilizador(RoutingContext rc, int id) {
         return cf.ContaUtilizador(rc,id);
     }
-    public void adicionarUser(int id,String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
+    public void adicionarUser(int id,String nome, String username, String email, int nif, String password, String matricula, String modelo, String plano, String lugar, String marca, int phone) {
         
         cf.atualizarUser(id, nome,  username,  email,  nif,  password,  matricula,  modelo,  plano,  lugar,  marca,  phone) ;
         
@@ -129,14 +129,17 @@ public class UserController {
         String nome = e.request().getParam("nome");
         String username = e.request().getParam("username");
         String email = e.request().getParam("email");
-        String nif = e.request().getParam("nif");
+       
+        int nif = Integer.parseInt(e.request().getParam("nif"));
         String password = e.request().getParam("password");
         String matricula = e.request().getParam("matricula");
         String modelo = e.request().getParam("modelo");
         String plano = e.request().getParam("plano");
         String lugar = e.request().getParam("lugar");
         String marca = e.request().getParam("marca");
-        String phone = e.request().getParam("phone");
+        int phone = Integer.parseInt(e.request().getParam("phone"));
+      
+
 
         cf.atualizarUser(id, nome, username, email, nif, password, matricula, modelo, plano, lugar, marca, phone);
         System.out.println("frefergergegegwgregergerg" + id + nome + username + email + nif + password + matricula + modelo + plano + lugar + marca + "telemovelllllllllll" + phone);

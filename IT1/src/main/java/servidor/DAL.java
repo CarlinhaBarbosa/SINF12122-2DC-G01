@@ -235,29 +235,26 @@ public class DAL {
         return e;
     }
 
-    public void atualizarUser(int id, String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
-        String query = "Update Users SET Name= " + nome + ",Email=" + email + ",Username=" + username + ",Phone=" + phone + ",taxID=" + nif + ",Password=" + password + ",PlanNAME=" + plano + ",Seat=" + lugar + "WHERE Id= '" + id + "'";
+    public void atualizarUser(int id, String nome, String username, String email, int nif, String password, String matricula, String modelo, String plano, String lugar, String marca, int phone) {
+        String query = "Update Users SET Name= '" + nome + "',Email='" + email + "',Username='" + username + "',Phone=" + phone + ",taxID=" + nif + ",Password='" + password + "',PlanNAME='" + plano + "',Seat='" + lugar + "' WHERE Id= " + id;
         System.out.println(query);
-        executaQuery(query);
-        String query1 = "UPDATE Vehicles SET Brand=" + marca + ",Model=" + modelo + ",Registration=" + matricula + "WHERE UserId= '" + id + "'";
+      
+        String query1 = "UPDATE Vehicles SET Brand='" + marca + "',Model='" + modelo + "',Registration='" + matricula + "' WHERE UserId= " + id;
         System.out.println(query1);
-        executaQuery(query1);
-    }
-
-    public static void atualizaUser(Connection connection, int id, String nome, String username, String email, String nif, String password, String matricula, String modelo, String plano, String lugar, String marca, String phone) {
-        String querry = "Update Users SET Name= " + nome + ",Email=" + email + ",Username=" + username + ",Phone=" + phone + ",taxID=" + nif + ",Password=" + password + ",PlanNAME=" + plano + ",Seat=" + lugar + "WHERE Id= '" + id + "'";
-        String querry1 = "Update Vehicles SET Brand=" + marca + ",Model=" + modelo + ",Registration=" + matricula + "WHERE UserId= '" + id + "'";
-
+      
         try {
-            prepedStatement = connection.prepareStatement(querry);
+            Connection conn = DBFactory.getConnection();
+            prepedStatement = conn.prepareStatement(query);
             prepedStatement.execute();
-            prepedStatement = connection.prepareStatement(querry1);
+            prepedStatement = conn.prepareStatement(query1);
             prepedStatement.execute();
         } catch (SQLException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
 
         }
     }
+
+  
 
     public String NumeroPlano() {
         String query = "SELECT COUNT (Id), PlanNAME FROM Users GROUP BY PlanNAME";
