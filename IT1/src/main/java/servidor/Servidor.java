@@ -112,6 +112,7 @@ public class Servidor extends AbstractVerticle  {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
@@ -119,6 +120,10 @@ public class Servidor extends AbstractVerticle  {
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
          router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
 >>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
+=======
+        router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
+        router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
+>>>>>>> Stashed changes
 =======
         router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
         router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
@@ -275,6 +280,7 @@ public class Servidor extends AbstractVerticle  {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         DAL cf = new DAL();
 
         try {
@@ -327,6 +333,11 @@ public class Servidor extends AbstractVerticle  {
     private void ListarStats(RoutingContext e) {
         JSONObject json1 = new JSONObject();
 >>>>>>> Stashed changes
+=======
+
+    private void ListarStats(RoutingContext e) {
+        JSONObject json1 = new JSONObject();
+>>>>>>> Stashed changes
 
         DAL cf = new DAL();
 
@@ -343,6 +354,7 @@ public class Servidor extends AbstractVerticle  {
         response.end(finalJson.toJSONString());
     }
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< HEAD
@@ -376,6 +388,8 @@ public class Servidor extends AbstractVerticle  {
 
 }
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
