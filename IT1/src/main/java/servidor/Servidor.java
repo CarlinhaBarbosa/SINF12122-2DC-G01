@@ -3,7 +3,11 @@ package servidor;
 
 
 import Controller.UserController;
+<<<<<<< HEAD
 import Model.Reservar;
+=======
+import FicheirosCSV.LerFicheiros;
+>>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
 import Model.Utilizador;
 import Model.Viatura;
 
@@ -23,6 +27,7 @@ import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 import static io.vertx.ext.web.handler.StaticHandler.DEFAULT_WEB_ROOT;
+import java.io.File;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.text.DateFormat;
@@ -85,8 +90,13 @@ public class Servidor extends AbstractVerticle {
         router.get("/InfoUser/*").handler((this::ContaPessoal));
         router.post("/cliente/:id").handler((this::AMinhaConta));
 
+<<<<<<< HEAD
 
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
+=======
+        router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
+         router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
+>>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
@@ -278,6 +288,7 @@ public class Servidor extends AbstractVerticle {
         response.end(finalJson.toJSONString());
     }
 
+<<<<<<< HEAD
     public void inserirReserva(RoutingContext rc){
         UserController rcc = new UserController();
         String plano = rc.request().getParam("tipoReserva");
@@ -307,3 +318,23 @@ public class Servidor extends AbstractVerticle {
 
 
 }
+=======
+    private void Sending(RoutingContext e) {
+        
+        try {
+           File f = new File(e.request().getParam("file"));
+           
+           LerFicheiros.leitorUser(f);
+         
+        } catch (EncodeException ee) {
+            System.out.println("exception: " + ee.getMessage());
+
+            e.response()
+                    .setStatusCode(500)
+                    .putHeader("content-type", "application/json; charset=utf-8")
+                    .end(Json.encodeToBuffer("{erro: 'erro!'}"));
+}
+        
+    }
+}
+>>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
