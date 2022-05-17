@@ -1,0 +1,116 @@
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <title>Reservar</title>
+        <link type="text/css" href="../CSS/newcss.css" rel="stylesheet">
+        <link type="text/css" href="../CSS/headeradmin.css" rel="stylesheet">
+        <link type="text/css" href="../CSS/reserva.css" rel="stylesheet">
+        <link href="http://fonts.cdnfonts.com/css/elianto" rel="stylesheet"> <!-- letra -->
+        <meta name="viewport" content="width=device-width">
+        <script src="../javascript/InformationScreen.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="../javascript/reservar.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <img align="left" style="width:80px; height: 80px" class="img" src="../pictures/estacionamento.png" alt="parque de estacionamento"/> 
+                    <div class='title' align="center">Pushing Park</div>
+                </div>
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="ClienteScreen.html">Página</a></li>
+                        <li><a  href="FinancialScreen.html">Àrea Financeira</a></li>
+                        <li><a  href="MapScreen.html">Mapa</a></li>
+                        <li><a href="InformationScreen.html">Informações</a></li>
+                    </ul>
+                </div>
+                <div class="botao">
+                    <button id="myBtn" class="dropbtn" onclick="openOption()"><img alt="" style="width:50px ;height: 50px ; float: right" src="../pictures/user.png"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                         <button class="letra"  style="background-color: white; color: black" onclick="OpenInfoUser()">A minha conta</button>
+                               
+                                <a style="background-color: grey" class="letra" href="Reserva.html" > Reserva </a>
+                                <a class="letra" href="index.html">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid column bg-grey">
+            <form id="formularioReserva" style="border: none;">
+                <div class="form-group">
+                    <label for="tipoReserva">Tipo de Reserva</label>
+                    <input list="tipoReserva" name="tipoReserva" id="inserir">
+                    <datalist id="tipoReserva">
+                        <option value="Reservado">
+                        <option value="Diário">
+                        <option value="Ocasional">
+                    </datalist>
+                
+                    <label for="zona">Zona</label>
+                    <input list="zona" name="zona">
+                    <datalist id="zona">
+                        <option value="Zona A">
+                        <option value="Zona B">
+                        <option value="Zona C">
+                        <option value="Zona D">
+                        <option value="Zona E">
+                        <option value="Zona F">
+                    </datalist>
+
+                    <label for="lugar">Lugar</label>
+                    <input list="lugar" name="lugar">
+                    <datalist id="lugar">
+                        <option value="Lugar 1">
+                        <option value="Lugar 2">
+                        <option value="Lugar 3">
+                        <option value="Lugar 4">
+                        <option value="Lugar 5">
+                        <option value="Lugar 6">
+                        <option value="Lugar 7">
+                        <option value="Lugar 8">
+                        <option value="Lugar 9">
+                        <option value="Lugar 10">
+                        <option value="Lugar 11">
+                        <option value="Lugar 12">
+                        <option value="Lugar 13">
+                        <option value="Lugar 14">
+                        <option value="Lugar 15">
+                        <option value="Lugar 16">
+                        <option value="Lugar 17">
+                        <option value="Lugar 18">
+                        <option value="Lugar 19">
+                        <option value="Lugar 20">
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="entrada">Entrada:</label>
+                    <input type="date" id="entrada" name="entrada">
+
+                    <label for="saida">Saída:</label>
+                    <input type="date" id="saida" name="saida">
+
+                    <label for="viatura">Viatura</label>
+                    <input list="viatura" name="viatura">
+                    <datalist id="viatura">
+                        
+                    </datalist>         
+                </div>
+
+
+
+                <input type="button" style="background: white; color: black" onclick="reserva()" value="Submit">
+            </form>
+        </div>
+        <div class="round">
+            <a href="Reserva.html" class="previous">&#8249;</a>           
+        </div>
+        <div class="footer">
+            <p>© All Rights Reserved 2022 </p>
+        </div>
+    </body>
+</html>

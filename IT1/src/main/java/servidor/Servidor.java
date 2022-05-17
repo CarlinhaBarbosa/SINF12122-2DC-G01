@@ -95,7 +95,15 @@ public class Servidor extends AbstractVerticle  {
         router.route(HttpMethod.GET, "/GestorScreen").handler(StaticHandler.create(webRoot + "/" + "GestorScreen.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/ClienteScreen/").handler(StaticHandler.create(webRoot + "/" + "ClienteScreen.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/ClienteScreen/FinancialScreen.html").handler(StaticHandler.create(webRoot + "/" + "FinancialScreen.html").setDefaultContentEncoding("UTF-8"));
+        router.route(HttpMethod.GET, "/ClienteScreen/Reserva.html").handler(StaticHandler.create(webRoot + "/" + "Reserva.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/ClienteScreen/MapScreen.html").handler(StaticHandler.create(webRoot + "/" + "MapScreen.html").setDefaultContentEncoding("UTF-8"));
+          router.route(HttpMethod.GET, "/InfoUser/AMinhaConta.html").handler(StaticHandler.create(webRoot + "/" + "AMinhaConta.html").setDefaultContentEncoding("UTF-8"));
+           router.route(HttpMethod.GET, "/InfoUser/InformationScreen.html").handler(StaticHandler.create(webRoot + "/" + "InformationScreen.html").setDefaultContentEncoding("UTF-8"));
+            router.route(HttpMethod.GET, "/InfoUser/FinancialScreen.html").handler(StaticHandler.create(webRoot + "/" + "FinancialScreen.html").setDefaultContentEncoding("UTF-8"));
+            router.route(HttpMethod.GET, "/InfoUser/MapScreen.html").handler(StaticHandler.create(webRoot + "/" + "MapScreen.html").setDefaultContentEncoding("UTF-8"));
+            router.route(HttpMethod.GET, "/InfoUser/Reserva.html").handler(StaticHandler.create(webRoot + "/" + "Reserva.html").setDefaultContentEncoding("UTF-8"));
+             router.route(HttpMethod.GET, "/InfoUser/ClienteScreen.html").handler(StaticHandler.create(webRoot + "/" + "ClienteScreen.html").setDefaultContentEncoding("UTF-8"));
+                  router.route(HttpMethod.GET, "/InfoUser/index.html").handler(StaticHandler.create(webRoot + "/" + "index.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/ClienteScreen/InformationScreen.html").handler(StaticHandler.create(webRoot + "/" + "InformationScreen.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/AMinhaConta").handler(StaticHandler.create(webRoot + "/" + "AMinhaConta.html").setDefaultContentEncoding("UTF-8"));
         router.route(HttpMethod.GET, "/Estatisticas").handler(StaticHandler.create(webRoot + "/" + "Estatistica.html").setDefaultContentEncoding("UTF-8"));
@@ -107,6 +115,7 @@ public class Servidor extends AbstractVerticle  {
         router.route(HttpMethod.POST, "/ListarStats").handler(this::ListarStats);
         router.get("/ClienteScreen/*").handler((this::PaginaCliente));
         router.get("/InfoUser/*").handler((this::ContaPessoal));
+        
         router.post("/cliente/:id").handler((this::AMinhaConta));
         router.post("/SendFile").handler((this::Sending));
 
@@ -253,7 +262,6 @@ public class Servidor extends AbstractVerticle  {
         e.response().setStatusCode(202);
         e.response().end();
     }
-
 
 
     private void ListarStats(RoutingContext e) {
