@@ -1,11 +1,11 @@
 package servidor;
 
 import Controller.UserController;
-<<<<<<< HEAD
+
 import Model.Reservar;
-=======
+
 import FicheirosCSV.LerFicheiros;
->>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
+
 import Model.Utilizador;
 import Model.Viatura;
 
@@ -108,39 +108,12 @@ public class Servidor extends AbstractVerticle  {
         router.get("/ClienteScreen/*").handler((this::PaginaCliente));
         router.get("/InfoUser/*").handler((this::ContaPessoal));
         router.post("/cliente/:id").handler((this::AMinhaConta));
-
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
+        
 
         router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
-=======
-        router.route(HttpMethod.POST, "/edicao").handler(new UserController()::AlterarCliente);
-         router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
->>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
-=======
-        router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
-        router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
->>>>>>> Stashed changes
-=======
-        router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
-        router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
->>>>>>> Stashed changes
-=======
-        router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
-        router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
->>>>>>> Stashed changes
-=======
-        router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
-        router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
->>>>>>> Stashed changes
-=======
-        router.route(HttpMethod.POST, "/alterarUser").handler(new UserController()::AlterarCliente);
-        router.route(HttpMethod.POST, "/SendFile").handler(this::Sending);
->>>>>>> Stashed changes
+     
+
+
         router.route().handler(BodyHandler.create());
         router.route(HttpMethod.POST, "/addUtilizador").handler(this::verificarUtilizador);
         router.route(HttpMethod.POST, "/addViatura").handler(this::verificarViatura);
@@ -281,79 +254,16 @@ public class Servidor extends AbstractVerticle  {
         e.response().end();
     }
 
-   
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        DAL cf = new DAL();
 
-        try {
-            int id = Integer.parseInt(e.request().getParam("id"));
-
-            System.out.println("Id --------------->" + id);
-            String nome = e.request().getParam("nome");
-            String username = e.request().getParam("username");
-            String email = e.request().getParam("email");
-            String nif = e.request().getParam("nif");
-            String password = e.request().getParam("password");
-            String matricula = e.request().getParam("matricula");
-            String modelo = e.request().getParam("modelo");
-            String plano = e.request().getParam("plano");
-            String lugar = e.request().getParam("lugar");
-            String marca = e.request().getParam("marca");
-            String phone = e.request().getParam("phone");
-
-            cf.atualizarUser(id, nome, username, email, nif, password, matricula, modelo, plano, lugar, marca, phone);
-            Utilizador u = new Utilizador();
-            final String json = Json.encodePrettily(u);
-            e.response().setStatusCode(201).putHeader("content-type", "application/json; charset=utf-8").end(json);
-
-        } catch (EncodeException ee) {
-            System.out.println("exception: " + ee.getMessage());
-
-            e.response()
-                    .setStatusCode(500)
-                    .putHeader("content-type", "application/json; charset=utf-8")
-                    .end(Json.encodeToBuffer("{erro: 'erro!'}"));
-        }
-    }
 
     private void ListarStats(RoutingContext e) {
         JSONObject json1 = new JSONObject();
-        
-         DAL cf = new DAL();
-        //json1.put("NumeroViaturas", cf.NumeroViaturasReal());
-=======
 
-    private void ListarStats(RoutingContext e) {
-        JSONObject json1 = new JSONObject();
-=======
-
-    private void ListarStats(RoutingContext e) {
-        JSONObject json1 = new JSONObject();
->>>>>>> Stashed changes
-=======
-
-    private void ListarStats(RoutingContext e) {
-        JSONObject json1 = new JSONObject();
->>>>>>> Stashed changes
-=======
-
-    private void ListarStats(RoutingContext e) {
-        JSONObject json1 = new JSONObject();
->>>>>>> Stashed changes
-=======
-
-    private void ListarStats(RoutingContext e) {
-        JSONObject json1 = new JSONObject();
->>>>>>> Stashed changes
 
         DAL cf = new DAL();
 
 //        json1.put("NumeroViaturas", cf.NumeroViaturasReal());
->>>>>>> Stashed changes
+
         json1.put("NumeroReservas", cf.NumeroReservas());
         json1.put("NumeroModelo", cf.NumeroModel());
         //json1.put("NumeroPlano",cf.NumeroPlano());
@@ -365,11 +275,7 @@ public class Servidor extends AbstractVerticle  {
         response.end(finalJson.toJSONString());
     }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< HEAD
+
     public void inserirReserva(RoutingContext rc){
         UserController rcc = new UserController();
         String plano = rc.request().getParam("tipoReserva");
@@ -397,17 +303,6 @@ public class Servidor extends AbstractVerticle  {
         Reservar r = new Reservar(plano, dataInicio, dataFim, HoraEntrada, HoraSaida, viatura, lugar, u.getId());
     }
 
-
-}
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     private void Sending(RoutingContext e) {
         DeliveryOptions options = new DeliveryOptions();
         HttpServerResponse response = e.response();
@@ -430,4 +325,4 @@ public class Servidor extends AbstractVerticle  {
         return String.join(",", "" + data.getValue(0), "" + data.getValue(1), "" + data.getValue(2), "" + data.getValue(3), "" + data.getValue(4), "" + data.getValue(5), "\r\n");
     }
 }
->>>>>>> 7245a1eb2a5bc907236490b1b2d6a0f387e04fe4
+
